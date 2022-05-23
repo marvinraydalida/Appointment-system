@@ -1,35 +1,114 @@
-#dashboard{
+#dashboard {
     width: 80vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     padding: 0;
 }
 
-#analytics-container{
+#analytics-container {
     width: 90%;
     height: 40%;
-    margin: auto;
+    margin: 0px auto;
+    padding: 0;
     display: flex;
     justify-content: space-between;
 }
 
-#weekly-graph-container{
+#analytics-container>div {
+    box-shadow: -1px 3px 13px -3px rgba(0, 0, 0, 0.06);
+    -webkit-box-shadow: -1px 3px 13px -3px rgba(0, 0, 0, 0.06);
+    -moz-box-shadow: -1px 3px 13px -3px rgba(0, 0, 0, 0.06);
+    background-color: white;
+    border-radius: 10px;
+}
+
+#weekly-graph-container {
     width: 70%;
-    background-color: white;
-    border-radius: 10px;
+
 }
 
-#request-graph-container{
+#request-graph-container {
     width: 28%;
-    background-color: white;
-    border-radius: 10px;
 }
 
-#request-container{
+#request-container {
     width: 90%;
     height: 50%;
-    background-color: black;
-    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: -1px 3px 13px -3px rgba(0, 0, 0, 0.06);
+    -webkit-box-shadow: -1px 3px 13px -3px rgba(0, 0, 0, 0.06);
+    -moz-box-shadow: -1px 3px 13px -3px rgba(0, 0, 0, 0.06);
+    margin: 0px auto;
+    font-family: 'Nunito', sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
 }
+
+#request-container h1 {
+    margin-top: 0px;
+    color: #4F5355;
+    font-size: 1.2rem;
+}
+
+table {
+    /* border: 1px solid black; */
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: start;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #576461;
+}
+
+
+td{
+    padding-top: 15px;
+    color: #383C3F;
+}
+
+td > button{
+    border: none;
+    padding: 13px;
+    border-radius: 3px;
+    font-weight: bold;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    min-width: 80px;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+}
+
+td > button:nth-child(1){
+    background-color: #31be6c;
+}
+
+td > button:nth-child(2){
+    background-color: #3187c0;
+}
+
+td > button:nth-child(3){
+    background-color: #e24055;
+}
+
+td > button:hover{
+    transform: scale(1.03);
+}
+
+tr > td:nth-child(3){
+    color: #2D6CA0;
+    font-weight: bold;
+}
+
+
+tr:nth-child(1) {
+    border-top: 1px solid #F4F5F8;
+    border-bottom: 1px solid #F4F5F8;
+}
+
+
