@@ -14,7 +14,7 @@ class User_Login extends CI_Model {
 			// 'password' => $_POST['password']
 		);	
 		$this->db->select('*');
-		$this->db->from('user_accounts');
+		$this->db->from('user_details');
 		$this->db->where($data);
 		$query= $this->db->get();
 		if($query->num_rows()!=0){

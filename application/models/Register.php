@@ -10,9 +10,10 @@ class Register extends CI_Model {
 	public function insertData()
 	{	
 			$this->db->select('*');
-			$this->db->from('user_accounts');
-			$this->db->where('firstname',$_POST['firstname']);
-			$this->db->where('lastname',$_POST['lastname']);
+			$this->db->from('user_details');
+			$this->db->where('name',$_POST['name']);
+			// $this->db->where('firstname',$_POST['firstname']);
+			// $this->db->where('lastname',$_POST['lastname']);
 			$query=$this->db->get();
 			if($query->num_rows()<=0){
                 if($_POST['password'] == $_POST['confirmpassword']){
@@ -20,12 +21,13 @@ class Register extends CI_Model {
                         'userID' => NULL,
                         'username' =>$_POST['username'],
                         'password' => password_hash($_POST['password'],PASSWORD_DEFAULT),
-                        'firstname' => $_POST['firstname'],
-                        'lastname' => $_POST['lastname'],
-                        'email' => $_POST['email'],
-                        'status' => 1
+						'name' => $_POST['firstname'] . $_POST['lastname'],
+                        //'firstname' => $_POST['firstname'],
+                        //'lastname' => $_POST['lastname'],
+                        //'email' => $_POST['email'],
+                        //'status' => 1
                     );
-                    $this->db->insert('user_accounts',$data);
+                    $this->db->insert('user_details',$data);
                     unset($_POST);
                     $this->session->set_flashdata('successAddingUser','Added user account successfully');
                 }
