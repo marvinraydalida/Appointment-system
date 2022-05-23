@@ -53,6 +53,28 @@
     font-size: 1.2rem;
 }
 
+#table-container{
+    height: 85%;
+    overflow-y: scroll;
+    
+}
+
+/* width */
+#table-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Handle */
+#table-container::-webkit-scrollbar-thumb {
+    background: rgb(206, 206, 206);
+    border-radius: 50px;
+}
+
+/* Handle on hover */
+#table-container::-webkit-scrollbar-thumb:hover {
+    background: rgb(146, 146, 146);
+}
+
 table {
     /* border: 1px solid black; */
     width: 100%;
