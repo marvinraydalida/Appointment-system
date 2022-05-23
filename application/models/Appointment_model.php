@@ -17,7 +17,6 @@ class Appointment_model extends CI_Model {
             'email' => $_POST['email'],
             'date' => $_POST['date'],
             'time' => $_POST['time'],
-			'dateRequested' => date('d-m-y'),
 			'status' => 'pending'
         );
 
@@ -32,4 +31,22 @@ class Appointment_model extends CI_Model {
 
 		redirect('Appointment');
     }
+
+    public function viewAppointments() #Read
+	{	
+		$query = $this->db->query('	SELECT * FROM appointments where `status`= "pending" ');
+		return $query->result();
+	}
+
+    public function viewAppointmentsAll() #Read
+	{	
+		$query = $this->db->query('	SELECT * FROM appointments');
+		return $query->result();
+	}
+
+      public function viewSingleAppointment($id) #Read
+	{	
+		$query = $this->db->query('	SELECT * FROM appointments where appointmentID ='.$id);
+		return $query->row();
+	}
 }

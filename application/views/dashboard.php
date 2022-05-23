@@ -5,7 +5,7 @@
         </div>
 
         <div id="request-container">
-            <h1>Appointment request (row count ng mga pending request)</h1>
+            <h1>Appointment request (<?php echo $rowcount ?>)</h1>
 
             <div id="table-container">
                 <table>
@@ -17,90 +17,24 @@
                         <th>Email</th>
                         <th>Action</th>
                     </tr>
-                    <tr>
-                        <td style="font-weight: bold;">7:00 am</td>
-                        <td>2022-05-24</td>
-                        <td>Alfreds Futterkiste</td>
-                        <td>09972184815</td>
-                        <td>marvinraydalida@gmail.com</td>
-                        <td>
-                            <button>Accept</button>
-                            <button>Reschedule</button>
-                            <button>Decline</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight: bold;">7:00 am</td>
-                        <td>2022-05-24</td>
-                        <td>Alfreds Futterkiste</td>
-                        <td>09972184815</td>
-                        <td>marvinraydalida@gmail.com</td>
-                        <td>
-                            <button>Accept</button>
-                            <button>Reschedule</button>
-                            <button>Decline</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight: bold;">7:00 am</td>
-                        <td>2022-05-24</td>
-                        <td>Alfreds Futterkiste</td>
-                        <td>09972184815</td>
-                        <td>marvinraydalida@gmail.com</td>
-                        <td>
-                            <button>Accept</button>
-                            <button>Reschedule</button>
-                            <button>Decline</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight: bold;">7:00 am</td>
-                        <td>2022-05-24</td>
-                        <td>Alfreds Futterkiste</td>
-                        <td>09972184815</td>
-                        <td>marvinraydalida@gmail.com</td>
-                        <td>
-                            <button>Accept</button>
-                            <button>Reschedule</button>
-                            <button>Decline</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight: bold;">7:00 am</td>
-                        <td>2022-05-24</td>
-                        <td>Alfreds Futterkiste</td>
-                        <td>09972184815</td>
-                        <td>marvinraydalida@gmail.com</td>
-                        <td>
-                            <button>Accept</button>
-                            <button>Reschedule</button>
-                            <button>Decline</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight: bold;">7:00 am</td>
-                        <td>2022-05-24</td>
-                        <td>Alfreds Futterkiste</td>
-                        <td>09972184815</td>
-                        <td>marvinraydalida@gmail.com</td>
-                        <td>
-                            <button>Accept</button>
-                            <button>Reschedule</button>
-                            <button>Decline</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight: bold;">7:00 am</td>
-                        <td>2022-05-24</td>
-                        <td>Alfreds Futterkiste</td>
-                        <td>09972184815</td>
-                        <td>marvinraydalida@gmail.com</td>
-                        <td>
-                            <button>Accept</button>
-                            <button>Reschedule</button>
-                            <button>Decline</button>
-                        </td>
-                    </tr>
+                    <?php foreach ($appointments as $appointment) {?>
+                        <tr>
+                            
+                            <td style="font-weight: bold;"> <?php echo date('h:i a', strtotime($appointment->time))?></td>
+                            <td><?php echo date("m/d/Y",strtotime($appointment->date)) ?></td>
+                            <td><?php echo $appointment->name ?></td>
+                            <td><?php echo $appointment->contactNum ?></td>
+                            <td><?php echo $appointment->email ?></td>
+                            <td>
+                                <button>Accept</button>
+                                <button>Reschedule</button>
+                                <button>Decline</button>
+                            </td>
+                            
+                        </tr>
+                    <?php } ?>
+               
+
                 </table>
             </div>
 

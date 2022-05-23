@@ -19,4 +19,6 @@ class Appointment extends CI_Controller
     {
         $this->Appointment_model->create();
     }
+
+   
 }
