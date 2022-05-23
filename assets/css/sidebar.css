@@ -1,0 +1,30 @@
+body{
+    display: flex;
+    margin: 0;
+    background-color: #F5F9FA;
+}
+
+#sidebar{
+    width: 20vw;
+    height: 100vh;
+    background-color: #005CAA;
+}
+
+#link-container{
+    margin: 100px auto 0px auto;
+    width: 60%;
+
+}
+
+#link-container a{
+    display: block;
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.3rem;
+    color: #E8F9FE;
+    margin-bottom: 30px;
+}
+
+#link-container a i{
+    width: 2rem;
+}
