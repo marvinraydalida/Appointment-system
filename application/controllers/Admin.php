@@ -17,4 +17,14 @@ class Admin extends CI_Controller
         $this->load->view('templates/sidebar');
 		$this->load->view('dashboard',$data);
     }
+
+    public function acceptAppointment($id){
+        $this->Appointment_model->acceptAppointment($id);
+        redirect('Admin');
+    }
+
+    public function declineAppointment($id){
+        $this->Appointment_model->declineAppointment($id);
+        redirect('Admin');
+    }
 }

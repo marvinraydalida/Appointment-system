@@ -49,4 +49,21 @@ class Appointment_model extends CI_Model {
 		$query = $this->db->query('	SELECT * FROM appointments where appointmentID ='.$id);
 		return $query->row();
 	}
+
+    public function acceptAppointment($id){ #Delete/Status
+		$data = array(
+			'status' => "accepted"
+		);
+		$this->db->where('appointmentID',$id);
+		$this->db->update('appointments',$data);
+	}
+
+    public function declineAppointment($id){ #Delete/Status
+		$data = array(
+			'status' => "declined"
+		);
+		$this->db->where('appointmentID',$id);
+		$this->db->update('appointments',$data);
+	}
 }
+

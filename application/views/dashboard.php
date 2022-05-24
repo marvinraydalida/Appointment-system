@@ -6,7 +6,7 @@
             <h1>Are you sure you want to decline the appointment?</h1>
             <div id = "decline-button-container">
                 <!-- Wrap nalang sa form to para ma submit -->
-                <button>Yes</button>
+                <button id="decline-appointment-btn">Yes</button>
                 <button>No</button>
                 <!--  -->
             </div>
@@ -64,11 +64,14 @@
                             <td><?php echo $appointment->contactNum ?></td>
                             <td><?php echo $appointment->email ?></td>
                             <td>
-                                <button>Accept</button>
-                                <button class = "reschedule-request-btn">Reschedule</button>
-                                <button class = "decline-request-btn">Decline</button>
+                                <button onclick="location.href='<?php echo site_url('Admin/acceptAppointment')?>/<?php echo $appointment->appointmentID; ?>'">Accept</button>
+                                <button class = "reschedule-request-btn" onclick="">Reschedule</button>
+                                <button class = "decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>">Decline</button>
                             </td>
                             <input type="hidden" value = "<?php echo $appointment->date?>">
+                            <input type="hidden" value = "<?php echo date('h:i a', strtotime($appointment->time))?>">
+                            
+                           
                         </tr>
                     <?php } ?>
                
@@ -78,7 +81,10 @@
 
         </div>
     </section>
-
+    <script>
+       
+        
+    </script>                     
     </body>
 
     </html>
