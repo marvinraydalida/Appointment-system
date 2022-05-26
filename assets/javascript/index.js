@@ -39,7 +39,7 @@ function showModal(event) {
     if (event.target.className === 'decline-request-btn') {
         document.getElementById('decline-modal').style.display = "block";
         confirmDeclineBtn.onclick=function(){
-            location.href=document.location.href +'/declineAppointment/'+ event.target.dataset.id;
+            location.href=document.location.href +'/sendEmailDeclined/'+ event.target.dataset.id;
         }
        
     }

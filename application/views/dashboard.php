@@ -64,7 +64,7 @@
                             <td><?php echo $appointment->contactNum ?></td>
                             <td><?php echo $appointment->email ?></td>
                             <td>
-                                <button onclick="location.href='<?php echo site_url('Admin/acceptAppointment')?>/<?php echo $appointment->appointmentID; ?>'">Accept</button>
+                                <button onclick="location.href='<?php echo site_url('Admin/sendEmailAccepted')?>/<?php echo $appointment->appointmentID; ?>'">Accept</button>
                                 <button class = "reschedule-request-btn" onclick="">Reschedule</button>
                                 <button class = "decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>">Decline</button>
                             </td>
