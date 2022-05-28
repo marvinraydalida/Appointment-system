@@ -2,6 +2,7 @@ const modalCloseBtn = document.querySelectorAll('.modal-close');
 const modalBackDrop = document.getElementById('modal-container');
 const declineBtn = document.querySelectorAll('.decline-request-btn');
 const rescheduleBtn = document.querySelectorAll('.reschedule-request-btn');
+const confirmDeclineBtn = document.getElementById('decline-appointment-btn');
 
 
 
@@ -37,6 +38,10 @@ function showModal(event) {
     modalBackDrop.style.display = "flex";
     if (event.target.className === 'decline-request-btn') {
         document.getElementById('decline-modal').style.display = "block";
+        confirmDeclineBtn.onclick=function(){
+            location.href=document.location.href +'/sendEmailDeclined/'+ event.target.dataset.id;
+        }
+       
     }
     else if (event.target.className === 'reschedule-request-btn') {
         document.getElementById('rescehdule-modal').style.display = "flex";
