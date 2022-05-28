@@ -78,7 +78,7 @@
 
         </div>
     </section>
-
+    <script src="<?php echo base_url("assets/javascript/index.js") ?>"></script>
     </body>
 
     </html>

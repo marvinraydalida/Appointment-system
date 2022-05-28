@@ -17,4 +17,9 @@ class Admin extends CI_Controller
         $this->load->view('templates/sidebar');
 		$this->load->view('dashboard',$data);
     }
+
+    public function appointment(){
+        $this->load->view('templates/sidebar');
+        $this->load->view('adminAppointment');
+    }
 }
