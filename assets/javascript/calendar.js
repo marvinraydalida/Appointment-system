@@ -5,6 +5,7 @@ const currentMonth = date.getMonth() + 1;
 const monthPickerLabel = document.querySelector('#month-picker h1');
 const monthPickerButtons = document.querySelectorAll('#month-picker button');
 const datePickerButtons = document.querySelectorAll('td button');
+const calendar = document.getElementById('calendar-container');
 const months = ['', 'January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'
 ];
@@ -14,6 +15,10 @@ const tableData = document.querySelectorAll('td');
 let selectedMonthIndex = currentMonth;
 let selectedYear = currentYear;
 let previousSelectedDate = null;
+
+
+calendar.style.height = calendar.clientWidth +'px';
+console.dir(calendar)
 
 function getDaysInMonth(year, month) {
     return new Date(year, month, 0).getDate();

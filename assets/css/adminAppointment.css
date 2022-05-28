@@ -1,29 +1,35 @@
 #appointment {
-    display: flex;
-    width: 80vw;
-    height: 100vh;
-    flex-direction: row;
-    font-family: 'Nunito', sans-serif;
-    justify-content: space-evenly;
-    padding-top: 5vh;
+  display: flex;
+  width: 80vw;
+  flex-direction: row;
+  font-family: 'Nunito', sans-serif;
+  justify-content: space-evenly;
+  padding-top: 5vh;
+}
+
+#appointment-components {
+  width: 30%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 #calendar-container {
-    width: 350px;
-    height: 350px;
-    border-radius: 10px;
-    background-color: white;
-    box-shadow: -1px 3px 13px -3px rgba(0, 0, 0, 0.06);
-    -webkit-box-shadow: -1px 3px 13px -3px rgba(0, 0, 0, 0.06);
-    -moz-box-shadow: -1px 3px 13px -3px rgba(0, 0, 0, 0.06);
+  width: 100%;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: -1px 3px 13px -3px rgba(0, 0, 0, 0.06);
+  -webkit-box-shadow: -1px 3px 13px -3px rgba(0, 0, 0, 0.06);
+  -moz-box-shadow: -1px 3px 13px -3px rgba(0, 0, 0, 0.06);
 }
 
-#calendar-container button{
+#calendar-container button {
   border: none;
   cursor: pointer;
 }
 
-#month-picker{
+#month-picker {
   width: 100%;
   height: 20%;
   display: flex;
@@ -31,36 +37,36 @@
   justify-content: space-between;
 }
 
-#month-picker button{
+#month-picker button {
   width: 20%;
   background-color: white;
   font-size: 1rem;
   border-radius: 10px;
 }
 
-#month-picker h1{
+#month-picker h1 {
   margin: 0;
   font-size: 1.5rem;
   margin: auto;
 }
 
 
-table{
+table {
   width: 95%;
   height: 75%;
   border-collapse: collapse;
   margin: auto;
 }
 
-th{
+th {
   font-size: 1.5rem;
 }
 
-td{
+td {
   width: calc(100%/7);
 }
 
-td button{
+td button {
   width: 100%;
   height: 100%;
   border: none;
@@ -68,20 +74,36 @@ td button{
   transition: all 250ms ease-in-out;
 }
 
-.current-day{
+.current-day {
   font-weight: bold;
   color: #256CA2;
 }
 
-.date-toggle{
+.date-toggle {
   color: white;
   border-radius: 10px;
   background-color: #0174DA;
 }
 
+.appointment-status {
+  width: 100%;
+  font-size: .8rem;
+}
 
-#appointment-container{
-    width: 750px;
-    height: 90vh;
-    border:  1px solid black;
+#selected-appointments i{
+  color: #10db76;
+}
+
+#request-appointments i{
+  color: #f5d418;
+}
+
+#cancel-appointments i{
+  color: #f53218;
+}
+
+#appointment-container {
+  width: 65%;
+  height: 90vh;
+  border: 1px solid black;
 }
