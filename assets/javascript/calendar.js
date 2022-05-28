@@ -87,7 +87,7 @@ function changeMonth() {
 
 function selectDate(event) {
     if (previousSelectedDate !== null && event.target !== previousSelectedDate) {
-        previousSelectedDate.classList.toggle('date-toggle');
+        previousSelectedDate.classList.remove('date-toggle');
     }
     event.target.classList.toggle('date-toggle');
     previousSelectedDate = event.target;
