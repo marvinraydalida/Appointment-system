@@ -54,6 +54,7 @@ class Admin extends CI_Controller
             show_error($this->email->print_debugger());
         }
     }
+    
     public function sendEmailDeclined($id)
     {
         $this->Appointment_model->declineAppointment($id);

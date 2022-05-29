@@ -4,7 +4,7 @@
   flex-direction: row;
   font-family: 'Nunito', sans-serif;
   justify-content: space-evenly;
-  padding-top: 5vh;
+  align-items: center;
 }
 
 #appointment-components {
@@ -90,20 +90,154 @@ td button {
   font-size: .8rem;
 }
 
-#selected-appointments i{
-  color: #10db76;
+#selected-appointments i {
+  color: #92e4cf;
 }
 
-#request-appointments i{
+/* #request-appointments i {
   color: #f5d418;
-}
+} */
 
-#cancel-appointments i{
-  color: #f53218;
+#cancel-appointments i {
+  color: #f76c5a;
 }
 
 #appointment-container {
-  width: 65%;
+  width: 55%;
   height: 90vh;
-  border: 1px solid black;
+  overflow-y: scroll;
+  /* border: 1px solid black; */
+}
+
+#appointment-container::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Handle */
+#appointment-container::-webkit-scrollbar-thumb {
+  background: rgb(206, 206, 206);
+  border-radius: 50px;
+}
+
+/* Handle on hover */
+#appointment-container::-webkit-scrollbar-thumb:hover {
+  background: rgb(146, 146, 146);
+}
+
+.appointment-divider {
+  width: 100%;
+  font-size: .8rem;
+  position: relative;
+}
+
+.appointment-divider h1 {
+  margin: 0px 0px 15px 0px;
+  font-weight: 400;
+  color: #cacaca;
+}
+
+.line-divider {
+  width: 83%;
+  border-top: 2px solid #cacaca;
+  border-radius: 5px;
+  position: absolute;
+  top: 13px;
+  right: 2%;
+}
+
+.appointment-card {
+  width: 98%;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  background-color: white;
+  box-sizing: border-box;
+  box-shadow: -1px 3px 13px -3px rgba(0, 0, 0, 0.06);
+  -webkit-box-shadow: -1px 3px 13px -3px rgba(0, 0, 0, 0.06);
+  -moz-box-shadow: -1px 3px 13px -3px rgba(0, 0, 0, 0.06);
+}
+
+.appointment-time {
+  width: 15%;
+  height: 100%;
+  border-radius: 15px 0px 0px 15px;
+  background-color: #92e4cf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.appointment-time h1 {
+  color: white;
+  font-weight: 500;
+  margin: 0px;
+}
+
+.appointment-detail {
+  width: 55%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.appointment-detail h1 {
+  margin: 0px 0px 0px 20px;
+  color: black;
+  font-size: 1.5rem;
+}
+
+.appointment-action {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  /* border: 1px solid black; */
+}
+
+.appointment-action button {
+  border: none;
+  padding: 13px;
+  border-radius: 3px;
+  font-weight: bold;
+  font-family: 'Nunito', sans-serif;
+  min-width: 80px;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+}
+
+.reschedule-request-btn {
+  color: #377099;
+  background-color: #bfe4ff;
+}
+
+.cancel-request-btn {
+  color: #A95069;
+  background-color: #ffb7c1;
+}
+
+.appointment-action button:hover {
+  transform: scale(1.1);
+}
+
+.reschedule-request-btn:hover {
+  background-color: #99d5ff;
+}
+
+.cancel-request-btn:hover {
+  background-color: #ff9fac;
+}
+
+.reschedule-request-btn:active {
+  background-color: #84b4d6;
+}
+
+.cancel-request-btn:active {
+  background-color: #d38590;
 }
