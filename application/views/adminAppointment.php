@@ -7,6 +7,9 @@
                     <button><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
                 <table>
+                    <form id = "select-date" method="get">
+                        <input type="hidden" id = "select-date-hidden" name = "date" value="">
+                    </form>
                     <tr>
                         <th>Su</th>
                         <th>Mo</th>
@@ -147,23 +150,6 @@
             <div class="appointment-divider">
                 <h1></i> 11:00 am</h1>
                 <div class="line-divider"></div>
-                <div class="appointment-card">
-                    <div class="appointment-time">
-                        <h1>8:45 AM</h1>
-                    </div>
-                    <div class="appointment-detail">
-                        <h1>Marvin Ray Dalida</h1>
-                    </div>
-                    <div class="appointment-action">
-                        <button class="reschedule-request-btn">Reschedule</button>
-                        <button class="cancel-request-btn">Cancel</button>
-                    </div>
-                </div>
-            </div>
-            <div class="appointment-divider">
-                <h1></i> 11:00 am</h1>
-                <div class="line-divider"></div>
-                <div class="appointment-card"></div>
                 <div class="appointment-card">
                     <div class="appointment-time">
                         <h1>8:45 AM</h1>

@@ -22,6 +22,8 @@ class Admin extends CI_Controller
     {
         $this->load->view('templates/sidebar');
         $this->load->view('adminAppointment');
+
+        // echo $_GET['date'];
     }
 
     public function sendEmailAccepted($id)

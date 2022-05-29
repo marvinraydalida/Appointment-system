@@ -1,24 +1,29 @@
 const date = new Date();
-const today = new Date().toISOString().slice(0, 10);
+const today = new Date().toLocaleDateString('en-CA');
 const currentYear = date.getFullYear();
 const currentMonth = date.getMonth() + 1;
 const monthPickerLabel = document.querySelector('#month-picker h1');
 const monthPickerButtons = document.querySelectorAll('#month-picker button');
 const datePickerButtons = document.querySelectorAll('td button');
 const calendar = document.getElementById('calendar-container');
+const tableData = document.querySelectorAll('td');
+const selectDateForm = document.getElementById('select-date');
+const dateFormHidden = document.getElementById('select-date-hidden');
 const months = ['', 'January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'
 ];
-const tableData = document.querySelectorAll('td');
+
+const requestURI = window.location.search;
+const urlParams = new URLSearchParams(requestURI);
+const toggledDate = urlParams.get('date');
 
 
-let selectedMonthIndex = currentMonth;
-let selectedYear = currentYear;
-let previousSelectedDate = null;
+let selectedMonthIndex = parseInt(toggledDate.split('-')[1]);
+let selectedYear = toggledDate.split('-')[0];
+let previousSelectedDate;
 
 
-calendar.style.height = calendar.clientWidth +'px';
-console.dir(calendar)
+calendar.style.height = calendar.clientWidth + 'px';
 
 function getDaysInMonth(year, month) {
     return new Date(year, month, 0).getDate();
@@ -49,6 +54,11 @@ function fillCalendar(year, month) {
         if (month < 10) currentMonth = '0' + month;
         if (today === `${year}-${currentMonth}-${currentDay}`) {
             tableData[i].firstElementChild.classList.toggle('current-day');
+        }
+
+        if(toggledDate === `${year}-${currentMonth}-${currentDay}`){
+            previousSelectedDate = tableData[i].firstElementChild;
+            tableData[i].firstElementChild.classList.toggle('date-toggle');
         }
     }
 }
@@ -86,11 +96,25 @@ function changeMonth() {
 }
 
 function selectDate(event) {
+    let dateSelected = selectedMonthIndex;
+    let yearSelected = selectedYear;
+    let daySelected = parseInt(event.target.textContent);
+
     if (previousSelectedDate !== null && event.target !== previousSelectedDate) {
         previousSelectedDate.classList.remove('date-toggle');
     }
     event.target.classList.toggle('date-toggle');
+
+    if (dateSelected < 10) dateSelected = '0' + dateSelected;
+    if (yearSelected < 10) yearSelected = '0' + yearSelected;
+    if (daySelected < 10) daySelected = '0' + daySelected;
+
+    dateFormHidden.value = `${yearSelected}-${dateSelected}-${daySelected}`;
+    console.log(`${yearSelected}-${dateSelected}-${daySelected}`);
+
     previousSelectedDate = event.target;
+
+    selectDateForm.submit();
 }
 
 monthPickerButtons[0].addEventListener('click', changeMonth);

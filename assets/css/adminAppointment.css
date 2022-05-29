@@ -91,7 +91,7 @@ td button {
 }
 
 #selected-appointments i {
-  color: #92e4cf;
+  color: #79e9cd;
 }
 
 /* #request-appointments i {
@@ -131,7 +131,7 @@ td button {
 }
 
 .appointment-divider h1 {
-  margin: 0px 0px 15px 0px;
+  margin: 0px 0px 15px 3px;
   font-weight: 400;
   color: #cacaca;
 }
@@ -152,6 +152,7 @@ td button {
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 15px;
+  margin-left: 3px;
   border-radius: 15px;
   background-color: white;
   box-sizing: border-box;
@@ -173,6 +174,7 @@ td button {
 
 .appointment-time h1 {
   color: #47cfad;
+  font-size: 1rem;
   font-weight: 500;
   margin: 0px;
 }
@@ -188,11 +190,11 @@ td button {
 .appointment-detail h1 {
   margin: 0px 0px 0px 20px;
   color: black;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .appointment-action {
-  width: 40%;
+  width: 35%;
   height: 100%;
   display: flex;
   flex-direction: row;
