@@ -2,14 +2,11 @@
         <div id="appointment-components">
             <div id="calendar-container">
                 <div id="month-picker">
-                    <button disabled><i class="fa-solid fa-chevron-left"></i></button>
+                    <button><i class="fa-solid fa-chevron-left"></i></button>
                     <h1>month</h1>
                     <button><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
                 <table>
-                    <form id = "select-date" method="get">
-                        <input type="hidden" id = "select-date-hidden" name = "date" value="">
-                    </form>
                     <tr>
                         <th>Su</th>
                         <th>Mo</th>
@@ -82,6 +79,15 @@
             </div>
         </div>
         <div id="appointment-container">
+            <form id="select-date" method="get">
+                <input type="hidden" id="select-date-hidden" name="date" value="">
+                <Label>Appointment status: </Label>
+                <?php $request_uri = explode('status=', $_SERVER['REQUEST_URI'],2);?>
+                <select name="status" id="status-drop-down">
+                    <option value="accepted">Accepted</option>
+                    <option value="cancelled">Cancelled</option>
+                </select>
+            </form>
             <div class="appointment-divider">
                 <h1> 8:00 am</h1>
                 <div class="line-divider"></div>
@@ -165,7 +171,8 @@
             </div>
         </div>
     </section>
-    <script src="<?php echo base_url("assets/javascript/calendar.js") ?>"></script>
+    <script src="<?php echo base_url("assets/javascript/adminAppointment.js") ?>" type="module"></script>
+    <script src="<?php echo base_url("assets/javascript/calendar.js") ?>" type="module"></script>
     </body>
 
     </html>

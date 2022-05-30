@@ -85,12 +85,12 @@ function changeMonth() {
 
     monthPickerLabel.textContent = `${months[selectedMonthIndex]} - ${selectedYear}`;
 
-    if (currentMonth !== selectedMonthIndex && currentYear === selectedYear ||
-        currentYear !== selectedYear) {
-        monthPickerButtons[0].disabled = false;
-    } else {
-        monthPickerButtons[0].disabled = true;
-    }
+    // if (currentMonth !== selectedMonthIndex && currentYear === selectedYear ||
+    //     currentYear !== selectedYear) {
+    //     monthPickerButtons[0].disabled = false;
+    // } else {
+    //     monthPickerButtons[0].disabled = true;
+    // }
 
     fillCalendar(selectedYear, selectedMonthIndex);
 }
@@ -126,3 +126,5 @@ for (const btn of datePickerButtons) {
 
 monthPickerLabel.textContent = `${months[selectedMonthIndex]} - ${selectedYear}`;
 fillCalendar(selectedYear, selectedMonthIndex);
+
+export {toggledDate, dateFormHidden};

@@ -71,7 +71,7 @@ td button {
   height: 100%;
   border: none;
   background-color: white;
-  transition: all 250ms ease-in-out;
+  /* transition: all 250ms ease-in-out; */
 }
 
 .current-day {
@@ -124,9 +124,24 @@ td button {
   background: rgb(146, 146, 146);
 }
 
+#select-date{
+  margin-bottom: 1rem;
+}
+
+#select-date Label{
+  font-family: 'Nunito', sans-serif;
+  font-size: 2rem;
+}
+
+#select-date select{
+  height: 2rem;
+  font-family: 'Nunito', sans-serif;
+  transform: translateY(-5px);
+}
+
 .appointment-divider {
   width: 100%;
-  font-size: .8rem;
+  font-size: .7rem;
   position: relative;
 }
 
@@ -138,10 +153,10 @@ td button {
 
 .line-divider {
   width: 83%;
-  border-top: 2px solid #cacaca;
+  border-top: 2px solid #eeeeee;
   border-radius: 5px;
   position: absolute;
-  top: 13px;
+  top: 10px;
   right: 2%;
 }
 
