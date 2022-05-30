@@ -81,10 +81,7 @@
 
         </div>
     </section>
-    <script>
-       
-        
-    </script>                     
+    <script src="<?php echo base_url("assets/javascript/dashboard.js") ?>"></script>
     </body>
 
     </html>

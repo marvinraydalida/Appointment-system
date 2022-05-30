@@ -5,8 +5,6 @@ const rescheduleBtn = document.querySelectorAll('.reschedule-request-btn');
 const confirmDeclineBtn = document.getElementById('decline-appointment-btn');
 
 
-
-
 for (const btn of declineBtn) {
     btn.addEventListener('click', showModal);
 }
