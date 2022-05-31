@@ -106,11 +106,7 @@
                             <h1><?php echo $appointment->name?></h1>
                         </div>
 
-                        <?php if(strcasecmp($_GET['status'], "accepted") == 0): ?>
-                        <div class="appointment-action accepted">
-                        <?php elseif(strcasecmp($_GET['status'], "cancelled") == 0): ?>
-                        <div class="appointment-action cancelled">
-                        <?php endif; ?>
+                        <div class="appointment-action">
                             <button class="reschedule-request-btn">Reschedule</button>
                             <button class="cancel-request-btn">Cancel</button>
                         </div>
@@ -128,22 +124,14 @@
                     <?php if(strtotime($appointment->time) >= strtotime('9:00') && strtotime($appointment->time) < strtotime('10:00')): ?>
                     <!-- ETO YUNG SAMPLE NG ISANG APPOINTMENT CARD -->
                     <div class="appointment-card">
-                        <?php if(strcasecmp($_GET['status'], "accepted") == 0): ?>
-                            <div class="appointment-time accepted">
-                        <?php elseif(strcasecmp($_GET['status'], "cancelled") == 0): ?>
-                            <div class="appointment-time cancelled">
-                        <?php endif; ?>
+                        <div class="appointment-time">
                             <h1><?php echo date('h:i a', strtotime($appointment->time))?></h1>
                         </div>
                         <div class="appointment-detail">
                             <h1><?php echo $appointment->name?></h1>
                         </div>
 
-                        <?php if(strcasecmp($_GET['status'], "accepted") == 0): ?>
-                        <div class="appointment-action accepted">
-                        <?php elseif(strcasecmp($_GET['status'], "cancelled") == 0): ?>
-                        <div class="appointment-action cancelled">
-                        <?php endif; ?>
+                        <div class="appointment-action">
                             <button class="reschedule-request-btn">Reschedule</button>
                             <button class="cancel-request-btn">Cancel</button>
                         </div>
@@ -161,22 +149,14 @@
                     <?php if(strtotime($appointment->time) >= strtotime('10:00') && strtotime($appointment->time) < strtotime('11:00')): ?>
                     <!-- ETO YUNG SAMPLE NG ISANG APPOINTMENT CARD -->
                     <div class="appointment-card">
-                        <?php if(strcasecmp($_GET['status'], "accepted") == 0): ?>
-                            <div class="appointment-time accepted">
-                        <?php elseif(strcasecmp($_GET['status'], "cancelled") == 0): ?>
-                            <div class="appointment-time cancelled">
-                        <?php endif; ?>
+                    <div class="appointment-time">
                             <h1><?php echo date('h:i a', strtotime($appointment->time))?></h1>
                         </div>
                         <div class="appointment-detail">
                             <h1><?php echo $appointment->name?></h1>
                         </div>
 
-                        <?php if(strcasecmp($_GET['status'], "accepted") == 0): ?>
-                            <div class="appointment-action accepted">
-                        <?php elseif(strcasecmp($_GET['status'], "cancelled") == 0): ?>
-                            <div class="appointment-action cancelled">
-                        <?php endif; ?>
+                        <div class="appointment-action">
                             <button class="reschedule-request-btn">Reschedule</button>
                             <button class="cancel-request-btn">Cancel</button>
                         </div>
@@ -194,22 +174,14 @@
                     <?php if(strtotime($appointment->time) >= strtotime('11:00') && strtotime($appointment->time) < strtotime('12:00')): ?>
                     <!-- ETO YUNG SAMPLE NG ISANG APPOINTMENT CARD -->
                     <div class="appointment-card">
-                        <?php if(strcasecmp($_GET['status'], "accepted") == 0): ?>
-                            <div class="appointment-time accepted">
-                        <?php elseif(strcasecmp($_GET['status'], "cancelled") == 0): ?>
-                            <div class="appointment-time cancelled">
-                        <?php endif; ?>
+                    <div class="appointment-time">
                             <h1><?php echo date('h:i a', strtotime($appointment->time))?></h1>
                         </div>
                         <div class="appointment-detail">
                             <h1><?php echo $appointment->name?></h1>
                         </div>
 
-                        <?php if(strcasecmp($_GET['status'], "accepted") == 0): ?>
-                            <div class="appointment-action accepted">
-                        <?php elseif(strcasecmp($_GET['status'], "cancelled") == 0): ?>
-                            <div class="appointment-action cancelled">
-                        <?php endif; ?>
+                        <div class="appointment-action">
                             <button class="reschedule-request-btn">Reschedule</button>
                             <button class="cancel-request-btn">Cancel</button>
                         </div>
@@ -227,22 +199,14 @@
                     <?php if(strtotime($appointment->time) >= strtotime('13:00') && strtotime($appointment->time) < strtotime('14:00')): ?>
                     <!-- ETO YUNG SAMPLE NG ISANG APPOINTMENT CARD -->
                     <div class="appointment-card">
-                        <?php if(strcasecmp($_GET['status'], "accepted") == 0): ?>
-                            <div class="appointment-time accepted">
-                        <?php elseif(strcasecmp($_GET['status'], "cancelled") == 0): ?>
-                            <div class="appointment-time cancelled">
-                        <?php endif; ?>
+                        <div class="appointment-time">
                             <h1><?php echo date('h:i a', strtotime($appointment->time))?></h1>
                         </div>
                         <div class="appointment-detail">
                             <h1><?php echo $appointment->name?></h1>
                         </div>
 
-                        <?php if(strcasecmp($_GET['status'], "accepted") == 0): ?>
-                            <div class="appointment-action accepted">
-                        <?php elseif(strcasecmp($_GET['status'], "cancelled") == 0): ?>
-                            <div class="appointment-action cancelled">
-                        <?php endif; ?>
+                        <div class="appointment-action">
                             <button class="reschedule-request-btn">Reschedule</button>
                             <button class="cancel-request-btn">Cancel</button>
                         </div>
@@ -259,22 +223,14 @@
                     <?php if(strtotime($appointment->time) >= strtotime('14:00') && strtotime($appointment->time) < strtotime('15:00')): ?>
                     <!-- ETO YUNG SAMPLE NG ISANG APPOINTMENT CARD -->
                     <div class="appointment-card">
-                        <?php if(strcasecmp($_GET['status'], "accepted") == 0): ?>
-                            <div class="appointment-time accepted">
-                        <?php elseif(strcasecmp($_GET['status'], "cancelled") == 0): ?>
-                            <div class="appointment-time cancelled">
-                        <?php endif; ?>
+                        <div class="appointment-time">
                             <h1><?php echo date('h:i a', strtotime($appointment->time))?></h1>
                         </div>
                         <div class="appointment-detail">
                             <h1><?php echo $appointment->name?></h1>
                         </div>
 
-                        <?php if(strcasecmp($_GET['status'], "accepted") == 0): ?>
-                            <div class="appointment-action accepted">
-                        <?php elseif(strcasecmp($_GET['status'], "cancelled") == 0): ?>
-                            <div class="appointment-action cancelled">
-                        <?php endif; ?>
+                        <div class="appointment-action">
                             <button class="reschedule-request-btn">Reschedule</button>
                             <button class="cancel-request-btn">Cancel</button>
                         </div>
@@ -291,22 +247,14 @@
                     <?php if(strtotime($appointment->time) >= strtotime('15:00') && strtotime($appointment->time) < strtotime('16:00')): ?>
                     <!-- ETO YUNG SAMPLE NG ISANG APPOINTMENT CARD -->
                     <div class="appointment-card">
-                        <?php if(strcasecmp($_GET['status'], "accepted") == 0): ?>
-                            <div class="appointment-time accepted">
-                        <?php elseif(strcasecmp($_GET['status'], "cancelled") == 0): ?>
-                            <div class="appointment-time cancelled">
-                        <?php endif; ?>
+                        <div class="appointment-time">
                             <h1><?php echo date('h:i a', strtotime($appointment->time))?></h1>
                         </div>
                         <div class="appointment-detail">
                             <h1><?php echo $appointment->name?></h1>
                         </div>
 
-                        <?php if(strcasecmp($_GET['status'], "accepted") == 0): ?>
-                            <div class="appointment-action accepted">
-                        <?php elseif(strcasecmp($_GET['status'], "cancelled") == 0): ?>
-                            <div class="appointment-action cancelled">
-                        <?php endif; ?>
+                        <div class="appointment-action">
                             <button class="reschedule-request-btn">Reschedule</button>
                             <button class="cancel-request-btn">Cancel</button>
                         </div>
@@ -323,22 +271,14 @@
                     <?php if(strtotime($appointment->time) >= strtotime('16:00') && strtotime($appointment->time) < strtotime('17:00')): ?>
                     <!-- ETO YUNG SAMPLE NG ISANG APPOINTMENT CARD -->
                     <div class="appointment-card">
-                        <?php if(strcasecmp($_GET['status'], "accepted") == 0): ?>
-                            <div class="appointment-time accepted">
-                        <?php elseif(strcasecmp($_GET['status'], "cancelled") == 0): ?>
-                            <div class="appointment-time cancelled">
-                        <?php endif; ?>
+                        <div class="appointment-time">
                             <h1><?php echo date('h:i a', strtotime($appointment->time))?></h1>
                         </div>
                         <div class="appointment-detail">
                             <h1><?php echo $appointment->name?></h1>
                         </div>
 
-                        <?php if(strcasecmp($_GET['status'], "accepted") == 0): ?>
-                            <div class="appointment-action accepted">
-                        <?php elseif(strcasecmp($_GET['status'], "cancelled") == 0): ?>
-                            <div class="appointment-action cancelled">
-                        <?php endif; ?>
+                        <div class="appointment-action">
                             <button class="reschedule-request-btn">Reschedule</button>
                             <button class="cancel-request-btn">Cancel</button>
                         </div>
@@ -356,22 +296,14 @@
                     <?php if(strtotime($appointment->time) >= strtotime('17:00') && strtotime($appointment->time) < strtotime('18:00')): ?>
                     <!-- ETO YUNG SAMPLE NG ISANG APPOINTMENT CARD -->
                     <div class="appointment-card">
-                        <?php if(strcasecmp($_GET['status'], "accepted") == 0): ?>
-                            <div class="appointment-time accepted">
-                        <?php elseif(strcasecmp($_GET['status'], "cancelled") == 0): ?>
-                            <div class="appointment-time cancelled">
-                        <?php endif; ?>
+                        <div class="appointment-time">
                             <h1><?php echo date('h:i a', strtotime($appointment->time))?></h1>
                         </div>
                         <div class="appointment-detail">
                             <h1><?php echo $appointment->name?></h1>
                         </div>
 
-                        <?php if(strcasecmp($_GET['status'], "accepted") == 0): ?>
-                            <div class="appointment-action accepted">
-                        <?php elseif(strcasecmp($_GET['status'], "cancelled") == 0): ?>
-                            <div class="appointment-action cancelled">
-                        <?php endif; ?>
+                        <div class="appointment-action">
                             <button class="reschedule-request-btn">Reschedule</button>
                             <button class="cancel-request-btn">Cancel</button>
                         </div>

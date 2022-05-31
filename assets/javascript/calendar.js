@@ -127,4 +127,4 @@ for (const btn of datePickerButtons) {
 monthPickerLabel.textContent = `${months[selectedMonthIndex]} - ${selectedYear}`;
 fillCalendar(selectedYear, selectedMonthIndex);
 
-export {toggledDate, dateFormHidden};
+export {toggledDate, dateFormHidden, today};
