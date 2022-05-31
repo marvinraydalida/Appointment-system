@@ -91,7 +91,8 @@
             <div class="appointment-divider">
                 <h1> 8:00 am</h1>
                 <div class="line-divider"></div>
-                <div class="appointment-card">
+
+                <!-- ETO YUNG SAMPLE NG ISANG APPOINTMENT CARD -->
                 <div class="appointment-card">
                     <?php if(strcasecmp($_GET['status'], "accepted") == 0): ?>
                     <div class="appointment-time accepted">
@@ -113,13 +114,17 @@
                         <button class="cancel-request-btn">Cancel</button>
                     </div>
                 </div>
-                </div>
+                <!-- END OF SAMPLE -->
+
             </div>
-            <!-- Duplicate nalnag example lang to di ko pa kasi alam yung sched nila-->
+            <!-- Appointment divider-->
             <div class="appointment-divider">
                 <h1></i> 9:00 am</h1>
                 <div class="line-divider"></div>
             </div>
+            <!-- End of divider -->
+
+            <!-- Pede mo na burahin to for example purposes lang to -->
             <div class="appointment-divider">
                 <h1></i> 10:00 am</h1>
                 <div class="line-divider"></div>
@@ -144,6 +149,7 @@
                         <button class="cancel-request-btn">Cancel</button>
                     </div>
                 </div>
+                
             </div>
             <div class="appointment-divider">
                 <h1></i> 11:00 am</h1>
@@ -216,6 +222,7 @@
                     </div>
                 </div>
             </div>
+            <!-- End of example -->
         </div>
     </section>
     <script src="<?php echo base_url("assets/javascript/adminAppointment.js") ?>" type="module"></script>
