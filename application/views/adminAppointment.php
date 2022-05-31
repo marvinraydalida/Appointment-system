@@ -92,16 +92,27 @@
                 <h1> 8:00 am</h1>
                 <div class="line-divider"></div>
                 <div class="appointment-card">
-                    <div class="appointment-time">
+                <div class="appointment-card">
+                    <?php if(strcasecmp($_GET['status'], "accepted") == 0): ?>
+                    <div class="appointment-time accepted">
+                    <?php elseif(strcasecmp($_GET['status'], "cancelled") == 0): ?>
+                    <div class="appointment-time cancelled">
+                    <?php endif; ?>
                         <h1>8:45 AM</h1>
                     </div>
                     <div class="appointment-detail">
                         <h1>Marvin Ray Dalida</h1>
                     </div>
-                    <div class="appointment-action">
+
+                    <?php if(strcasecmp($_GET['status'], "accepted") == 0): ?>
+                    <div class="appointment-action accepted">
+                    <?php elseif(strcasecmp($_GET['status'], "cancelled") == 0): ?>
+                    <div class="appointment-action cancelled">
+                    <?php endif; ?>
                         <button class="reschedule-request-btn">Reschedule</button>
                         <button class="cancel-request-btn">Cancel</button>
                     </div>
+                </div>
                 </div>
             </div>
             <!-- Duplicate nalnag example lang to di ko pa kasi alam yung sched nila-->
@@ -113,41 +124,22 @@
                 <h1></i> 10:00 am</h1>
                 <div class="line-divider"></div>
                 <div class="appointment-card">
-                    <div class="appointment-time">
+                    <?php if(strcasecmp($_GET['status'], "accepted") == 0): ?>
+                    <div class="appointment-time accepted">
+                    <?php elseif(strcasecmp($_GET['status'], "cancelled") == 0): ?>
+                    <div class="appointment-time cancelled">
+                    <?php endif; ?>
                         <h1>8:45 AM</h1>
                     </div>
                     <div class="appointment-detail">
                         <h1>Marvin Ray Dalida</h1>
                     </div>
-                    <div class="appointment-action">
-                        <button class="reschedule-request-btn">Reschedule</button>
-                        <button class="cancel-request-btn">Cancel</button>
-                    </div>
-                </div>
-                <div class="appointment-card">
-                    <div class="appointment-time">
-                        <h1>8:45 AM</h1>
-                    </div>
-                    <div class="appointment-detail">
-                        <h1>Marvin Ray Dalida</h1>
-                    </div>
-                    <div class="appointment-action">
-                        <button class="reschedule-request-btn">Reschedule</button>
-                        <button class="cancel-request-btn">Cancel</button>
-                    </div>
-                </div>
-            </div>
-            <div class="appointment-divider">
-                <h1></i> 11:00 am</h1>
-                <div class="line-divider"></div>
-                <div class="appointment-card">
-                    <div class="appointment-time">
-                        <h1>8:45 AM</h1>
-                    </div>
-                    <div class="appointment-detail">
-                        <h1>Marvin Ray Dalida</h1>
-                    </div>
-                    <div class="appointment-action">
+
+                    <?php if(strcasecmp($_GET['status'], "accepted") == 0): ?>
+                    <div class="appointment-action accepted">
+                    <?php elseif(strcasecmp($_GET['status'], "cancelled") == 0): ?>
+                    <div class="appointment-action cancelled">
+                    <?php endif; ?>
                         <button class="reschedule-request-btn">Reschedule</button>
                         <button class="cancel-request-btn">Cancel</button>
                     </div>
@@ -157,13 +149,68 @@
                 <h1></i> 11:00 am</h1>
                 <div class="line-divider"></div>
                 <div class="appointment-card">
-                    <div class="appointment-time">
+                    <?php if(strcasecmp($_GET['status'], "accepted") == 0): ?>
+                    <div class="appointment-time accepted">
+                    <?php elseif(strcasecmp($_GET['status'], "cancelled") == 0): ?>
+                    <div class="appointment-time cancelled">
+                    <?php endif; ?>
                         <h1>8:45 AM</h1>
                     </div>
                     <div class="appointment-detail">
                         <h1>Marvin Ray Dalida</h1>
                     </div>
-                    <div class="appointment-action">
+
+                    <?php if(strcasecmp($_GET['status'], "accepted") == 0): ?>
+                    <div class="appointment-action accepted">
+                    <?php elseif(strcasecmp($_GET['status'], "cancelled") == 0): ?>
+                    <div class="appointment-action cancelled">
+                    <?php endif; ?>
+                        <button class="reschedule-request-btn">Reschedule</button>
+                        <button class="cancel-request-btn">Cancel</button>
+                    </div>
+                </div>
+            </div>
+            <div class="appointment-divider">
+                <h1></i> 11:00 am</h1>
+                <div class="line-divider"></div>
+                <div class="appointment-card">
+                    <?php if(strcasecmp($_GET['status'], "accepted") == 0): ?>
+                    <div class="appointment-time accepted">
+                    <?php elseif(strcasecmp($_GET['status'], "cancelled") == 0): ?>
+                    <div class="appointment-time cancelled">
+                    <?php endif; ?>
+                        <h1>8:45 AM</h1>
+                    </div>
+                    <div class="appointment-detail">
+                        <h1>Marvin Ray Dalida</h1>
+                    </div>
+
+                    <?php if(strcasecmp($_GET['status'], "accepted") == 0): ?>
+                    <div class="appointment-action accepted">
+                    <?php elseif(strcasecmp($_GET['status'], "cancelled") == 0): ?>
+                    <div class="appointment-action cancelled">
+                    <?php endif; ?>
+                        <button class="reschedule-request-btn">Reschedule</button>
+                        <button class="cancel-request-btn">Cancel</button>
+                    </div>
+                </div>
+                <div class="appointment-card">
+                    <?php if(strcasecmp($_GET['status'], "accepted") == 0): ?>
+                    <div class="appointment-time accepted">
+                    <?php elseif(strcasecmp($_GET['status'], "cancelled") == 0): ?>
+                    <div class="appointment-time cancelled">
+                    <?php endif; ?>
+                        <h1>8:45 AM</h1>
+                    </div>
+                    <div class="appointment-detail">
+                        <h1>Marvin Ray Dalida</h1>
+                    </div>
+
+                    <?php if(strcasecmp($_GET['status'], "accepted") == 0): ?>
+                    <div class="appointment-action accepted">
+                    <?php elseif(strcasecmp($_GET['status'], "cancelled") == 0): ?>
+                    <div class="appointment-action cancelled">
+                    <?php endif; ?>
                         <button class="reschedule-request-btn">Reschedule</button>
                         <button class="cancel-request-btn">Cancel</button>
                     </div>
