@@ -124,16 +124,16 @@ td button {
   background: rgb(146, 146, 146);
 }
 
-#select-date{
+#select-date {
   margin-bottom: 1rem;
 }
 
-#select-date Label{
+#select-date Label {
   font-family: 'Nunito', sans-serif;
   font-size: 2rem;
 }
 
-#select-date select{
+#select-date select {
   height: 2rem;
   font-family: 'Nunito', sans-serif;
   transform: translateY(-5px);
@@ -180,19 +180,33 @@ td button {
   width: 15%;
   height: 100%;
   border-radius: 15px 0px 0px 15px;
-  /* background-color: #92e4cf; */
-  background-color: #f7fffd;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .appointment-time h1 {
-  color: #47cfad;
   font-size: 1rem;
   font-weight: 500;
   margin: 0px;
 }
+
+.appointment-time.accepted {
+  background-color: #f7fffd;
+}
+
+.appointment-time.accepted h1 {
+  color: #0bc093;
+}
+
+.appointment-time.cancelled {
+  background-color: #fff7f7;
+}
+
+.appointment-time.cancelled h1 {
+  color: #cf4747;
+}
+
 
 .appointment-detail {
   width: 55%;
@@ -228,6 +242,10 @@ td button {
   margin-right: 5px;
   cursor: pointer;
   transition: all 250ms ease-in-out;
+}
+
+.appointment-action.cancelled button{
+  z-index: -1;
 }
 
 .reschedule-request-btn {
