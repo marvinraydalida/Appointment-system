@@ -292,6 +292,11 @@ tr:nth-child(1) {
     margin-bottom: 5px;
 }
 
+#rescehdule-modal form{
+    display: flex;
+    flex-direction: column;
+}
+
 #rescehdule-modal label{
     margin-bottom: 10px;
     font-family: 'Nunito', sans-serif;

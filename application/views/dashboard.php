@@ -1,10 +1,9 @@
-    
-    <section id = "modal-container">
-        <div id = "decline-modal">
-            <button class = "modal-close">X</button>
+    <section id="modal-container">
+        <div id="decline-modal">
+            <button class="modal-close">X</button>
 
             <h1>Are you sure you want to decline the appointment?</h1>
-            <div id = "decline-button-container">
+            <div id="decline-button-container">
                 <!-- Wrap nalang sa form to para ma submit -->
                 <button id="decline-appointment-btn">Yes</button>
                 <button>No</button>
@@ -12,30 +11,30 @@
             </div>
         </div>
 
-        <div id = "rescehdule-modal">
-            <button class = "modal-close">X</button>
+        <div id="rescehdule-modal">
+            <button class="modal-close">X</button>
             <h1>Reschedule Request</h1>
             <!-- di ku pa na tetest yung form kaya commented muna -->
-            <!-- <form action=""> -->
-            <h2>Date</h2>
-            <label>From</label>
-            <input type="date" disabled>
+            <form  action = "<?php echo site_url('Admin/sendEmailRescheduled') ?>" method="POST">
+                <h2>Date</h2>
+                <label>From</label>
+                <input type="date" disabled>
 
-            <label>To</label>
-            <input type="date" name="">
+                <label>To</label>
+                <input type="date" name="date" required>
 
-            <h2>Time</h2>
-            <label>From</label>
-            <input type="time" disabled>
+                <h2>Time</h2>
+                <label>From</label>
+                <input type="time" disabled>
 
-            <label>To</label>
-            <input type="time" name="">
+                <label>To</label>
+                <input type="time" name="time" min = "08:00" max = "17:00" required>
 
-            <input type="submit" value = "Send Response">
-            <!-- </form> -->
+                <input type="submit" value="Send Response">
+            </form>
         </div>
     </section>
-    
+
     <section id="dashboard">
         <div id="analytics-container">
             <div id="weekly-graph-container"></div>
@@ -55,26 +54,26 @@
                         <th>Email</th>
                         <th>Action</th>
                     </tr>
-                    <?php foreach ($appointments as $appointment) {?>
-                        <tr class = "row-data">
-                            
-                            <td style="font-weight: bold;"> <?php echo date('h:i a', strtotime($appointment->time))?></td>
-                            <td><?php echo date("m/d/Y",strtotime($appointment->date)) ?></td>
+                    <?php foreach ($appointments as $appointment) { ?>
+                        <tr class="row-data">
+
+                            <td style="font-weight: bold;"> <?php echo date('h:i a', strtotime($appointment->time)) ?></td>
+                            <td><?php echo date("m/d/Y", strtotime($appointment->date)) ?></td>
                             <td><?php echo $appointment->name ?></td>
                             <td><?php echo $appointment->contactNum ?></td>
                             <td><?php echo $appointment->email ?></td>
                             <td>
-                                <button onclick="location.href='<?php echo site_url('Admin/sendEmailAccepted')?>/<?php echo $appointment->appointmentID; ?>'">Accept</button>
-                                <button class = "reschedule-request-btn" onclick="">Reschedule</button>
-                                <button class = "decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>">Decline</button>
+                                <button onclick="location.href='<?php echo site_url('Admin/sendEmailAccepted') ?>/<?php echo $appointment->appointmentID; ?>'">Accept</button>
+                                <button class="reschedule-request-btn" onclick="">Reschedule</button>
+                                <button class="decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>">Decline</button>
                             </td>
-                            <input type="hidden" value = "<?php echo $appointment->date?>">
-                            <input type="hidden" value = "<?php echo date('h:i a', strtotime($appointment->time))?>">
-                            
-                           
+                            <input type="hidden" value="<?php echo $appointment->date ?>">
+                            <input type="hidden" value="<?php echo date('h:i', strtotime($appointment->time)) ?>">
+
+
                         </tr>
                     <?php } ?>
-               
+
 
                 </table>
             </div>

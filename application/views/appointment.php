@@ -48,7 +48,7 @@
         <input type="date" name = "date" required>
 
         <label>Time</label>
-        <input type="time" name = "time" required>
+        <input type="time" name = "time" min = "08:00" max = "17:00" required>
 
         <input type="submit">
 	</form>

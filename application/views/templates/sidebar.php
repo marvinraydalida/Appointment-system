@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link href=<?php echo base_url("assets/css/sidebar.css") ?> rel="stylesheet">
+    <link href=<?php echo site_url("assets/css/sidebar.css") ?> rel="stylesheet">
 
 
     <?php 
@@ -16,9 +16,9 @@
     ?>
 
     <?php if (strcasecmp($_SERVER['REQUEST_URI'], "/Appointment-system/Admin") == 0) : ?>
-        <link href=<?php echo base_url("assets/css/dashboard.css") ?> rel="stylesheet">
+        <link href=<?php echo site_url("assets/css/dashboard.css") ?> rel="stylesheet">
     <?php elseif (strcasecmp($_SERVER['REQUEST_URI'], $request_uri[0]) == 0) : ?>
-        <link href=<?php echo base_url("assets/css/adminAppointment.css") ?> rel="stylesheet">
+        <link href=<?php echo site_url("assets/css/adminAppointment.css") ?> rel="stylesheet">
     <?php endif; ?>
 
 

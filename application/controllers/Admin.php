@@ -77,4 +77,9 @@ class Admin extends CI_Controller
             show_error($this->email->print_debugger());
         }
     }
+
+    public function sendEmailRescheduled(){
+
+        redirect('Admin');
+    }
 }
