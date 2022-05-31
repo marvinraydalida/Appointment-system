@@ -18,6 +18,7 @@ class Appointment extends CI_Controller
     public function appointment()
     {
         $this->Appointment_model->create();
+        
     }
 
    

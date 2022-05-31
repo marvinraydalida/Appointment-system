@@ -35,8 +35,8 @@
 <body>
     <section id="sidebar">
         <div id="link-container">
-            <a href="<?php echo base_url('Admin') ?>"><i class="fa-solid fa-house-medical"></i> Home</a>
-            <a href="<?php echo base_url('Admin/Appointment') . '?date=' . $date . '&status=accepted'?>"><i class="fa-solid fa-calendar-check"></i> Appointments</a>
+            <a href="<?php echo site_url('Admin') ?>"><i class="fa-solid fa-house-medical"></i> Home</a>
+            <a href="<?php echo site_url('Admin/Appointment') . '?date=' . $date . '&status=accepted'?>"><i class="fa-solid fa-calendar-check"></i> Appointments</a>
             <a href=""><i class="fa-solid fa-user-pen"></i> Account</a>
             <a href=""><i class="fa-solid fa-file-lines"></i> Logs</a>
         </div>

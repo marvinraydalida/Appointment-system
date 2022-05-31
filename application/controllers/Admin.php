@@ -20,15 +20,22 @@ class Admin extends CI_Controller
 
     public function appointment()
     {
-        $this->load->view('templates/sidebar');
-        $this->load->view('adminAppointment');
+        $date =  $_GET['date'];
+        $status = $_GET['status'];
+        $data['appointments'] = $this->Appointment_model->viewAppointmentPerTime($date,$status);
+        $data['accepted'] = $this->Appointment_model->countAccepted();
+        $data['pending'] = $this->Appointment_model->countPending();
+        $data['cancelled'] = $this->Appointment_model->countCancelled();
 
-        // echo $_GET['date'];
+        $this->load->view('templates/sidebar');
+        $this->load->view('adminAppointment',$data);
+
+        
     }
 
     public function sendEmailAccepted($id)
     {
-        // $this->Appointment_model->acceptAppointment($id);
+        $this->Appointment_model->acceptAppointment($id);
         $this->load->library('email');
         $this->load->config('email');
         $this->email->set_mailtype("html");
@@ -50,7 +57,7 @@ class Admin extends CI_Controller
     
     public function sendEmailDeclined($id)
     {
-        // $this->Appointment_model->declineAppointment($id);
+        $this->Appointment_model->declineAppointment($id);
         $this->load->library('email');
         $this->load->config('email');
         $this->email->set_mailtype("html");

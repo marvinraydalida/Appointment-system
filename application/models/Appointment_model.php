@@ -65,5 +65,33 @@ class Appointment_model extends CI_Model {
 		$this->db->where('appointmentID',$id);
 		$this->db->update('appointments',$data);
 	}
+
+	public function cancelAppointment($id){ #Delete/Status
+		$data = array(
+			'status' => "cancelled"
+		);
+		$this->db->where('appointmentID',$id);
+		$this->db->update('appointments',$data);
+	}
+
+	public function countPending(){ 
+		$query = $this->db->query('	SELECT * FROM appointments where `status`= "pending" ');
+		return $query->num_rows();
+	}
+
+	public function countAccepted(){ 
+		$query = $this->db->query('	SELECT * FROM appointments where `status`= "accepted" ');
+		return $query->num_rows();
+	}
+
+	public function countCancelled(){
+		$query = $this->db->query('	SELECT * FROM appointments where `status`= "cancelled" ');
+		return $query->num_rows();
+	}
+
+	public function viewAppointmentPerTime($date,$status){
+		$query = $this->db->query('	SELECT * FROM appointments where `date`="'.$date.'" AND `status`="'.$status.'" ORDER BY `time` ASC');
+		return $query->result();
+	}
 }
 
