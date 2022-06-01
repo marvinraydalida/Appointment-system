@@ -69,7 +69,7 @@ class Admin extends CI_Controller
         $message = $this->load->view('templates/email_templateDeclined',$data,TRUE);
         $this->email->subject('Email Test');
         $this->email->message($message);
-        $this->load->view('templates/email_templateDeclined',$data);
+    
         if ($this->email->send()) {
              redirect('Admin');
             
@@ -79,7 +79,29 @@ class Admin extends CI_Controller
     }
 
     public function sendEmailRescheduled(){
+        $this->Appointment_model->rescheduleAppointment();
+        $this->load->library('email');
+        $this->load->config('email');
+        $this->email->set_mailtype("html");
 
-        redirect('Admin');
+        $data['appointment'] = $this->Appointment_model->viewSingleAppointment($_POST['appointmentID']);
+        $data['time'] = $_POST['time'];
+        $data['date'] = $_POST['date'];
+        $this->email->from($this->config->item('smtp_user'));
+        $this->email->to($data['appointment']->email);
+        $message = $this->load->view('templates/email_templateResched',$data,TRUE);
+        $this->email->subject('Reschedule notice');
+        $this->email->message($message);
+        $this->load->view('templates/email_templateResched',$data);
+        if ($this->email->send()) {
+              redirect('Admin');
+            
+         } else {
+             show_error($this->email->print_debugger());
+         } 
+    }
+
+    public function acceptedEmailReschedule($id){
+        $this->Appointment_model->acceptedRescheduleAppointment($id);
     }
 }

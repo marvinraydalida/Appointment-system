@@ -15,7 +15,7 @@
             <button class="modal-close">X</button>
             <h1>Reschedule Request</h1>
             <!-- di ku pa na tetest yung form kaya commented muna -->
-            <form action="<?php echo site_url('Admin/sendEmailRescheduled') ?>" method="POST">
+            <form action="<?php echo site_url('Admin/sendEmailRescheduled')?>" method="POST">
                 <h2>Date</h2>
                 <label>From</label>
                 <input type="date" disabled>
@@ -29,7 +29,7 @@
 
                 <label>To</label>
                 <input type="time" name="time" min="08:00" max="17:00" required>
-                <input type="hidden" name="id">
+                <input type="hidden" name="appointmentID">
 
                 <input type="submit" value="Send Response">
             </form>

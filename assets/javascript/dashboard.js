@@ -55,7 +55,7 @@ function showModal(event) {
         // dateInputs[0].value = event.target.parentNode.nextElementSibling.value;
         // timeInputs[0].value = event.target.parentNode.parentNode.lastElementChild.value;
         dateInputs[0].value = tmpHiddens.children[0].value;
-        dateInputs[0].value = tmpHiddens.children[1].value;
+        timeInputs[0].value = tmpHiddens.children[1].value;
         hiddenID.value = tmpHiddens.children[2].value;
     }
 }
