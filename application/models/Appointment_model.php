@@ -93,5 +93,29 @@ class Appointment_model extends CI_Model {
 		$query = $this->db->query('	SELECT * FROM appointments where `date`="'.$date.'" AND `status`="'.$status.'" ORDER BY `time` ASC');
 		return $query->result();
 	}
+
+	public function rescheduleAppointment(){
+		$data = array(
+			"status" => "reschedule pending"
+		);
+		$this->db->where('appointmentID',$_POST['appointmentID']);
+		$this->db->update('appointments',$data);
+	}
+
+	public function acceptedRescheduleAppointment($id){
+		$data=array(
+			"time" => $_POST["time"],
+			"date" => $_POST["date"],
+			"status" => "accepted"
+		);
+		$this->db->where('appointmentID',$id);
+		$this->db->update('appointments',$data);
+		unset($_POST);
+	}
+
+	public function checkTicket(){
+		$query = $this->db->query('	SELECT * FROM appointments where `appointmentTicket`='.$_POST["appointmentTicket"]);
+		return $query->num_rows();
+	}
 }
 
