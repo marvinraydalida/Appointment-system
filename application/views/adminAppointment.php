@@ -145,7 +145,7 @@
 
                                 <div class="appointment-action">
                                     <button class="reschedule-request-btn">Reschedule</button>
-                                    <button class="decline-request-btn">Cancel</button>
+                                    <button class="decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>".>Cancel</button>
                                 </div>
                                 <div id="hidden-container">
                                     <input type="hidden" value="<?php echo $appointment->date ?>">
@@ -175,7 +175,7 @@
 
                                     <div class="appointment-action">
                                         <button class="reschedule-request-btn">Reschedule</button>
-                                        <button class="decline-request-btn">Cancel</button>
+                                        <button class="decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>".>Cancel</button>
                                     </div>
 
                                     <div id="hidden-container">
@@ -206,7 +206,7 @@
 
                                     <div class="appointment-action">
                                         <button class="reschedule-request-btn">Reschedule</button>
-                                        <button class="decline-request-btn">Cancel</button>
+                                        <button class="decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>".>Cancel</button>
                                     </div>
 
                                     <div id="hidden-container">
@@ -237,7 +237,7 @@
 
                                     <div class="appointment-action">
                                         <button class="reschedule-request-btn">Reschedule</button>
-                                        <button class="decline-request-btn">Cancel</button>
+                                        <button class="decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>".>Cancel</button>
                                     </div>
 
                                     <div id="hidden-container">
@@ -268,7 +268,7 @@
 
                                     <div class="appointment-action">
                                         <button class="reschedule-request-btn">Reschedule</button>
-                                        <button class="decline-request-btn">Cancel</button>
+                                        <button class="decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>".>Cancel</button>
                                     </div>
 
                                     <div id="hidden-container">
@@ -298,7 +298,7 @@
 
                                     <div class="appointment-action">
                                         <button class="reschedule-request-btn">Reschedule</button>
-                                        <button class="decline-request-btn">Cancel</button>
+                                        <button class="decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>".>Cancel</button>
                                     </div>
 
                                     <div id="hidden-container">
@@ -328,7 +328,7 @@
 
                                     <div class="appointment-action">
                                         <button class="reschedule-request-btn">Reschedule</button>
-                                        <button class="decline-request-btn">Cancel</button>
+                                        <button class="decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>".>Cancel</button>
                                     </div>
 
                                     <div id="hidden-container">
@@ -358,7 +358,7 @@
 
                                     <div class="appointment-action">
                                         <button class="reschedule-request-btn">Reschedule</button>
-                                        <button class="decline-request-btn">Cancel</button>
+                                        <button class="decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>".>Cancel</button>
                                     </div>
 
                                     <div id="hidden-container">
@@ -389,7 +389,7 @@
 
                                     <div class="appointment-action">
                                         <button class="reschedule-request-btn">Reschedule</button>
-                                        <button class="decline-request-btn">Cancel</button>
+                                        <button class="decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>".>Cancel</button>
                                     </div>
 
                                     <div id="hidden-container">

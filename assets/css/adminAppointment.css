@@ -94,9 +94,9 @@ td button {
   color: #79e9cd;
 }
 
-/* #request-appointments i {
+#request-appointments i {
   color: #f5d418;
-} */
+}
 
 #cancel-appointments i {
   color: #f76c5a;
@@ -229,7 +229,6 @@ td button {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  /* border: 1px solid black; */
 }
 
 .appointment-action button {

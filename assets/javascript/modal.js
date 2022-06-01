@@ -45,16 +45,22 @@ function showModal(event) {
     if (event.target.className === 'decline-request-btn') {
         document.getElementById('decline-modal').style.display = "block";
         confirmDeclineBtn.onclick=function(){
-            location.href=document.location.href +'/sendEmailDeclined/'+ event.target.dataset.id;
+            console.log();
+            if(event.target.textContent === "Decline"){
+                location.href=document.location.href +'/sendEmailDeclined/'+ event.target.dataset.id;
+            }
+            else{
+                //Dito gagawin
+                console.log("Do something");
+            }
         }
-       
     }
     else if (event.target.className === 'reschedule-request-btn') {
         document.getElementById('rescehdule-modal').style.display = "flex";
 
         // dateInputs[0].value = event.target.parentNode.nextElementSibling.value;
         // timeInputs[0].value = event.target.parentNode.parentNode.lastElementChild.value;
-        
+
         dateInputs[0].value = tmpHiddens.children[0].value;
         timeInputs[0].value = tmpHiddens.children[1].value;
         hiddenID.value = tmpHiddens.children[2].value;
