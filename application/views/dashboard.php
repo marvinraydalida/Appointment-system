@@ -15,7 +15,7 @@
             <button class="modal-close">X</button>
             <h1>Reschedule Request</h1>
             <!-- di ku pa na tetest yung form kaya commented muna -->
-            <form  action = "<?php echo site_url('Admin/sendEmailRescheduled') ?>" method="POST">
+            <form action="<?php echo site_url('Admin/sendEmailRescheduled') ?>" method="POST">
                 <h2>Date</h2>
                 <label>From</label>
                 <input type="date" disabled>
@@ -28,7 +28,8 @@
                 <input type="time" disabled>
 
                 <label>To</label>
-                <input type="time" name="time" min = "08:00" max = "17:00" required>
+                <input type="time" name="time" min="08:00" max="17:00" required>
+                <input type="hidden" name="id">
 
                 <input type="submit" value="Send Response">
             </form>
@@ -67,9 +68,12 @@
                                 <button class="reschedule-request-btn" onclick="">Reschedule</button>
                                 <button class="decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>">Decline</button>
                             </td>
-                            <input type="hidden" value="<?php echo $appointment->date ?>">
-                            <input type="hidden" value="<?php echo date('h:i', strtotime($appointment->time)) ?>">
-
+                            
+                            <div id = "hidden-container">
+                                <input type="hidden" value="<?php echo $appointment->date ?>">
+                                <input type="hidden" value="<?php echo date('h:i', strtotime($appointment->time)) ?>">
+                                <input type="hidden" value="<?php echo $appointment->appointmentID?>">
+                            </div>
 
                         </tr>
                     <?php } ?>

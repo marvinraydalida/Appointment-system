@@ -5,6 +5,8 @@ const rescheduleBtn = document.querySelectorAll('.reschedule-request-btn');
 const confirmDeclineBtn = document.getElementById('decline-appointment-btn');
 const dateInputs = document.querySelectorAll('#rescehdule-modal input[type=\"date\"]');
 const timeInputs = document.querySelectorAll('#rescehdule-modal input[type=\"time\"]');
+const hiddenID = document.querySelector('#rescehdule-modal input[type=\"hidden\"]');
+const tmpHiddens = document.getElementById('hidden-container');
 
 
 for (const btn of declineBtn) {
@@ -50,7 +52,10 @@ function showModal(event) {
     else if (event.target.className === 'reschedule-request-btn') {
         document.getElementById('rescehdule-modal').style.display = "flex";
 
-        dateInputs[0].value = event.target.parentNode.nextElementSibling.value;
-        timeInputs[0].value = event.target.parentNode.parentNode.lastElementChild.value;
+        // dateInputs[0].value = event.target.parentNode.nextElementSibling.value;
+        // timeInputs[0].value = event.target.parentNode.parentNode.lastElementChild.value;
+        dateInputs[0].value = tmpHiddens.children[0].value;
+        dateInputs[0].value = tmpHiddens.children[1].value;
+        hiddenID.value = tmpHiddens.children[2].value;
     }
 }
