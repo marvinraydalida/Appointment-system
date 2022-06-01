@@ -50,8 +50,8 @@ function showModal(event) {
                 location.href=document.location.href +'/sendEmailDeclined/'+ event.target.dataset.id;
             }
             else{
-                //Dito gagawin
-                console.log("Do something");
+                //console.log();
+                location.href=document.location.href.split('/Admin')[0] + `/Admin/sendEmailCancelled/${event.target.dataset.id}?${location.href.split('?')[1]}`
             }
         }
     }

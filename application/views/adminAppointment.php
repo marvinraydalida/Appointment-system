@@ -14,7 +14,7 @@
     <div id="rescehdule-modal">
         <button class="modal-close">X</button>
         <h1>Reschedule Request</h1>
-        <form action="<?php echo site_url('Admin/sendEmailRescheduled') ?>" method="POST">
+        <form action="<?php echo site_url('Admin/sendEmailRescheduled?date=' . $_GET['date'] . '&status=' . $_GET['status']) ?>" method="POST">
             <h2>Date</h2>
             <label>From</label>
             <input type="date" disabled>
