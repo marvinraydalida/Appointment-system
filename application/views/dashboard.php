@@ -84,7 +84,7 @@
 
         </div>
     </section>
-    <script src="<?php echo base_url("assets/javascript/dashboard.js") ?>"></script>
+    <script src="<?php echo base_url("assets/javascript/modal.js") ?>"></script>
     </body>
 
     </html>

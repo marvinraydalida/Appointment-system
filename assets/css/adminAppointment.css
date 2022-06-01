@@ -253,7 +253,7 @@ td button {
   background-color: #bfe4ff;
 }
 
-.cancel-request-btn {
+.decline-request-btn {
   color: #A95069;
   background-color: #ffb7c1;
 }
@@ -266,7 +266,7 @@ td button {
   background-color: #99d5ff;
 }
 
-.cancel-request-btn:hover {
+.decline-request-btn:hover {
   background-color: #ff9fac;
 }
 
@@ -274,6 +274,165 @@ td button {
   background-color: #84b4d6;
 }
 
-.cancel-request-btn:active {
+.decline-request-btn:active {
   background-color: #d38590;
+}
+
+#modal-container{
+  position: absolute;
+  display: none;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.582);
+  z-index: 1;
+}
+
+#decline-modal{
+  display: none;
+  width: 400px;
+  height: 250px;
+  margin: auto;
+  position: relative;
+  padding: 50px 5px 5px 5px;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 10px;
+  font-family: 'Nunito', sans-serif;
+  animation: slideDown 300ms ease-in-out;
+}
+
+@keyframes slideDown {
+  from {
+      transform: translateY(-30px);
+  }
+  to {
+      transform: translateY(0px);
+  }
+}
+
+#decline-modal h1{
+  text-align: center;
+  font-size: 1.3rem;
+  margin: 0px 0px 50px 0px;
+}
+
+.modal-close{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  color: red;
+  background-color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+}
+
+#decline-button-container{
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#decline-button-container button{
+  height: 50px;
+  min-width: 100px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  transition: all 250ms ease-in-out;
+}
+
+#decline-button-container button:nth-child(1){
+  color: #2E8469;
+  background-color: #cbffdf;
+}
+
+#decline-button-container button:nth-child(2){
+  color: #A95069;
+  background-color: #ffb7c1;
+}
+
+#decline-button-container button:hover{
+  transform: scale(1.1);
+}
+
+#decline-button-container button:nth-child(1):hover{
+  background-color: #95f0b6;
+  
+}
+
+#decline-button-container button:nth-child(2):hover{
+  background-color: #ff9fac;
+}
+
+#rescehdule-modal{
+  display: none;
+  flex-direction: column;
+  width: 500px;
+  height: 600px;
+  margin: auto;
+  position: relative;
+  padding: 30px 20px 20px 20px;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 10px;
+  font-family: 'Nunito', sans-serif;
+  animation: slideDown 300ms ease-in-out;
+}
+
+#rescehdule-modal h1{
+  margin: 0;
+}
+
+#rescehdule-modal h2{
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+#rescehdule-modal form{
+  display: flex;
+  flex-direction: column;
+}
+
+#rescehdule-modal label{
+  margin-bottom: 10px;
+  font-family: 'Nunito', sans-serif;
+}
+
+#rescehdule-modal input{
+  padding: 5px;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+#rescehdule-modal input[type = "submit"]{
+  border: none;
+  height: 50px;
+  margin-top: 20px;
+  color: #2E8469;
+  background-color: #cbffdf;
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
+}
+
+#rescehdule-modal input[type = "submit"]:hover {
+  transform: scale(1.02);
+  background-color: #95f0b6;
+}
+
+#rescehdule-modal input[type = "submit"]:active {
+  background-color: #87d3a4;
 }
