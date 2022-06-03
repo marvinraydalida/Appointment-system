@@ -75,22 +75,31 @@ class Appointment_model extends CI_Model {
 	}
 
 	public function countPending(){ 
-		$query = $this->db->query('	SELECT * FROM appointments where `status`= "pending" ');
+		$query = $this->db->query('	SELECT * FROM appointments 
+									where `status`= "pending" 
+									AND `date` >= CURDATE()');
 		return $query->num_rows();
 	}
 
 	public function countAccepted(){ 
-		$query = $this->db->query('	SELECT * FROM appointments where `status`= "accepted" ');
+		$query = $this->db->query('	SELECT * FROM appointments 
+									where `status`= "accepted" 
+									AND `date` >= CURDATE()');
 		return $query->num_rows();
 	}
 
 	public function countCancelled(){
-		$query = $this->db->query('	SELECT * FROM appointments where `status`= "cancelled" ');
+		$query = $this->db->query('	SELECT * FROM appointments
+									where `status`= "cancelled" 
+									AND `date` >= CURDATE()');
 		return $query->num_rows();
 	}
 
 	public function viewAppointmentPerTime($date,$status){
-		$query = $this->db->query('	SELECT * FROM appointments where `date`="'.$date.'" AND `status`="'.$status.'" ORDER BY `time` ASC');
+		$query = $this->db->query('	SELECT * FROM appointments 
+									where `date`="'.$date.'" 
+									AND `status`="'.$status.'" 
+									ORDER BY `time` ASC');
 		return $query->result();
 	}
 

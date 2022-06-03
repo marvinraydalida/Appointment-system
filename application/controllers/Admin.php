@@ -8,6 +8,7 @@ class Admin extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Appointment_model');
+        $this->load->model('userAccount');
     }
 
     public function index()
@@ -28,7 +29,39 @@ class Admin extends CI_Controller
         $data['cancelled'] = $this->Appointment_model->countCancelled();
 
         $this->load->view('templates/sidebar');
-        $this->load->view('adminAppointment', $data);
+        $this->load->view('adminAppointment',$data);
+
+    }
+
+    public function account()
+    {
+        $data['accounts'] = $this->userAccount->viewData();
+        $this->load->view('templates/sidebar');
+        $this->load->view('adminAccount',$data);
+    }
+
+    public function addAdminAccount(){
+        if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['confirmpassword'])){
+            $this->userAccount->insertData();
+            redirect("Admin/Account");
+        }
+    }
+
+    public function editAdminAccount(){
+        if(isset($_POST['username']) && isset($_POST['newpassword']) && isset($_POST['confirmpassword'])){
+            $this->userAccount->updateData($_POST['userID']);
+            redirect("Admin/Account");
+        }
+    }
+
+    public function activateAccount($id){
+        $this->userAccount->reactivateData($id);
+        redirect("Admin/Account");
+    }
+
+    public function deactivateAccount($id){
+        $this->userAccount->deactivateData($id);
+        redirect("Admin/Account");
     }
 
     public function sendEmailAccepted($id)

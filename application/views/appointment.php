@@ -50,7 +50,7 @@
 
         <label>Time</label>
         <input type="time" name="time" min="08:00" max="17:00" required>
-        <div class="h-captcha" data-sitekey="fb70fa30-9d3b-43b4-9afe-83d8bb65d0a9"></div>
+        <div class="h-captcha" data-sitekey="6ad65b76-24e9-4e8b-8e89-0a480ed2c8b8"></div>
         <input type="submit" name = "submit" value = "submit">
     </form>
 
