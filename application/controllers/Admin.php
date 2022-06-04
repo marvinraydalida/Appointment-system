@@ -7,10 +7,12 @@ class Admin extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->load->model('Authentication');
         $this->load->model('Appointment_model');
         $this->load->model('userAccount');
     }
 
+    // VIEWS
     public function index()
     {
         $data['appointments'] = $this->Appointment_model->viewAppointments();
@@ -19,6 +21,7 @@ class Admin extends CI_Controller
         $this->load->view('dashboard', $data);
     }
 
+    
     public function appointment()
     {
         $date =  $_GET['date'];
@@ -32,6 +35,13 @@ class Admin extends CI_Controller
         $this->load->view('adminAppointment',$data);
 
     }
+
+    public function logs(){
+        $this->load->view('templates/sidebar');
+        $this->load->view('adminLogs');
+    }
+
+    //ACCOUNT FUNCTIONS
 
     public function account()
     {
@@ -64,6 +74,9 @@ class Admin extends CI_Controller
         redirect("Admin/Account");
     }
 
+    //APPOINTMENT PROCESSING
+
+    
     public function sendEmailAccepted($id)
     {
         $this->Appointment_model->acceptAppointment($id);

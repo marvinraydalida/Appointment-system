@@ -20,6 +20,12 @@
 				<button type="button" class="btn-close close" data-bs-dismiss="alert"></button>
 			</div>
 			<?php $this->session->unset_userdata ('loginerror'); ?>
+		<?php elseif($this->session->flashdata('login')) : ?>
+			<div class="alert alert-danger alert-dismissible fade show">
+				<?= $this->session->flashdata('login'); ?>
+				<button type="button" class="btn-close close" data-bs-dismiss="alert"></button>
+			</div>
+			<?php $this->session->unset_userdata ('login'); ?>
 		<?php endif; ?>
 		
 		<div class="form">

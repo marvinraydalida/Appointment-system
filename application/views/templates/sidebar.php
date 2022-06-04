@@ -21,6 +21,8 @@
     <?php elseif (strcasecmp($_SERVER['REQUEST_URI'], "/Appointment-system/Admin/Account") == 0) : ?>
         <link href=<?php echo site_url("assets/css/adminAccount.css") ?> rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <?php elseif (strcasecmp($_SERVER['REQUEST_URI'], "/Appointment-system/Admin/Logs") == 0) : ?>
+        <link href=<?php echo site_url("assets/css/adminAccount.css") ?> rel="stylesheet">
         
     <?php elseif (strcasecmp($_SERVER['REQUEST_URI'],  $request_uri[0]) == 0) : ?>
         <link href=<?php echo site_url("assets/css/adminAppointment.css") ?> rel="stylesheet">
@@ -44,6 +46,7 @@
             <a href="<?php echo site_url('Admin') ?>"><i class="fa-solid fa-house-medical"></i> Home</a>
             <a href="<?php echo site_url('Admin/Appointment') . '?date=' . $date . '&status=accepted'?>"><i class="fa-solid fa-calendar-check"></i> Appointments</a>
             <a href="<?php echo site_url('Admin/Account')?>"><i class="fa-solid fa-user-pen"></i> Account</a>
-            <a href=""><i class="fa-solid fa-file-lines"></i> Logs</a>
+            <a href="<?php echo site_url('Admin/Logs')?>"><i class="fa-solid fa-file-lines"></i> Logs</a>
+            <a href="<?php echo site_url('Logout') ?>"><i class="fa-solid fa-sign-out"></i> Logout</a>
         </div>
     </section>

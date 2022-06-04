@@ -84,8 +84,5 @@ class userAccount extends CI_Model {
 		$this->db->update('user_details',$data);
 	}
 
-
-    
-
 	
 }
