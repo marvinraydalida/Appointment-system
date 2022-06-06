@@ -15,7 +15,7 @@
             <button class="modal-close">X</button>
             <h1>Reschedule Request</h1>
             <!-- di ku pa na tetest yung form kaya commented muna -->
-            <form action="<?php echo site_url('Admin/sendEmailRescheduled')?>" method="POST">
+            <form action="<?php echo site_url('Admin/sendEmailRescheduled') ?>" method="POST">
                 <h2>Date</h2>
                 <label>From</label>
                 <input type="date" disabled>
@@ -38,7 +38,9 @@
 
     <section id="dashboard">
         <div id="analytics-container">
-            <div id="weekly-graph-container"></div>
+            <div id="weekly-graph-container">
+                <canvas id="myChart"></canvas>
+            </div>
             <div id="request-graph-container"></div>
         </div>
 
@@ -68,11 +70,11 @@
                                 <button class="reschedule-request-btn" onclick="">Reschedule</button>
                                 <button class="decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>">Decline</button>
                             </td>
-                            
-                            <div id = "hidden-container">
+
+                            <div id="hidden-container">
                                 <input type="hidden" value="<?php echo $appointment->date ?>">
                                 <input type="hidden" value="<?php echo date('h:i', strtotime($appointment->time)) ?>">
-                                <input type="hidden" value="<?php echo $appointment->appointmentID?>">
+                                <input type="hidden" value="<?php echo $appointment->appointmentID ?>">
                             </div>
 
                         </tr>
@@ -84,7 +86,10 @@
 
         </div>
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="<?php echo base_url("assets/javascript/modal.js") ?>"></script>
+    <script src="<?php echo base_url("assets/javascript/chart.js") ?>"></script>
+
     </body>
 
     </html>
