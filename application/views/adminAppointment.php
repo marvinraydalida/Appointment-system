@@ -33,6 +33,46 @@
             <input type="submit" value="Send Response">
         </form>
     </div>
+    <div id="appointment-details-modal">
+        <button class="modal-close">X</button>
+        <h1>Appointment Details</h1>
+        <p class="ticket-number">Ticket no.: 707-12-2022</p>
+
+        <div class="badge-container">
+            <div class="badge">
+                <i class="fa-regular fa-calendar"></i>
+                <p></p>
+            </div>
+
+            <div class="badge">
+                <i class="fa-regular fa-clock"></i>
+                <p></p>
+            </div>
+        </div>
+
+        <label>Name</label>
+        <h2></h2>
+        <label>Email</label>
+        <h2></h2>
+
+        <div class="age-sex-container">
+            <div>
+                <label>Contact</label>
+                <h2></h2>
+            </div>
+            <div>
+                <label>Age</label>
+                <h2></h2>
+            </div>
+            <div>
+                <label>Sex</label>
+                <h2></h2>
+            </div>
+        </div>
+
+        <label>Address</label>
+        <h2 class="address"></h2>
+    </div>
 </section>
 
 <section id="appointment">
@@ -144,13 +184,22 @@
                                 </div>
 
                                 <div class="appointment-action">
-                                    <button class="reschedule-request-btn">Reschedule</button>
-                                    <button class="decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>".>Cancel</button>
+                                    <button class="reschedule-appointment-btn">Reschedule</button>
+                                    <button class="decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>" .>Cancel</button>
                                 </div>
                                 <div id="hidden-container">
                                     <input type="hidden" value="<?php echo $appointment->date ?>">
                                     <input type="hidden" value="<?php echo date('h:i', strtotime($appointment->time)) ?>">
                                     <input type="hidden" value="<?php echo $appointment->appointmentID ?>">
+
+                                    <input type="hidden" value="<?php echo $appointment->name ?>">
+                                    <input type="hidden" value="<?php echo $appointment->email ?>">
+                                    <input type="hidden" value="<?php echo $appointment->contactNum ?>">
+                                    <input type="hidden" value="<?php echo $appointment->age ?>">
+                                    <input type="hidden" value="<?php echo $appointment->gender ?>">
+                                    <input type="hidden" value="<?php echo $appointment->address ?>">
+                                    <input type="hidden" value="<?php echo date("M d, Y", strtotime($appointment->date)) ?>">
+                                    <input type="hidden" value="<?php echo date('h:i a', strtotime($appointment->time)) ?>">
                                 </div>
                             </div>
                             <!-- END OF SAMPLE -->
@@ -174,14 +223,23 @@
                                     </div>
 
                                     <div class="appointment-action">
-                                        <button class="reschedule-request-btn">Reschedule</button>
-                                        <button class="decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>".>Cancel</button>
+                                        <button class="reschedule-appointment-btn">Reschedule</button>
+                                        <button class="decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>" .>Cancel</button>
                                     </div>
 
                                     <div id="hidden-container">
                                         <input type="hidden" value="<?php echo $appointment->date ?>">
                                         <input type="hidden" value="<?php echo date('h:i', strtotime($appointment->time)) ?>">
                                         <input type="hidden" value="<?php echo $appointment->appointmentID ?>">
+
+                                        <input type="hidden" value="<?php echo $appointment->name ?>">
+                                        <input type="hidden" value="<?php echo $appointment->email ?>">
+                                        <input type="hidden" value="<?php echo $appointment->contactNum ?>">
+                                        <input type="hidden" value="<?php echo $appointment->age ?>">
+                                        <input type="hidden" value="<?php echo $appointment->gender ?>">
+                                        <input type="hidden" value="<?php echo $appointment->address ?>">
+                                        <input type="hidden" value="<?php echo date("M d, Y", strtotime($appointment->date)) ?>">
+                                        <input type="hidden" value="<?php echo date('h:i a', strtotime($appointment->time)) ?>">
                                     </div>
                                 </div>
                                 <!-- END OF SAMPLE -->
@@ -205,14 +263,23 @@
                                     </div>
 
                                     <div class="appointment-action">
-                                        <button class="reschedule-request-btn">Reschedule</button>
-                                        <button class="decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>".>Cancel</button>
+                                        <button class="reschedule-appointment-btn">Reschedule</button>
+                                        <button class="decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>" .>Cancel</button>
                                     </div>
 
                                     <div id="hidden-container">
                                         <input type="hidden" value="<?php echo $appointment->date ?>">
                                         <input type="hidden" value="<?php echo date('h:i', strtotime($appointment->time)) ?>">
                                         <input type="hidden" value="<?php echo $appointment->appointmentID ?>">
+
+                                        <input type="hidden" value="<?php echo $appointment->name ?>">
+                                        <input type="hidden" value="<?php echo $appointment->email ?>">
+                                        <input type="hidden" value="<?php echo $appointment->contactNum ?>">
+                                        <input type="hidden" value="<?php echo $appointment->age ?>">
+                                        <input type="hidden" value="<?php echo $appointment->gender ?>">
+                                        <input type="hidden" value="<?php echo $appointment->address ?>">
+                                        <input type="hidden" value="<?php echo date("M d, Y", strtotime($appointment->date)) ?>">
+                                        <input type="hidden" value="<?php echo date('h:i a', strtotime($appointment->time)) ?>">
                                     </div>
                                 </div>
                                 <!-- END OF SAMPLE -->
@@ -236,14 +303,23 @@
                                     </div>
 
                                     <div class="appointment-action">
-                                        <button class="reschedule-request-btn">Reschedule</button>
-                                        <button class="decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>".>Cancel</button>
+                                        <button class="reschedule-appointment-btn">Reschedule</button>
+                                        <button class="decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>" .>Cancel</button>
                                     </div>
 
                                     <div id="hidden-container">
                                         <input type="hidden" value="<?php echo $appointment->date ?>">
                                         <input type="hidden" value="<?php echo date('h:i', strtotime($appointment->time)) ?>">
                                         <input type="hidden" value="<?php echo $appointment->appointmentID ?>">
+
+                                        <input type="hidden" value="<?php echo $appointment->name ?>">
+                                        <input type="hidden" value="<?php echo $appointment->email ?>">
+                                        <input type="hidden" value="<?php echo $appointment->contactNum ?>">
+                                        <input type="hidden" value="<?php echo $appointment->age ?>">
+                                        <input type="hidden" value="<?php echo $appointment->gender ?>">
+                                        <input type="hidden" value="<?php echo $appointment->address ?>">
+                                        <input type="hidden" value="<?php echo date("M d, Y", strtotime($appointment->date)) ?>">
+                                        <input type="hidden" value="<?php echo date('h:i a', strtotime($appointment->time)) ?>">
                                     </div>
                                 </div>
                                 <!-- END OF SAMPLE -->
@@ -267,14 +343,23 @@
                                     </div>
 
                                     <div class="appointment-action">
-                                        <button class="reschedule-request-btn">Reschedule</button>
-                                        <button class="decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>".>Cancel</button>
+                                        <button class="reschedule-appointment-btn">Reschedule</button>
+                                        <button class="decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>" .>Cancel</button>
                                     </div>
 
                                     <div id="hidden-container">
                                         <input type="hidden" value="<?php echo $appointment->date ?>">
                                         <input type="hidden" value="<?php echo date('h:i', strtotime($appointment->time)) ?>">
                                         <input type="hidden" value="<?php echo $appointment->appointmentID ?>">
+
+                                        <input type="hidden" value="<?php echo $appointment->name ?>">
+                                        <input type="hidden" value="<?php echo $appointment->email ?>">
+                                        <input type="hidden" value="<?php echo $appointment->contactNum ?>">
+                                        <input type="hidden" value="<?php echo $appointment->age ?>">
+                                        <input type="hidden" value="<?php echo $appointment->gender ?>">
+                                        <input type="hidden" value="<?php echo $appointment->address ?>">
+                                        <input type="hidden" value="<?php echo date("M d, Y", strtotime($appointment->date)) ?>">
+                                        <input type="hidden" value="<?php echo date('h:i a', strtotime($appointment->time)) ?>">
                                     </div>
                                 </div>
                                 <!-- END OF SAMPLE -->
@@ -297,14 +382,23 @@
                                     </div>
 
                                     <div class="appointment-action">
-                                        <button class="reschedule-request-btn">Reschedule</button>
-                                        <button class="decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>".>Cancel</button>
+                                        <button class="reschedule-appointment-btn">Reschedule</button>
+                                        <button class="decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>" .>Cancel</button>
                                     </div>
 
                                     <div id="hidden-container">
                                         <input type="hidden" value="<?php echo $appointment->date ?>">
                                         <input type="hidden" value="<?php echo date('h:i', strtotime($appointment->time)) ?>">
                                         <input type="hidden" value="<?php echo $appointment->appointmentID ?>">
+
+                                        <input type="hidden" value="<?php echo $appointment->name ?>">
+                                        <input type="hidden" value="<?php echo $appointment->email ?>">
+                                        <input type="hidden" value="<?php echo $appointment->contactNum ?>">
+                                        <input type="hidden" value="<?php echo $appointment->age ?>">
+                                        <input type="hidden" value="<?php echo $appointment->gender ?>">
+                                        <input type="hidden" value="<?php echo $appointment->address ?>">
+                                        <input type="hidden" value="<?php echo date("M d, Y", strtotime($appointment->date)) ?>">
+                                        <input type="hidden" value="<?php echo date('h:i a', strtotime($appointment->time)) ?>">
                                     </div>
                                 </div>
                                 <!-- END OF SAMPLE -->
@@ -327,14 +421,23 @@
                                     </div>
 
                                     <div class="appointment-action">
-                                        <button class="reschedule-request-btn">Reschedule</button>
-                                        <button class="decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>".>Cancel</button>
+                                        <button class="reschedule-appointment-btn">Reschedule</button>
+                                        <button class="decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>" .>Cancel</button>
                                     </div>
 
                                     <div id="hidden-container">
                                         <input type="hidden" value="<?php echo $appointment->date ?>">
                                         <input type="hidden" value="<?php echo date('h:i', strtotime($appointment->time)) ?>">
                                         <input type="hidden" value="<?php echo $appointment->appointmentID ?>">
+
+                                        <input type="hidden" value="<?php echo $appointment->name ?>">
+                                        <input type="hidden" value="<?php echo $appointment->email ?>">
+                                        <input type="hidden" value="<?php echo $appointment->contactNum ?>">
+                                        <input type="hidden" value="<?php echo $appointment->age ?>">
+                                        <input type="hidden" value="<?php echo $appointment->gender ?>">
+                                        <input type="hidden" value="<?php echo $appointment->address ?>">
+                                        <input type="hidden" value="<?php echo date("M d, Y", strtotime($appointment->date)) ?>">
+                                        <input type="hidden" value="<?php echo date('h:i a', strtotime($appointment->time)) ?>">
                                     </div>
                                 </div>
                                 <!-- END OF SAMPLE -->
@@ -357,14 +460,23 @@
                                     </div>
 
                                     <div class="appointment-action">
-                                        <button class="reschedule-request-btn">Reschedule</button>
-                                        <button class="decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>".>Cancel</button>
+                                        <button class="reschedule-appointment-btn">Reschedule</button>
+                                        <button class="decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>" .>Cancel</button>
                                     </div>
 
                                     <div id="hidden-container">
                                         <input type="hidden" value="<?php echo $appointment->date ?>">
                                         <input type="hidden" value="<?php echo date('h:i', strtotime($appointment->time)) ?>">
                                         <input type="hidden" value="<?php echo $appointment->appointmentID ?>">
+
+                                        <input type="hidden" value="<?php echo $appointment->name ?>">
+                                        <input type="hidden" value="<?php echo $appointment->email ?>">
+                                        <input type="hidden" value="<?php echo $appointment->contactNum ?>">
+                                        <input type="hidden" value="<?php echo $appointment->age ?>">
+                                        <input type="hidden" value="<?php echo $appointment->gender ?>">
+                                        <input type="hidden" value="<?php echo $appointment->address ?>">
+                                        <input type="hidden" value="<?php echo date("M d, Y", strtotime($appointment->date)) ?>">
+                                        <input type="hidden" value="<?php echo date('h:i a', strtotime($appointment->time)) ?>">
                                     </div>
                                 </div>
                                 <!-- END OF SAMPLE -->
@@ -388,14 +500,23 @@
                                     </div>
 
                                     <div class="appointment-action">
-                                        <button class="reschedule-request-btn">Reschedule</button>
-                                        <button class="decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>".>Cancel</button>
+                                        <button class="reschedule-appointment-btn">Reschedule</button>
+                                        <button class="decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>" .>Cancel</button>
                                     </div>
 
                                     <div id="hidden-container">
                                         <input type="hidden" value="<?php echo $appointment->date ?>">
                                         <input type="hidden" value="<?php echo date('h:i', strtotime($appointment->time)) ?>">
                                         <input type="hidden" value="<?php echo $appointment->appointmentID ?>">
+
+                                        <input type="hidden" value="<?php echo $appointment->name ?>">
+                                        <input type="hidden" value="<?php echo $appointment->email ?>">
+                                        <input type="hidden" value="<?php echo $appointment->contactNum ?>">
+                                        <input type="hidden" value="<?php echo $appointment->age ?>">
+                                        <input type="hidden" value="<?php echo $appointment->gender ?>">
+                                        <input type="hidden" value="<?php echo $appointment->address ?>">
+                                        <input type="hidden" value="<?php echo date("M d, Y", strtotime($appointment->date)) ?>">
+                                        <input type="hidden" value="<?php echo date('h:i a', strtotime($appointment->time)) ?>">
                                     </div>
                                 </div>
                                 <!-- END OF SAMPLE -->

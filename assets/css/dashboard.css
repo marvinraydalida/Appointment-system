@@ -98,6 +98,7 @@ th {
 td {
     padding: 15px 5px;
     color: #383C3F;
+    cursor: pointer;
 }
 
 td>button {
@@ -337,3 +338,77 @@ tr:nth-child(1) {
     background-color: #87d3a4;
 }
 
+#appointment-details-modal{
+    display: none;
+    flex-direction: column;
+    width: 500px;
+    height: 550px;
+    margin: auto;
+    position: relative;
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 10px;
+    font-family: 'Nunito', sans-serif;
+    animation: slideDown 300ms ease-in-out;
+}
+
+#appointment-details-modal h1 {
+    font-size: 30px;
+    margin: 0;
+}
+
+#appointment-details-modal h2{
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.ticket-number{
+    font-size: 1rem;
+    color: #afafaf;
+}
+
+.age-sex-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 85%;
+}
+
+.address{
+    font-size: 15px !important;
+}
+
+.badge-container{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.badge{
+    width: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 7px;
+    margin-right: 10px;
+    color: white;
+    border-radius: 5px;
+}
+
+.badge p {
+    margin: 0;
+}
+
+.badge i {
+    margin-right: 7px;
+}
+
+.badge:first-of-type{
+    background-color: #62db90ab;
+}
+
+.badge:last-of-type{
+    background-color: #79baf080;
+}
