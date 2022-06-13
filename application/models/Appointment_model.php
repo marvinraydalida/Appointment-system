@@ -133,27 +133,18 @@ class Appointment_model extends CI_Model {
 		$AcceptedNextWeek = array();
 		$CancelledNextWeek = array();
 		$RequestNextWeek = array();
-		$dateCounterAccepted = new DateTime('tomorrow');
-		$dateCounterCancelled = new DateTime('tomorrow');
-		$dateCounterRequest = new DateTime('tomorrow');
+		$dateCounter= new DateTime('tomorrow');	
 		for($counter = 0; $counter < 7; $counter++){
-			$query = $this->db->query('	SELECT * FROM appointments where `date` = "'.$dateCounterAccepted->format('Y-m-d').'" AND `status`= "accepted"');
-			$totalCount =  $query->num_rows();
-			array_push($AcceptedNextWeek,$totalCount);
-			$dateCounterAccepted = $dateCounterAccepted->modify('+1 day');
-		}
-		for($counter = 0; $counter < 7; $counter++){
-			$query = $this->db->query('	SELECT * FROM appointments where `date` = "'.$dateCounterCancelled->format('Y-m-d').'" AND `status`= "cancelled"');
-			$totalCount =  $query->num_rows();
-			array_push($CancelledNextWeek,$totalCount);
-			$dateCounterCancelled = $dateCounterCancelled->modify('+1 day');
-		}
-		for($counter = 0; $counter < 7; $counter++){
-			$query = $this->db->query('	SELECT * FROM appointments where `date` = "'.$dateCounterRequest->format('Y-m-d').'" AND `status`= "pending"');
-			$totalCount =  $query->num_rows();
-			array_push($RequestNextWeek,$totalCount);
-			$dateCounterRequest = $dateCounterRequest->modify('+1 day');
-			
+			$queryAccepted = $this->db->query('	SELECT * FROM appointments where `date` = "'.$dateCounter->format('Y-m-d').'" AND `status`= "accepted"');
+			$queryCancelled = $this->db->query('SELECT * FROM appointments where `date` = "'.$dateCounter->format('Y-m-d').'" AND `status`= "cancelled"');
+			$queryRequest = $this->db->query('	SELECT * FROM appointments where `date` = "'.$dateCounter->format('Y-m-d').'" AND `status`= "pending"');
+			$totalCountAccepted =  $queryAccepted->num_rows();
+			$totalCountCancelled =  $queryCancelled->num_rows();
+			$totalCountRequest =  $queryRequest->num_rows();
+			array_push($AcceptedNextWeek,$totalCountAccepted);
+			array_push($CancelledNextWeek,$totalCountCancelled);
+			array_push($RequestNextWeek,$totalCountRequest);
+			$dateCounter = $dateCounter->modify('+1 day');
 		}
 		array_push($NextWeekData,$AcceptedNextWeek,$CancelledNextWeek,$RequestNextWeek);
 		return $NextWeekData;
