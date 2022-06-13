@@ -58,8 +58,10 @@ function closeModal(event) {
 }
 
 function showModal(event) {
-    console.log(event.target)
-    modalBackDrop.style.display = "flex";
+    if(event.target.textContent !== 'Accept'){
+        modalBackDrop.style.display = "flex";
+    }
+    
     if (event.target.className === 'decline-request-btn') {
         document.getElementById('decline-modal').style.display = "block";
         confirmDeclineBtn.onclick = function () {
