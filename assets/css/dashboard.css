@@ -26,7 +26,14 @@
 
 #weekly-graph-container {
     width: 70%;
+    box-sizing: border-box;
+    padding: 10px;
+}
 
+canvas {
+    margin: auto;
+    width: 95% !important;
+    height: 100% !important;
 }
 
 #request-graph-container {
@@ -91,6 +98,7 @@ th {
 td {
     padding: 15px 5px;
     color: #383C3F;
+    cursor: pointer;
 }
 
 td>button {
@@ -171,7 +179,7 @@ tr:nth-child(1) {
     background-color: #e5eff1;
 }
 
-#modal-container{
+#modal-container {
     position: absolute;
     display: none;
     align-items: center;
@@ -183,7 +191,7 @@ tr:nth-child(1) {
     z-index: 1;
 }
 
-#decline-modal{
+#decline-modal {
     display: none;
     width: 400px;
     height: 250px;
@@ -201,17 +209,18 @@ tr:nth-child(1) {
     from {
         transform: translateY(-30px);
     }
+
     to {
         transform: translateY(0px);
     }
-  }
+}
 
-#decline-modal h1{
+#decline-modal h1 {
     text-align: center;
     margin: 0px 0px 50px 0px;
 }
 
-.modal-close{
+.modal-close {
     position: absolute;
     top: 0;
     right: 0;
@@ -226,14 +235,14 @@ tr:nth-child(1) {
     cursor: pointer;
 }
 
-#decline-button-container{
+#decline-button-container {
     width: 80%;
     margin: auto;
     display: flex;
     justify-content: space-evenly;
 }
 
-#decline-button-container button{
+#decline-button-container button {
     height: 50px;
     min-width: 100px;
     border: none;
@@ -245,30 +254,30 @@ tr:nth-child(1) {
     transition: all 250ms ease-in-out;
 }
 
-#decline-button-container button:nth-child(1){
+#decline-button-container button:nth-child(1) {
     color: #2E8469;
     background-color: #cbffdf;
 }
 
-#decline-button-container button:nth-child(2){
+#decline-button-container button:nth-child(2) {
     color: #A95069;
     background-color: #ffb7c1;
 }
 
-#decline-button-container button:hover{
+#decline-button-container button:hover {
     transform: scale(1.1);
 }
 
-#decline-button-container button:nth-child(1):hover{
+#decline-button-container button:nth-child(1):hover {
     background-color: #95f0b6;
-    
+
 }
 
-#decline-button-container button:nth-child(2):hover{
+#decline-button-container button:nth-child(2):hover {
     background-color: #ff9fac;
 }
 
-#rescehdule-modal{
+#rescehdule-modal {
     display: none;
     flex-direction: column;
     width: 500px;
@@ -283,26 +292,26 @@ tr:nth-child(1) {
     animation: slideDown 300ms ease-in-out;
 }
 
-#rescehdule-modal h1{
+#rescehdule-modal h1 {
     margin: 0;
 }
 
-#rescehdule-modal h2{
+#rescehdule-modal h2 {
     font-weight: 400;
     margin-bottom: 5px;
 }
 
-#rescehdule-modal form{
+#rescehdule-modal form {
     display: flex;
     flex-direction: column;
 }
 
-#rescehdule-modal label{
+#rescehdule-modal label {
     margin-bottom: 10px;
     font-family: 'Nunito', sans-serif;
 }
 
-#rescehdule-modal input{
+#rescehdule-modal input {
     padding: 5px;
     margin-bottom: 10px;
     font-size: 1.2rem;
@@ -310,7 +319,7 @@ tr:nth-child(1) {
     border-radius: 5px;
 }
 
-#rescehdule-modal input[type = "submit"]{
+#rescehdule-modal input[type="submit"] {
     border: none;
     height: 50px;
     margin-top: 20px;
@@ -320,11 +329,86 @@ tr:nth-child(1) {
     cursor: pointer;
 }
 
-#rescehdule-modal input[type = "submit"]:hover {
+#rescehdule-modal input[type="submit"]:hover {
     transform: scale(1.02);
     background-color: #95f0b6;
 }
 
-#rescehdule-modal input[type = "submit"]:active {
+#rescehdule-modal input[type="submit"]:active {
     background-color: #87d3a4;
+}
+
+#appointment-details-modal{
+    display: none;
+    flex-direction: column;
+    width: 500px;
+    height: 550px;
+    margin: auto;
+    position: relative;
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 10px;
+    font-family: 'Nunito', sans-serif;
+    animation: slideDown 300ms ease-in-out;
+}
+
+#appointment-details-modal h1 {
+    font-size: 30px;
+    margin: 0;
+}
+
+#appointment-details-modal h2{
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.ticket-number{
+    font-size: 1rem;
+    color: #afafaf;
+}
+
+.age-sex-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 85%;
+}
+
+.address{
+    font-size: 15px !important;
+}
+
+.badge-container{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.badge{
+    width: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 7px;
+    margin-right: 10px;
+    color: white;
+    border-radius: 5px;
+}
+
+.badge p {
+    margin: 0;
+}
+
+.badge i {
+    margin-right: 7px;
+}
+
+.badge:first-of-type{
+    background-color: #62db90ab;
+}
+
+.badge:last-of-type{
+    background-color: #79baf080;
 }

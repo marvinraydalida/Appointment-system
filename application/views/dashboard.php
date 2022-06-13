@@ -14,8 +14,7 @@
         <div id="rescehdule-modal">
             <button class="modal-close">X</button>
             <h1>Reschedule Request</h1>
-            <!-- di ku pa na tetest yung form kaya commented muna -->
-            <form action="<?php echo site_url('Admin/sendEmailRescheduled')?>" method="POST">
+            <form action="<?php echo site_url('Admin/sendEmailRescheduled') ?>" method="POST">
                 <h2>Date</h2>
                 <label>From</label>
                 <input type="date" disabled>
@@ -34,11 +33,54 @@
                 <input type="submit" value="Send Response">
             </form>
         </div>
+
+        <div id="appointment-details-modal">
+            <button class="modal-close">X</button>
+            <h1>Appointment Details</h1>
+            <p class="ticket-number">Ticket no.: 707-12-2022</p>
+
+            <div class="badge-container">
+                <div class="badge">
+                    <i class="fa-regular fa-calendar"></i>
+                    <p></p>
+                </div>
+
+                <div class="badge">
+                    <i class="fa-regular fa-clock"></i>
+                    <p></p>
+                </div>
+            </div>
+
+            <label>Name</label>
+            <h2></h2>
+            <label>Email</label>
+            <h2></h2>
+
+            <div class="age-sex-container">
+                <div>
+                    <label>Contact</label>
+                    <h2></h2>
+                </div>
+                <div>
+                    <label>Age</label>
+                    <h2></h2>
+                </div>
+                <div>
+                    <label>Sex</label>
+                    <h2></h2>
+                </div>
+            </div>
+
+            <label>Address</label>
+            <h2 class="address"></h2>
+        </div>
     </section>
 
     <section id="dashboard">
         <div id="analytics-container">
-            <div id="weekly-graph-container"></div>
+            <div id="weekly-graph-container">
+                <canvas id="myChart"></canvas>
+            </div>
             <div id="request-graph-container"></div>
         </div>
 
@@ -57,7 +99,6 @@
                     </tr>
                     <?php foreach ($appointments as $appointment) { ?>
                         <tr class="row-data">
-
                             <td style="font-weight: bold;"> <?php echo date('h:i a', strtotime($appointment->time)) ?></td>
                             <td><?php echo date("m/d/Y", strtotime($appointment->date)) ?></td>
                             <td><?php echo $appointment->name ?></td>
@@ -68,13 +109,20 @@
                                 <button class="reschedule-request-btn" onclick="">Reschedule</button>
                                 <button class="decline-request-btn" data-id="<?php echo $appointment->appointmentID; ?>">Decline</button>
                             </td>
-                            
-                            <div id = "hidden-container">
+                            <td id="hidden-container">
                                 <input type="hidden" value="<?php echo $appointment->date ?>">
                                 <input type="hidden" value="<?php echo date('h:i', strtotime($appointment->time)) ?>">
-                                <input type="hidden" value="<?php echo $appointment->appointmentID?>">
-                            </div>
+                                <input type="hidden" value="<?php echo $appointment->appointmentID ?>">
 
+                                <input type="hidden" value = "<?php echo $appointment->name ?>">
+                                <input type="hidden" value = "<?php echo $appointment->email ?>">
+                                <input type="hidden" value = "<?php echo $appointment->contactNum ?>">
+                                <input type="hidden" value = "<?php echo $appointment->age ?>">
+                                <input type="hidden" value = "<?php echo $appointment->gender ?>">
+                                <input type="hidden" value = "<?php echo $appointment->address ?>">
+                                <input type="hidden" value="<?php echo date("M d, Y", strtotime($appointment->date)) ?>">
+                                <input type="hidden" value="<?php echo date('h:i a', strtotime($appointment->time)) ?>">
+                            </td>
                         </tr>
                     <?php } ?>
 
@@ -84,7 +132,10 @@
 
         </div>
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="<?php echo base_url("assets/javascript/modal.js") ?>"></script>
+    <script src="<?php echo base_url("assets/javascript/chart.js") ?>"></script>
+
     </body>
 
     </html>
