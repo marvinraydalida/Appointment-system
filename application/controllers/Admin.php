@@ -175,4 +175,10 @@ class Admin extends CI_Controller
     {
         $this->Appointment_model->acceptedRescheduleAppointment($id);
     }
+
+    // DATA 
+    public function getNextWeekData(){
+       
+        echo json_encode($this->Appointment_model->countNextWeekRecords());
+    }
 }

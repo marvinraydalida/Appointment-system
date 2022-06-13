@@ -7,6 +7,6 @@ $config = array(
     'smtp_port' => 587,
     'smtp_crypto' => 'tls',
     'smtp_user' => 'williamcrshd02@gmail.com',
-    'smtp_pass' => 'A858_P87Iy',
+    'smtp_pass' => 'eijybwgpbavjynkb',
     'newline' => "\r\n"
 );
