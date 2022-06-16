@@ -133,6 +133,7 @@ class Appointment_model extends CI_Model {
 		$AcceptedNextWeek = array();
 		$CancelledNextWeek = array();
 		$RequestNextWeek = array();
+		$DataToday = array();
 		$dateCounter= new DateTime('tomorrow');	
 		for($counter = 0; $counter < 7; $counter++){
 			$queryAccepted = $this->db->query('	SELECT * FROM appointments where `date` = "'.$dateCounter->format('Y-m-d').'" AND `status`= "accepted"');
@@ -146,7 +147,10 @@ class Appointment_model extends CI_Model {
 			array_push($RequestNextWeek,$totalCountRequest);
 			$dateCounter = $dateCounter->modify('+1 day');
 		}
-		array_push($NextWeekData,$AcceptedNextWeek,$CancelledNextWeek,$RequestNextWeek);
+		$todayAccepted = $this->db->query('	SELECT * FROM appointments where `date` = "'.date('Y-m-d').'" AND `status`= "accepted"');
+		$todayCancelled = $this->db->query('SELECT * FROM appointments where `date` = "'.date('Y-m-d').'" AND `status`= "cancelled"');
+		array_push($DataToday,$todayAccepted->num_rows(),$todayCancelled->num_rows());
+		array_push($NextWeekData,$DataToday,$AcceptedNextWeek,$CancelledNextWeek,$RequestNextWeek);
 		return $NextWeekData;
 	}
 }

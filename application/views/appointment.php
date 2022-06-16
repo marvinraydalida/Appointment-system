@@ -22,7 +22,7 @@
                 <div class="col-12">
                     <h3 class="fw-normal text-secondary fs-4 mb-4">Appointment form</h3>
                 </div>
-                <form action="Appointment/appointment" method="POST">
+                <form action="<?php echo site_url('Appointment/appointment') ?>" method="POST">
                     <div class="row g-3">
                         <div class="col-md-12">
                             <input type="text" name="name" required class="form-control input-lg" placeholder="Full Name">
@@ -67,7 +67,7 @@
                         <div class="h-captcha" data-sitekey="6ad65b76-24e9-4e8b-8e89-0a480ed2c8b8"></div>
                         </div>
                         <div class="col-12 mt-3">                        
-                            <button type="submit" class="btn btn-primary float-end">Book Appointment</button>
+                            <button type="submit" name="submit" class="btn btn-primary float-end">Book Appointment</button>
                             <button type="button" class="btn btn-outline-secondary float-end me-2">Cancel</button>
                         </div>
                         
