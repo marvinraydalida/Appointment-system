@@ -30,7 +30,7 @@
     padding: 10px;
 }
 
-canvas {
+#weekly-graph-container canvas {
     margin: auto;
     width: 95% !important;
     height: 100% !important;
@@ -38,7 +38,11 @@ canvas {
 
 #request-graph-container {
     width: 28%;
+    box-sizing: border-box;
+    padding: 10px 30px 30px 30px;
 }
+
+
 
 #request-container {
     width: 90%;

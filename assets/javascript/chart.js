@@ -74,6 +74,44 @@ function createChart(accepted, cancelled, request) {
     );
 }
 
+function createPieChart() {
+    const data = {
+        labels: [
+            'Accepted',
+            'Cancelled',
+        ],
+        datasets: [{
+            data: [150, 100],
+            backgroundColor: [
+                'rgba(75, 192, 192, 0.2)',
+                'rgb(255, 99, 132)'
+            ],
+            hoverOffset: 4
+        }]
+    };
+
+    const config = {
+        type: 'doughnut',
+        data: data,
+        options: {
+            rotation: 180,
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'TODAY\'S APPOINTMENT',
+                }
+            }
+        },
+      }
+
+      const myChart = new Chart(
+        document.getElementById('doughnutChart'),
+        config
+    );
+}
+
 fetch('http://test.mydomain.com/Appointment-system/admin/getNextWeekData')
     .then(response => response.json())
     .then(json => {
@@ -82,6 +120,7 @@ fetch('http://test.mydomain.com/Appointment-system/admin/getNextWeekData')
         const request = json[2];
 
         createChart(accepted, cancelled, request);
+        createPieChart()
 
         return json;
     })
