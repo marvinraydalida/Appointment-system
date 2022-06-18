@@ -74,14 +74,14 @@ function createChart(accepted, cancelled, request) {
     );
 }
 
-function createPieChart() {
+function createPieChart(accepted, cancelled) {
     const data = {
         labels: [
             'Accepted',
             'Cancelled',
         ],
         datasets: [{
-            data: [150, 100],
+            data: [accepted, cancelled],
             backgroundColor: [
                 'rgba(75, 192, 192, 0.2)',
                 'rgb(255, 99, 132)'
@@ -115,12 +115,12 @@ function createPieChart() {
 fetch('http://test.mydomain.com/Appointment-system/admin/getNextWeekData')
     .then(response => response.json())
     .then(json => {
-        const accepted = json[0];
-        const cancelled = json[1];
-        const request = json[2];
+        const accepted = json[1];
+        const cancelled = json[2];
+        const request = json[3];
 
         createChart(accepted, cancelled, request);
-        createPieChart()
+        createPieChart(json[0][0], json[0][1]);
 
         return json;
     })
