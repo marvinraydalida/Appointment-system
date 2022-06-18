@@ -81,7 +81,9 @@
             <div id="weekly-graph-container">
                 <canvas id="myChart"></canvas>
             </div>
-            <div id="request-graph-container"></div>
+            <div id="request-graph-container">
+                <canvas id="doughnutChart"></canvas>
+            </div>
         </div>
 
         <div id="request-container">
@@ -114,12 +116,12 @@
                                 <input type="hidden" value="<?php echo date('h:i', strtotime($appointment->time)) ?>">
                                 <input type="hidden" value="<?php echo $appointment->appointmentID ?>">
 
-                                <input type="hidden" value = "<?php echo $appointment->name ?>">
-                                <input type="hidden" value = "<?php echo $appointment->email ?>">
-                                <input type="hidden" value = "<?php echo $appointment->contactNum ?>">
-                                <input type="hidden" value = "<?php echo $appointment->age ?>">
-                                <input type="hidden" value = "<?php echo $appointment->gender ?>">
-                                <input type="hidden" value = "<?php echo $appointment->address ?>">
+                                <input type="hidden" value="<?php echo $appointment->name ?>">
+                                <input type="hidden" value="<?php echo $appointment->email ?>">
+                                <input type="hidden" value="<?php echo $appointment->contactNum ?>">
+                                <input type="hidden" value="<?php echo $appointment->age ?>">
+                                <input type="hidden" value="<?php echo $appointment->gender ?>">
+                                <input type="hidden" value="<?php echo $appointment->address ?>">
                                 <input type="hidden" value="<?php echo date("M d, Y", strtotime($appointment->date)) ?>">
                                 <input type="hidden" value="<?php echo date('h:i a', strtotime($appointment->time)) ?>">
                             </td>
