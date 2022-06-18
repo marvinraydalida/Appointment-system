@@ -71,10 +71,18 @@ h1 {
     font-weight: bold;
     padding: 20px;
     margin-top: 40px;
+    margin-right: 20px;
     border-radius: 5px;
-    background-color: white;
+    background-color: transparent;
+    border: solid;
+    border-width:  5px;
+    border-color: black;
     cursor: pointer;
     transition: all 250ms ease-in-out;
+}
+#text-container button:hover{
+    background-color: white;
+    border-width:  0px;
 }
 
 #text-container button a {

@@ -31,9 +31,12 @@
         <div id="text-container">
             <h1>More than just a </br>smile</h1>
             <button><a href="Appointment">Book an appointment</a></button>
+            
+            <button><a href="Appointment/viewAppointmentVerify">Manage Appointment</a></button>
         </div>
         <img src="<?php echo site_url("assets/image/person-smile.png") ?>" alt="">
     </header>
+
 
     <section id="service">
         <h1 id="service-title">Dental Services</h1>
@@ -87,16 +90,9 @@
     </section>
     <!-- https://springmedo.com/wp-content/uploads/2022/02/oral-surgery.jpg -->
 
-    <section id="about">
-        <h1>Contact Us!</h1>
-        <h2>We’re here for you when you need us!</h2>
-        <p>2nd flr. Don francisco tan gana bldg. National highway, Balibago, <br> Sta.rosa, Laguna and 2nd flr. Umerez building, GMA Cavite</p>
-        <p>cerillodental@gmail.com</p>
-        <p>09999999999</p>
-        <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1933.1286846082355!2d121.1056886032872!3d14.296473310725103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d8490ec6d2f9%3A0x9cc830abb3d064e1!2sCerillo%20house%20of%20dental%20medicine!5e0!3m2!1sen!2sph!4v1654371849026!5m2!1sen!2sph" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-    </section>
+
+
+    
 
     <footer>
         <div id="icon-container">

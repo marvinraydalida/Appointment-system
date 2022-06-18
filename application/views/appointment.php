@@ -77,38 +77,6 @@
         </div>
     </div>
 
-    <!-- <form action="Appointment/appointment" method="POST">
-        <label>Name</label>
-        <input type="text" name="name" required>
-
-        <label>Age</label>
-        <input type="number" name="age" required>
-
-        <label>Sex</label>
-        <select name="gender">
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-        </select>
-
-        <label>Address</label>
-        <input type="text" name="address" required>
-
-        <label>Contact</label>
-        <input type="number" name="contactNum" required>
-
-        <label>Email</label>
-        <input type="email" name="email" required>
-
-        <label>Date</label>
-        <input type="date" name="date" required>
-
-        <label>Time</label>
-        <input type="time" name="time" min="08:00" max="17:00" required>
-       
-        <input type="submit" name = "submit" value = "submit">
-    </form>
-
-
     <?= $this->session->flashdata('Appointment Request sent'); ?> -->
 </body>
 

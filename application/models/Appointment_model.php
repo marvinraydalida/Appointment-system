@@ -153,5 +153,17 @@ class Appointment_model extends CI_Model {
 		array_push($NextWeekData,$DataToday,$AcceptedNextWeek,$CancelledNextWeek,$RequestNextWeek);
 		return $NextWeekData;
 	}
+
+	public function viewAppointmentDetails(){
+		$query = $todayAccepted = $this->db->query('SELECT * FROM appointments where 
+													appointmentTicket = "'.$_POST['appointmentTicket'].'" 
+													AND email="'.$_POST['email'].'"');
+		if($query->num_rows()>0){
+			return $query->row();
+		}
+		else{
+			return NULL;
+		}
+	}
 }
 
