@@ -15,21 +15,6 @@
 <body>
 	<form action="<?php echo site_url('Registration/register') ?>" method="POST">
 
-		<?php if($this->session->flashdata('errorAddingUser')) : ?>
-				<div class="alert alert-danger alert-dismissible fade show">
-					<?= $this->session->flashdata('errorAddingUser'); ?>
-					<button type="button" class="btn-close close" data-bs-dismiss="alert"></button>
-				</div>
-				<?php $this->session->unset_userdata ('errorAddingUser'); ?>
-			<?php endif; ?>	
-
-			<?php if($this->session->flashdata('successAddingUser')) : ?>
-				<div class="alert alert-success alert-dismissible fade show">
-					<?= $this->session->flashdata('successAddingUser'); ?>
-					<button type="button" class="btn-close close" data-bs-dismiss="alert"></button>
-				</div>
-				<?php $this->session->unset_userdata ('successAddingUser'); ?>
-			<?php endif; ?>
 		<div class="form">
 			<div class="title">Register</div>
 			<div class="input-container ic2">
