@@ -38,6 +38,7 @@
 							Ticket</b>
 						and <b>Email Address</b> of your current appointment and click the <b>View Details Button</b>
 					</div>
+					
 
 				</div>
 				<form action="<?php echo site_url('Appointment/viewAppointment') ?>" method="POST">
