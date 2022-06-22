@@ -23,6 +23,13 @@
         </div>
     </div>
 	<div class="container">
+		<?php if($this->session->flashdata('appointmentError')) : ?>
+                <div class="alert alert-danger alert-dismissible fade show">
+                    <?= $this->session->flashdata('appointmentError') ?>
+                    <button type="button" class="btn-close close" data-bs-dismiss="alert"></button>
+                </div>
+                <?php $this->session->unset_userdata ('appointmentError'); ?>
+            <?php endif; ?>
         <?php if($this->session->flashdata('appointmentError')) : ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <?= $this->session->flashdata('appointmentError'); ?>

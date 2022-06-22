@@ -18,6 +18,7 @@ class Appointment_model extends CI_Model {
             'email' => $_POST['email'],
             'date' => $_POST['date'],
             'time' => $_POST['time'],
+			'service' => $_POST['service'],
 			'status' => 'pending'
         );
 

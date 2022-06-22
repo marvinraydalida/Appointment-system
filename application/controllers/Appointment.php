@@ -73,14 +73,15 @@ class Appointment extends CI_Controller
             if ($responseData->success) {
                 if($this->Appointment_model->viewAppointmentDetails()!=NULL){
                     $data = $this->Appointment_model->viewAppointmentDetails();
-                    echo json_encode($data);
+                    $this->load->view('PatientAppointmentDetails',$data);
                 }
                 else{
                     $this->session->set_flashdata('appointmentError','Invalid Appointment Code'); 
                     redirect('Appointment/viewAppointmentVerify');
                 }
             } else {
-                echo 'Robot verification failed, please try again.';
+                $this->session->set_flashdata('appointmentError','Captcha verification failed'); 
+                redirect('Appointment/viewAppointmentVerify');
             }
         }
     }

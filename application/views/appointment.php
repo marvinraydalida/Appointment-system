@@ -10,7 +10,7 @@
     <link href=<?php echo base_url("assets/css/stylesLogin.css") ?> rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
-
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
     <script src="https://js.hcaptcha.com/1/api.js?hl=en" async defer></script>
 </head>
 
@@ -18,6 +18,13 @@
 
     <div class="container mt-5">
         <div class="row">
+            <?php if($this->session->flashdata('successRequest')) : ?>
+                <div class="alert alert-success alert-dismissible fade show">
+                    <?= $this->session->flashdata('successRequest'); ?>
+                    <button type="button" class="btn-close close" data-bs-dismiss="alert"></button>
+                </div>
+                <?php $this->session->unset_userdata ('successRequest'); ?>
+            <?php endif; ?>
             <div class="col-md-5 offset-md-4 border p-4 shadow bg-light">
                 <div class="col-12">
                     <h3 class="fw-normal text-secondary fs-4 mb-4">Appointment form</h3>
@@ -28,7 +35,7 @@
                             <input type="text" name="name" required class="form-control input-lg" placeholder="Full Name">
                         </div>
                         <div class="col-md-6">
-                            <input type="number" name="age" required class="form-control" placeholder="Age">
+                            <input type="number" name="age" min="7" required class="form-control" placeholder="Age">
                         </div>
                         <div class="col-md-6">
                             <select class="form-select" name="gender" required>
@@ -40,14 +47,14 @@
                             <input type="text" name="address" required class="form-control" placeholder="Address">
                         </div>
                         <div class="col-md-12">
-                            <input type="number" name="contactNum" required class="form-control" placeholder="Contact number">
+                            <input type="tel" name="contactNum" pattern="[0][9][0-9]{9}" required class="form-control" placeholder="Contact number">
                         </div>
                         <div class="col-md-12">
                             <input type="email" name="email" required class="form-control" placeholder="Enter Email">
                         </div>
 
                         <div class="col-md-6">
-                            <input type="date" name="date" required class="form-control">
+                            <input id="date_picker" type="date" name="date" required class="form-control">
                         </div>
                         <div class="col-md-6">
                             <input  type="time" name="time" min="08:00" max="17:00" required class="form-control">
@@ -76,8 +83,17 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script language="javascript">
+        var today = new Date();
+        var dd = String(today.getDate()+1).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0');
+        var yyyy = today.getFullYear();
 
-    <?= $this->session->flashdata('Appointment Request sent'); ?> -->
+        today = yyyy + '-' + mm + '-' + dd;
+        $('#date_picker').attr('min',today);
+    </script>
 </body>
 
 </html>
+

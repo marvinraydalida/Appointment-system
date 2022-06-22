@@ -1,0 +1,59 @@
+   body {
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: sans-serif;
+  }
+  
+ 
+  h3,h5{
+    margin: 0 !important;
+  }
+
+
+  h5{
+    color: #6d6d6d;
+  }
+
+  .accepted{
+    color: rgb(32, 233, 32);
+  }
+
+  .pending{
+    color: rgb(44, 44, 209);
+  }
+
+  .cancelled{
+    color: rgb(193, 37, 37);
+  }
+  
+  .row{
+    padding-bottom: 15px;
+  }
+
+  .bg-color{
+    background-color: whitesmoke;
+  }
+
+  .blur{
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0);
+    height: 100%;
+  }
+
+  .imagebg{
+    background-image: url("../image/clinicbackground.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+   .container{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+
+  }
+  
