@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 28, 2022 at 04:13 PM
+-- Generation Time: Jun 28, 2022 at 04:20 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -47,15 +47,53 @@ CREATE TABLE IF NOT EXISTS `appointments` (
   `approvedBy` int(11) DEFAULT NULL,
   PRIMARY KEY (`appointmentID`),
   KEY `adminAppointmentRelation` (`approvedBy`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `appointments`
 --
 
 INSERT INTO `appointments` (`appointmentID`, `appointmentTicket`, `name`, `age`, `gender`, `contactNum`, `email`, `address`, `time`, `date`, `service`, `dateRequested`, `rescheduledDate`, `rescheduledTime`, `status`, `approvedBy`) VALUES
-(1, '129-06-22', 'William Cris Hod', 20, 'male', 2147483647, 'williamcris18@gmail.com', 'test address', '13:03:00', '2022-06-27', 'Tooth Extraction', '2022-06-29 00:04:09', NULL, NULL, 'cancelled', NULL),
-(2, '229-06-22', 'Luke Juniel Galicia', 20, 'male', 2147483647, 'williamcris18@gmail.com', 'test address', '13:11:00', '2022-06-21', 'Tooth Extraction', '2022-06-29 00:11:57', NULL, NULL, 'cancelled', NULL);
+(1, '129-06-22', 'William Cris Hod', 20, 'male', 2147483647, 'williamcris18@gmail.com', 'test address', '13:15:00', '2022-07-04', 'Tooth Extraction', '2022-06-29 00:15:52', NULL, NULL, 'pending', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `logs`
+--
+
+DROP TABLE IF EXISTS `logs`;
+CREATE TABLE IF NOT EXISTS `logs` (
+  `logID` int(255) NOT NULL AUTO_INCREMENT,
+  `userID` int(255) NOT NULL,
+  `action` varchar(255) NOT NULL,
+  `happenedAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`logID`),
+  KEY `userLogData` (`userID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_details`
+--
+
+DROP TABLE IF EXISTS `user_details`;
+CREATE TABLE IF NOT EXISTS `user_details` (
+  `userID` int(255) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `status` int(11) NOT NULL,
+  PRIMARY KEY (`userID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user_details`
+--
+
+INSERT INTO `user_details` (`userID`, `username`, `password`, `name`, `status`) VALUES
+(1, 'admin', '$2y$10$6wo.Uqdhp.XZ0v.OHpuheeE7kulCW0d6kEV7GwBT3GW.85cdwiAN2', 'Marvin Ray Dalida', 1);
 
 --
 -- Constraints for dumped tables
@@ -66,6 +104,12 @@ INSERT INTO `appointments` (`appointmentID`, `appointmentTicket`, `name`, `age`,
 --
 ALTER TABLE `appointments`
   ADD CONSTRAINT `adminAppointmentRelation` FOREIGN KEY (`approvedBy`) REFERENCES `user_details` (`userID`);
+
+--
+-- Constraints for table `logs`
+--
+ALTER TABLE `logs`
+  ADD CONSTRAINT `userLogData` FOREIGN KEY (`userID`) REFERENCES `user_details` (`userID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -34,8 +34,8 @@ class Appointment_model extends CI_Model {
     public function viewAppointments() #Read
 	{	
 		$date= new DateTime();	
-		$query = $this->db->query('	SELECT * FROM appointments where `status`= "pending" AND `date`<'.$date->format('Y-m-d'));
-		$queryb = $this->db->query('UPDATE appointments SET `status`= "cancelled" WHERE `date`>'.$date->format('Y-m-d'));
+		$query = $this->db->query('	SELECT * FROM appointments where `status`= "pending" AND `date`>'.$date->format('Y-m-d'));
+		$queryb = $this->db->query('UPDATE appointments SET `status`= "cancelled" WHERE `date`<'.$date->format('Y-m-d'));
 		return $query->result();
 	}
 
