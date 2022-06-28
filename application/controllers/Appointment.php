@@ -13,7 +13,7 @@ class Appointment extends CI_Controller
 
     public function index()
     {
-        $this->load->view('appointment');
+        $this->load->view('Appointment');
     }
 
     public function appointment()
@@ -39,6 +39,7 @@ class Appointment extends CI_Controller
             $responseData = json_decode($result);
             if ($responseData->success) {
                 $this->Appointment_model->create();
+                $this->load->view('successfullAppointment');
             } else {
                 echo 'Robot verification failed, please try again.';
             }
@@ -86,5 +87,11 @@ class Appointment extends CI_Controller
         }
     }
 
+    public function cancel($id){
+        $this->Appointment_model->cancelAppointment($id);
+    }
    
+    public function acceptReschedule($id){
+        $this->Appointment_model->acceptRescheduleAppointment($id);
+    }
 }

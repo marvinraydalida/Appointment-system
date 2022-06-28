@@ -29,9 +29,6 @@ class Appointment_model extends CI_Model {
         $this->db->where('appointmentID', $this->db->insert_id());
         $this->db->update('appointments');
 
-        $this->session->set_flashdata('successRequest','Appointment request has been sent.');
-
-		redirect('Appointment');
     }
 
     public function viewAppointments() #Read
@@ -107,6 +104,8 @@ class Appointment_model extends CI_Model {
 
 	public function rescheduleAppointment(){
 		$data = array(
+			"rescheduledDate" => $_POST["date"],
+			"rescheduledTime" => $_POST["time"],
 			"status" => "reschedule pending"
 		);
 		$this->db->where('appointmentID',$_POST['appointmentID']);
@@ -114,9 +113,13 @@ class Appointment_model extends CI_Model {
 	}
 
 	public function acceptedRescheduleAppointment($id){
+		$query = $this->db->query("SELECT * FROM appointments WHERE appointmentID =".$id);
+		$query = $query->row();
 		$data=array(
-			"time" => $_POST["time"],
-			"date" => $_POST["date"],
+			"time" => $query->reschuledTime,
+			"date" => $query->reschuledDate,
+			"rescheduledDate" => NULL,
+			"rescheduledTime" => NULL,
 			"status" => "accepted"
 		);
 		$this->db->where('appointmentID',$id);
@@ -134,18 +137,25 @@ class Appointment_model extends CI_Model {
 		$AcceptedNextWeek = array();
 		$CancelledNextWeek = array();
 		$RequestNextWeek = array();
+		
 		$DataToday = array();
 		$dateCounter= new DateTime('tomorrow');	
 		for($counter = 0; $counter < 7; $counter++){
+			$AcceptedArrayDate = array();
+			$CancelledArrayDate = array();
+			$RequestArrayDate = array();
 			$queryAccepted = $this->db->query('	SELECT * FROM appointments where `date` = "'.$dateCounter->format('Y-m-d').'" AND `status`= "accepted"');
 			$queryCancelled = $this->db->query('SELECT * FROM appointments where `date` = "'.$dateCounter->format('Y-m-d').'" AND `status`= "cancelled"');
 			$queryRequest = $this->db->query('	SELECT * FROM appointments where `date` = "'.$dateCounter->format('Y-m-d').'" AND `status`= "pending"');
 			$totalCountAccepted =  $queryAccepted->num_rows();
 			$totalCountCancelled =  $queryCancelled->num_rows();
 			$totalCountRequest =  $queryRequest->num_rows();
-			array_push($AcceptedNextWeek,$totalCountAccepted);
-			array_push($CancelledNextWeek,$totalCountCancelled);
-			array_push($RequestNextWeek,$totalCountRequest);
+			array_push($AcceptedArrayDate,$totalCountAccepted,$dateCounter->format('Y-m-d'));
+			array_push($RequestArrayDate,$totalCountRequest,$dateCounter->format('Y-m-d'));
+			array_push($CancelledArrayDate,$totalCountCancelled,$dateCounter->format('Y-m-d'));
+			array_push($AcceptedNextWeek,$AcceptedArrayDate);
+			array_push($CancelledNextWeek,$CancelledArrayDate);
+			array_push($RequestNextWeek,$RequestArrayDate);
 			$dateCounter = $dateCounter->modify('+1 day');
 		}
 		$todayAccepted = $this->db->query('	SELECT * FROM appointments where `date` = "'.date('Y-m-d').'" AND `status`= "accepted"');
@@ -163,8 +173,18 @@ class Appointment_model extends CI_Model {
 			return $query->row();
 		}
 		else{
-			return NULL;
+			return NULL; 
 		}
 	}
+
+	public function cancel($id){
+		$data=array(
+			"status" => "cancelled"
+		);
+		$this->db->where('appointmentID',$id);
+		$this->db->update('appointments',$data);
+	}
 }
+
+
 

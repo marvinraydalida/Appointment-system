@@ -18,13 +18,7 @@
 
     <div class="container mt-5">
         <div class="row">
-            <?php if($this->session->flashdata('successRequest')) : ?>
-                <div class="alert alert-success alert-dismissible fade show">
-                    <?= $this->session->flashdata('successRequest'); ?>
-                    <button type="button" class="btn-close close" data-bs-dismiss="alert"></button>
-                </div>
-                <?php $this->session->unset_userdata ('successRequest'); ?>
-            <?php endif; ?>
+
             <div class="col-md-5 offset-md-4 border p-4 shadow bg-light">
                 <div class="col-12">
                     <h3 class="fw-normal text-secondary fs-4 mb-4">Appointment form</h3>
@@ -39,8 +33,8 @@
                         </div>
                         <div class="col-md-6">
                             <select class="form-select" name="gender" required>
-                                <option selected value="1">Male</option>
-                                <option value="2">Female</option>   
+                                <option selected value="male">Male</option>
+                                <option value="female">Female</option>   
                             </select>
                         </div>
                         <div class="col-md-12">

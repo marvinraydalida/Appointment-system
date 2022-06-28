@@ -9,13 +9,12 @@ class User_Login extends CI_Model {
 
     public function login(){
 		$data = array(
-			'username' => $_POST['username']
-			// ,
+			'username' => $_POST['username'], // admin
 			// 'password' => $_POST['password']
 		);	
-		$this->db->select('*');
-		$this->db->from('user_details');
-		$this->db->where($data);
+		$this->db->select('*'); // select all data
+		$this->db->from('user_details'); // from table name
+		$this->db->where($data); // where check condition 
 		$query= $this->db->get();
 		if($query->num_rows()!=0){
 			// return $query->row();

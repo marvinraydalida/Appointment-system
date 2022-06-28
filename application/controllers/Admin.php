@@ -91,6 +91,7 @@ class Admin extends CI_Controller
         $message = $this->load->view('templates/email_templateAccepted', $data, TRUE);
         $this->email->subject('Email Test');
         $this->email->message($message);
+
         if ($this->email->send()) {
             redirect('Admin');
         } else {
@@ -112,7 +113,7 @@ class Admin extends CI_Controller
         $message = $this->load->view('templates/email_templateDeclined', $data, TRUE);
         $this->email->subject('Email Test');
         $this->email->message($message);
-
+       
         if ($this->email->send()) {
             redirect('Admin');
         } else {
@@ -134,7 +135,7 @@ class Admin extends CI_Controller
         $message = $this->load->view('templates/email_templateCancelled', $data, TRUE);
         $this->email->subject('Email Test');
         $this->email->message($message);
-
+    
         if ($this->email->send()) {
             redirect('Admin/Appointment?date=' . $_GET['date'] . '&status=' . $_GET['status']);
         } else {
@@ -157,7 +158,7 @@ class Admin extends CI_Controller
         $message = $this->load->view('templates/email_templateResched', $data, TRUE);
         $this->email->subject('Reschedule notice');
         $this->email->message($message);
-        $this->load->view('templates/email_templateResched', $data);
+       
         if ($this->email->send()) {
 
             if(isset($_GET['status']) && isset($_GET['date'])){
@@ -181,4 +182,6 @@ class Admin extends CI_Controller
        
         echo json_encode($this->Appointment_model->countNextWeekRecords());
     }
+
+    
 }

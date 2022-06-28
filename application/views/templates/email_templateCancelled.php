@@ -58,16 +58,11 @@
 		<tbody>
 			<tr>
 				<td>
-					<table align="center" border="0" cellpadding="0" cellspacing="0" class="row row-1"
-						role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
-						<tbody>
-							<tr>
-								<td>
-									<table align="center" border="0" cellpadding="0" cellspacing="0"
+				<table align="center" border="0" cellpadding="0" cellspacing="0"
 										class="row-content stack" role="presentation"
-										style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000000; width: 590px;"
+										style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000000; width: 590px; margin-top: 20px;"
 										width="590">
-										<tbody style="background-color: #9DD8EA;">
+										<tbody>
 											<tr>
 												<td class="column"
 													style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;"
@@ -80,21 +75,55 @@
 															<td
 																style="width:100%;padding-right:0px;padding-left:0px;padding-top:5px;padding-bottom:5px;">
 																<div align="center" style="line-height:10px"><img
-																		src="https://cdn.pixabay.com/photo/2018/03/22/05/52/dentist-3249382_1280.png"
+																		src="<?php echo base_url('assets/image/logo.jpg'); ?>"
 																		style="display: block; height: auto; border: 0; width: 148px; max-width: 100%;"
 																		width="148" /></div>
 															</td>
 														</tr>
 													</table>
 												</td>
+												<td class="column"
+													style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;"
+													width="75%">
+													<table border="0" cellpadding="0" cellspacing="0"
+														class="heading_block" role="presentation"
+														style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"
+														width="100%">
+														<tr>
+															<td style="padding-top:30px;text-align:center;width:100%;">
+																<h1
+																	style="margin: 0; color: #555555; direction: ltr; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; font-size: 27px; font-weight: bold; letter-spacing: normal; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0;">
+																	Cerillo House of Dental Medicine<br />
+																</h1>
+															</td>
+														</tr>
+													</table>
+													<table border="0" cellpadding="0" cellspacing="0" class="text_block"
+														role="presentation"
+														style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;"
+														width="100%">
+														<tr>
+															<td
+																style="padding-bottom:15px;padding-left:10px;padding-right:10px;padding-top:10px;">
+																<div style="font-family: sans-serif">
+																	<div
+																		style="font-size: 12px; mso-line-height-alt: 14.399999999999999px; color: #555555; line-height: 1.2; font-family: Arial, Helvetica Neue, Helvetica, sans-serif;">
+																		<p
+																			style="margin: 0; font-size: 15px; text-align: center;">
+																			2nd flr Don Francisco M. Tan Gana Bdg. 
+																			<br>National Hi-way, Balibago Sta. Rosa, Laguna
+																			<br> Clinic time: 9am-5pm
+																			<br>Contact Us: (+63) 915647621</p>
 
+																	</div>
+																</div>
+															</td>
+														</tr>
+													</table>
+												</td>
 											</tr>
 										</tbody>
 									</table>
-								</td>
-							</tr>
-						</tbody>
-					</table>
 					<table align="center" border="0" cellpadding="0" cellspacing="0" class="row row-2"
 						role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
 						<tbody>
@@ -182,47 +211,8 @@
 															</td>
 														</tr>
 													</table>
-													<table border="0" cellpadding="5" cellspacing="0" class="text_block"
-														role="presentation"
-														style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;"
-														width="100%">
-														<tr>
-															<td>
-																<div style="font-family: sans-serif">
-																	<div
-																		style="font-size: 14px; mso-line-height-alt: 16.8px; color: #555555; line-height: 1.2; font-family: Arial, Helvetica Neue, Helvetica, sans-serif;">
-																		<p
-																			style="margin: 0; font-size: 16px; text-align: center;">
-																			<b>Cerillo house of dental medicine</b><br>
-																			Address: Address Chuchu <br>
-																			Contact Number: 0915647621 <br>
-																			
-																	</div>
-																</div>
-															</td>
-														</tr>
-													</table>
-													<table border="0" cellpadding="10" cellspacing="0"
-														class="divider_block" role="presentation"
-														style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"
-														width="100%">
-														<tr>
-															<td>
-																<div align="center">
-																	<table border="0" cellpadding="0" cellspacing="0"
-																		role="presentation"
-																		style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"
-																		width="100%">
-																		<tr>
-																			<td class="divider_inner"
-																				style="font-size: 1px; line-height: 1px; border-top: 1px solid #BBBBBB;">
-																				<span> </span></td>
-																		</tr>
-																	</table>
-																</div>
-															</td>
-														</tr>
-													</table>
+												
+													
                                                     <table border="0" cellpadding="5" cellspacing="0" class="text_block"
 														role="presentation"
 														style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;"

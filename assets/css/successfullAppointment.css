@@ -1,0 +1,30 @@
+   body {
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: sans-serif;
+  }
+
+   .container{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    
+  }
+
+  
+  .sizing{
+    font-size: 100px;
+    color: rgb(44, 205, 44);
+    margin-bottom: 10px;
+  }
+
+  h2{
+    font-weight: bold;
+  }
+
+  .design{
+    padding: 10px;
+  }
+  
