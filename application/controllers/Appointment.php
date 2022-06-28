@@ -22,7 +22,7 @@ class Appointment extends CI_Controller
 
             $postdata = http_build_query(
                 array(
-                    'secret' => "0x94247ea2F22707663c228f7A81a4256065f04653",
+                    'secret' => $_ENV['CAPTCHA_SECRET'],
                     'response' => $_POST['h-captcha-response']
                 )
             );
@@ -56,7 +56,7 @@ class Appointment extends CI_Controller
 
             $postdata = http_build_query(
                 array(
-                    'secret' => "0x94247ea2F22707663c228f7A81a4256065f04653",
+                    'secret' => $_ENV['CAPTCHA_SECRET'],
                     'response' => $_POST['h-captcha-response']
                 )
             );
