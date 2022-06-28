@@ -113,5 +113,8 @@ function showModal(event) {
         details[3].textContent = tmpHiddens.children[6].value;
         details[4].textContent = tmpHiddens.children[7].value;
         details[5].textContent = tmpHiddens.children[8].value;
+        console.log(tmpHiddens.children);
+        document.querySelector(".ticket-number").textContent = "Ticket no.: " + tmpHiddens.children[11].value;
+        
     }
 }

@@ -6,7 +6,7 @@ $config = array(
     'smtp_host' => 'smtp.gmail.com',
     'smtp_port' => 587,
     'smtp_crypto' => 'tls',
-    'smtp_user' => 'williamcrshd02@gmail.com',
-    'smtp_pass' => 'ujrwkoefdxctengc',
+    'smtp_user' => $_ENV['SMTP_USER'],
+    'smtp_pass' => $_ENV['SMTP_PASS'],
     'newline' => "\r\n"
 );

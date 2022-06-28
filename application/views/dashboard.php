@@ -37,7 +37,7 @@
         <div id="appointment-details-modal">
             <button class="modal-close">X</button>
             <h1>Appointment Details</h1>
-            <p class="ticket-number">Ticket no.: 707-12-2022</p>
+            <p class="ticket-number"></p>
 
             <div class="badge-container">
                 <div class="badge">
@@ -124,6 +124,7 @@
                                 <input type="hidden" value="<?php echo $appointment->address ?>">
                                 <input type="hidden" value="<?php echo date("M d, Y", strtotime($appointment->date)) ?>">
                                 <input type="hidden" value="<?php echo date('h:i a', strtotime($appointment->time)) ?>">
+                                <input type="hidden" value="<?php echo $appointment->appointmentTicket ?>">
                             </td>
                         </tr>
                     <?php } ?>
