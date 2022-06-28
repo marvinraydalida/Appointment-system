@@ -137,31 +137,26 @@ class Appointment_model extends CI_Model {
 		$AcceptedNextWeek = array();
 		$CancelledNextWeek = array();
 		$RequestNextWeek = array();
-		
+		$WeeklyDay = array();
 		$DataToday = array();
 		$dateCounter= new DateTime('tomorrow');	
 		for($counter = 0; $counter < 7; $counter++){
-			$AcceptedArrayDate = array();
-			$CancelledArrayDate = array();
-			$RequestArrayDate = array();
 			$queryAccepted = $this->db->query('	SELECT * FROM appointments where `date` = "'.$dateCounter->format('Y-m-d').'" AND `status`= "accepted"');
 			$queryCancelled = $this->db->query('SELECT * FROM appointments where `date` = "'.$dateCounter->format('Y-m-d').'" AND `status`= "cancelled"');
 			$queryRequest = $this->db->query('	SELECT * FROM appointments where `date` = "'.$dateCounter->format('Y-m-d').'" AND `status`= "pending"');
 			$totalCountAccepted =  $queryAccepted->num_rows();
 			$totalCountCancelled =  $queryCancelled->num_rows();
 			$totalCountRequest =  $queryRequest->num_rows();
-			array_push($AcceptedArrayDate,$totalCountAccepted,$dateCounter->format('Y-m-d'));
-			array_push($RequestArrayDate,$totalCountRequest,$dateCounter->format('Y-m-d'));
-			array_push($CancelledArrayDate,$totalCountCancelled,$dateCounter->format('Y-m-d'));
-			array_push($AcceptedNextWeek,$AcceptedArrayDate);
-			array_push($CancelledNextWeek,$CancelledArrayDate);
-			array_push($RequestNextWeek,$RequestArrayDate);
+			array_push($AcceptedNextWeek,$totalCountAccepted);
+			array_push($CancelledNextWeek,$totalCountCancelled);
+			array_push($RequestNextWeek,$totalCountRequest);
+			array_push($WeeklyDay,$dateCounter->format('Y-m-d'));
 			$dateCounter = $dateCounter->modify('+1 day');
 		}
 		$todayAccepted = $this->db->query('	SELECT * FROM appointments where `date` = "'.date('Y-m-d').'" AND `status`= "accepted"');
 		$todayCancelled = $this->db->query('SELECT * FROM appointments where `date` = "'.date('Y-m-d').'" AND `status`= "cancelled"');
 		array_push($DataToday,$todayAccepted->num_rows(),$todayCancelled->num_rows());
-		array_push($NextWeekData,$DataToday,$AcceptedNextWeek,$CancelledNextWeek,$RequestNextWeek);
+		array_push($NextWeekData,$DataToday,$AcceptedNextWeek,$CancelledNextWeek,$RequestNextWeek,$WeeklyDay);
 		return $NextWeekData;
 	}
 
