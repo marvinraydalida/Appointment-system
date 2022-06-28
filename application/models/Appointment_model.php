@@ -33,7 +33,9 @@ class Appointment_model extends CI_Model {
 
     public function viewAppointments() #Read
 	{	
-		$query = $this->db->query('	SELECT * FROM appointments where `status`= "pending" ');
+		$date= new DateTime();	
+		$query = $this->db->query('	SELECT * FROM appointments where `status`= "pending" AND `date`<'.$date->format('Y-m-d'));
+		$queryb = $this->db->query('UPDATE appointments SET `status`= "cancelled" WHERE `date`>'.$date->format('Y-m-d'));
 		return $query->result();
 	}
 
@@ -150,7 +152,7 @@ class Appointment_model extends CI_Model {
 			array_push($AcceptedNextWeek,$totalCountAccepted);
 			array_push($CancelledNextWeek,$totalCountCancelled);
 			array_push($RequestNextWeek,$totalCountRequest);
-			array_push($WeeklyDay,$dateCounter->format('Y-m-d'));
+			array_push($WeeklyDay,$dateCounter->format('m/d/y'));
 			$dateCounter = $dateCounter->modify('+1 day');
 		}
 		$todayAccepted = $this->db->query('	SELECT * FROM appointments where `date` = "'.date('Y-m-d').'" AND `status`= "accepted"');
