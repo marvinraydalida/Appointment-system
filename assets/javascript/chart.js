@@ -1,14 +1,6 @@
 
 
 function createChart(accepted, cancelled, request, labels) {
-    const date = new Date();
-
-    
-
-    for (let i = 1; i <= 7; i++) {
-        labels.push(`${date.getMonth() + 1}/${date.getDate() + i}/` + `${date.getFullYear()}`.slice(-2));
-    }
-
 
     const backgroundColor = [
         'rgba(75, 192, 192, 0.2)',
