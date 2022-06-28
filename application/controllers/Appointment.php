@@ -89,9 +89,11 @@ class Appointment extends CI_Controller
 
     public function cancel($id){
         $this->Appointment_model->cancelAppointment($id);
+        $this->load->view('cancelAppointment');
     }
    
     public function acceptReschedule($id){
-        $this->Appointment_model->acceptRescheduleAppointment($id);
+        $this->Appointment_model->acceptedRescheduleAppointment($id);
+        $this->load->view('reschedAppointment');
     }
 }

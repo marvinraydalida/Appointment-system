@@ -18,6 +18,7 @@
 
     <?php if (strcasecmp($_SERVER['REQUEST_URI'], "/Appointment-system/Admin") == 0) : ?>
         <link href=<?php echo site_url("assets/css/dashboard.css") ?> rel="stylesheet">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
     <?php elseif (strcasecmp($_SERVER['REQUEST_URI'], "/Appointment-system/Admin/Account") == 0) : ?>
         <link href=<?php echo site_url("assets/css/adminAccount.css") ?> rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
