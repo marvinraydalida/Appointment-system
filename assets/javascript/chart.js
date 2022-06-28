@@ -74,17 +74,19 @@ function createChart(accepted, cancelled, request) {
     );
 }
 
-function createPieChart(accepted, cancelled) {
+function createPieChart(accepted, cancelled, empty = 0) {
+    if(accepted === 0 && cancelled === 0) empty = 1;
     const data = {
         labels: [
             'Accepted',
             'Cancelled',
         ],
         datasets: [{
-            data: [accepted, cancelled],
+            data: [accepted, cancelled, empty],
             backgroundColor: [
                 'rgba(75, 192, 192, 0.2)',
-                'rgb(255, 99, 132)'
+                'rgb(255, 99, 132)',
+                'rgb(245, 245, 245)'
             ],
             hoverOffset: 4
         }]
@@ -104,9 +106,9 @@ function createPieChart(accepted, cancelled) {
                 }
             }
         },
-      }
+    }
 
-      const myChart = new Chart(
+    const myChart = new Chart(
         document.getElementById('doughnutChart'),
         config
     );
