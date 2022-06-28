@@ -1,9 +1,9 @@
 
 
-function createChart(accepted, cancelled, request) {
+function createChart(accepted, cancelled, request, labels) {
     const date = new Date();
 
-    const labels = [];
+    
 
     for (let i = 1; i <= 7; i++) {
         labels.push(`${date.getMonth() + 1}/${date.getDate() + i}/` + `${date.getFullYear()}`.slice(-2));
@@ -120,8 +120,9 @@ fetch('http://test.mydomain.com/Appointment-system/admin/getNextWeekData')
         const accepted = json[1];
         const cancelled = json[2];
         const request = json[3];
+        const labels = json[4];
 
-        createChart(accepted, cancelled, request);
+        createChart(accepted, cancelled, request, labels);
         createPieChart(json[0][0], json[0][1]);
 
         return json;
