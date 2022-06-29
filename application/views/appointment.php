@@ -10,7 +10,7 @@
     <link href=<?php echo base_url("assets/css/stylesLogin.css") ?> rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://js.hcaptcha.com/1/api.js?hl=en" async defer></script>
 </head>
 
@@ -48,7 +48,7 @@
                         </div>
 
                         <div class="col-md-6">
-                            <input id="date_picker" type="date" name="date" required class="form-control">
+                            <input id="date_picker" type="date" name="date"  min="<?php echo date('Y-m-d', strtotime( date('Y-m-d')." +1 days"));?>"  required class="form-control">
                         </div>
                         <div class="col-md-6">
                             <input  type="time" name="time" min="08:00" max="17:00" required class="form-control">
@@ -78,15 +78,7 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script language="javascript">
-        var today = new Date();
-        var dd = String(today.getDate()+1).padStart(2, '0');
-        var mm = String(today.getMonth() + 1).padStart(2, '0');
-        var yyyy = today.getFullYear();
-
-        today = yyyy + '-' + mm + '-' + dd;
-        $('#date_picker').attr('min',today);
-    </script>
+  
 </body>
 
 </html>

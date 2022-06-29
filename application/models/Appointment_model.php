@@ -35,7 +35,7 @@ class Appointment_model extends CI_Model {
 	{	
 		$date_now = date("Y-m-d");
 		$query = $this->db->query('	SELECT * FROM appointments where `status`= "pending" AND `date`>CURDATE()');
-		$queryb = $this->db->query('UPDATE appointments SET `status`= "cancelled" WHERE `date`< CURDATE()');
+		$queryb = $this->db->query('UPDATE appointments SET `status`= "cancelled" WHERE `date`<= CURDATE()');
 		return $query->result();
 	}
 

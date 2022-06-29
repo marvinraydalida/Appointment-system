@@ -20,7 +20,7 @@
                 <input type="date" disabled>
 
                 <label>To</label>
-                <input type="date" id="date_picker" name="date" required>
+                <input type="date" min="<?php echo date('Y-m-d', strtotime( date('Y-m-d')." +1 days"));?>" name="date" required>
 
                 <h2>Time</h2>
                 <label>From</label>
@@ -138,16 +138,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
     <script src="<?php echo base_url("assets/javascript/modal.js") ?>"></script>
-    <script src="<?php echo base_url("assets/javascript/chart.js") ?>"></script>
-    <script language="javascript">
-        var today = new Date();
-        var dd = String(today.getDate()+1).padStart(2, '0');
-        var mm = String(today.getMonth() + 1).padStart(2, '0');
-        var yyyy = today.getFullYear();
-
-        today = yyyy + '-' + mm + '-' + dd;
-        $('#date_picker').attr('min',today);
-    </script>                   
+    <script src="<?php echo base_url("assets/javascript/chart.js") ?>"></script>                 
     </body>
 
     </html>
