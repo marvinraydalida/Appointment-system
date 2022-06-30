@@ -23,7 +23,7 @@
         <link href=<?php echo site_url("assets/css/adminAccount.css") ?> rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <?php elseif (strcasecmp($_SERVER['REQUEST_URI'], "/Appointment-system/Admin/Logs") == 0) : ?>
-        <link href=<?php echo site_url("assets/css/adminAccount.css") ?> rel="stylesheet">
+        <link href=<?php echo site_url("assets/css/adminLogs.css") ?> rel="stylesheet">
         
     <?php elseif (strcasecmp($_SERVER['REQUEST_URI'],  $request_uri[0]) == 0) : ?>
         <link href=<?php echo site_url("assets/css/adminAppointment.css") ?> rel="stylesheet">

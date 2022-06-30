@@ -31,6 +31,11 @@ class Appointment_model extends CI_Model {
 
     }
 
+	public function viewAllLogs(){
+		$query = $this->db->query('	SELECT * FROM logs ORDER BY happenedAt ASC');
+		return $query->result();
+	}
+
     public function viewAppointments() #Read
 	{	
 		$date_now = date("Y-m-d");
@@ -57,6 +62,12 @@ class Appointment_model extends CI_Model {
 		);
 		$this->db->where('appointmentID',$id);
 		$this->db->update('appointments',$data);
+		$data = array(
+            'userID' => $this->session->userdata('auth_user')['userID'],
+			'action' => 'Accepted an Appointment with ID '.$id,
+			'happenedAt' => date("Y-m-d h:i:s")
+        );
+        $this->db->insert('logs',$data);
 	}
 
     public function declineAppointment($id){ #Delete/Status
@@ -65,6 +76,12 @@ class Appointment_model extends CI_Model {
 		);
 		$this->db->where('appointmentID',$id);
 		$this->db->update('appointments',$data);
+		$data = array(
+            'userID' => $this->session->userdata('auth_user')['userID'],
+			'action' => 'Declined an Appointment with ID'.$id,
+			'happenedAt' => date("Y-m-d h:i:s")
+        );
+        $this->db->insert('logs',$data);
 	}
 
 	public function cancelAppointment($id){ #Delete/Status
@@ -73,6 +90,12 @@ class Appointment_model extends CI_Model {
 		);
 		$this->db->where('appointmentID',$id);
 		$this->db->update('appointments',$data);
+		$data = array(
+            'userID' => $this->session->userdata('auth_user')['userID'],
+			'action' => 'Cancelled an Appointment with ID'.$id,
+			'happenedAt' => date("Y-m-d h:i:s")
+        );
+        $this->db->insert('logs',$data);
 	}
 
 	public function countPending(){ 
@@ -112,6 +135,12 @@ class Appointment_model extends CI_Model {
 		);
 		$this->db->where('appointmentID',$_POST['appointmentID']);
 		$this->db->update('appointments',$data);
+		$data = array(
+            'userID' => $this->session->userdata('auth_user')['userID'],
+			'action' => 'Reschduled an Appointment with ID'.$_POST['appointmentID'],
+			'happenedAt' => date("Y-m-d h:i:s")
+        );
+        $this->db->insert('logs',$data);
 	}
 
 	public function acceptedRescheduleAppointment($id){

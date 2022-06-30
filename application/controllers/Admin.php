@@ -37,8 +37,9 @@ class Admin extends CI_Controller
     }
 
     public function logs(){
+        $data['logs'] = $this->Appointment_model->viewAllLogs();
         $this->load->view('templates/sidebar');
-        $this->load->view('adminLogs');
+        $this->load->view('adminLogs',$data);
     }
 
     //ACCOUNT FUNCTIONS
