@@ -6,7 +6,7 @@ const rescheduleAppointmentBtn = document.querySelectorAll('.reschedule-appointm
 const appointmentRows = document.querySelectorAll('.row-data');
 const confirmDeclineBtn = document.getElementById('decline-appointment-btn');
 const dateInputs = document.querySelectorAll('#rescehdule-modal input[type=\"date\"]');
-const timeInputs = document.querySelectorAll('#rescehdule-modal input[type=\"time\"]');
+const timeInputs = document.querySelectorAll('#rescehdule-modal input[type=\"text\"]');
 const hiddenID = document.querySelector('#rescehdule-modal input[type=\"hidden\"]');
 const details = document.querySelectorAll('#appointment-details-modal h2');
 const appointmentCards = document.querySelectorAll('.appointment-card');
@@ -105,7 +105,7 @@ function showModal(event) {
 
         const badges = document.querySelectorAll('.badge');
         badges[0].children[1].textContent = tmpHiddens.children[9].value;
-        badges[1].children[1].textContent = tmpHiddens.children[10].value;
+        badges[1].children[1].textContent = tmpHiddens.children[1].value;
 
         details[0].textContent = tmpHiddens.children[3].value;
         details[1].textContent = tmpHiddens.children[4].value;
@@ -113,8 +113,6 @@ function showModal(event) {
         details[3].textContent = tmpHiddens.children[6].value;
         details[4].textContent = tmpHiddens.children[7].value;
         details[5].textContent = tmpHiddens.children[8].value;
-        console.log(tmpHiddens.children);
-        document.querySelector(".ticket-number").textContent = "Ticket no.: " + tmpHiddens.children[11].value;
-        
+        document.querySelector(".ticket-number").textContent = "Ticket no.: " + tmpHiddens.children[10].value;
     }
 }

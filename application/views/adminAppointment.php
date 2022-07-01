@@ -20,11 +20,11 @@
             <input type="date" disabled>
 
             <label>To</label>
-            <input type="date" name="date" required>
+            <input type="date" min="<?php echo date('Y-m-d', strtotime( date('Y-m-d')." +1 days"));?>" name="date" required>
 
             <h2>Time</h2>
             <label>From</label>
-            <input type="time" disabled>
+            <input type="text" disabled>
 
             <label>To</label>
             <input type="time" name="time" min="08:00" max="17:00" required>
@@ -189,7 +189,7 @@
                                 </div>
                                 <div id="hidden-container">
                                     <input type="hidden" value="<?php echo $appointment->date ?>">
-                                    <input type="hidden" value="<?php echo date('h:i', strtotime($appointment->time)) ?>">
+                                    <input type="hidden" value="<?php echo date('h:i A', strtotime($appointment->time)) ?>">
                                     <input type="hidden" value="<?php echo $appointment->appointmentID ?>">
 
                                     <input type="hidden" value="<?php echo $appointment->name ?>">
@@ -199,7 +199,7 @@
                                     <input type="hidden" value="<?php echo $appointment->gender ?>">
                                     <input type="hidden" value="<?php echo $appointment->address ?>">
                                     <input type="hidden" value="<?php echo date("M d, Y", strtotime($appointment->date)) ?>">
-                                    <input type="hidden" value="<?php echo date('h:i a', strtotime($appointment->time)) ?>">
+                                    
                                     <input type="hidden" value="<?php echo $appointment->appointmentTicket ?>">
                                 </div>
                             </div>
@@ -230,7 +230,7 @@
 
                                     <div id="hidden-container">
                                         <input type="hidden" value="<?php echo $appointment->date ?>">
-                                        <input type="hidden" value="<?php echo date('h:i', strtotime($appointment->time)) ?>">
+                                        <input type="hidden" value="<?php echo date('h:i A', strtotime($appointment->time)) ?>">
                                         <input type="hidden" value="<?php echo $appointment->appointmentID ?>">
 
                                         <input type="hidden" value="<?php echo $appointment->name ?>">
@@ -240,7 +240,7 @@
                                         <input type="hidden" value="<?php echo $appointment->gender ?>">
                                         <input type="hidden" value="<?php echo $appointment->address ?>">
                                         <input type="hidden" value="<?php echo date("M d, Y", strtotime($appointment->date)) ?>">
-                                        <input type="hidden" value="<?php echo date('h:i a', strtotime($appointment->time)) ?>">
+                                        
                                         <input type="hidden" value="<?php echo $appointment->appointmentTicket ?>">
                                     </div>
                                 </div>
@@ -271,7 +271,7 @@
 
                                     <div id="hidden-container">
                                         <input type="hidden" value="<?php echo $appointment->date ?>">
-                                        <input type="hidden" value="<?php echo date('h:i', strtotime($appointment->time)) ?>">
+                                        <input type="hidden" value="<?php echo date('h:i A', strtotime($appointment->time)) ?>">
                                         <input type="hidden" value="<?php echo $appointment->appointmentID ?>">
 
                                         <input type="hidden" value="<?php echo $appointment->name ?>">
@@ -281,7 +281,7 @@
                                         <input type="hidden" value="<?php echo $appointment->gender ?>">
                                         <input type="hidden" value="<?php echo $appointment->address ?>">
                                         <input type="hidden" value="<?php echo date("M d, Y", strtotime($appointment->date)) ?>">
-                                        <input type="hidden" value="<?php echo date('h:i a', strtotime($appointment->time)) ?>">
+                                        
                                         <input type="hidden" value="<?php echo $appointment->appointmentTicket ?>">
                                     </div>
                                 </div>
@@ -312,7 +312,7 @@
 
                                     <div id="hidden-container">
                                         <input type="hidden" value="<?php echo $appointment->date ?>">
-                                        <input type="hidden" value="<?php echo date('h:i', strtotime($appointment->time)) ?>">
+                                        <input type="hidden" value="<?php echo date('h:i A', strtotime($appointment->time)) ?>">
                                         <input type="hidden" value="<?php echo $appointment->appointmentID ?>">
 
                                         <input type="hidden" value="<?php echo $appointment->name ?>">
@@ -322,7 +322,7 @@
                                         <input type="hidden" value="<?php echo $appointment->gender ?>">
                                         <input type="hidden" value="<?php echo $appointment->address ?>">
                                         <input type="hidden" value="<?php echo date("M d, Y", strtotime($appointment->date)) ?>">
-                                        <input type="hidden" value="<?php echo date('h:i a', strtotime($appointment->time)) ?>">
+                                        
                                         <input type="hidden" value="<?php echo $appointment->appointmentTicket ?>">
                                     </div>
                                 </div>
@@ -353,7 +353,7 @@
 
                                     <div id="hidden-container">
                                         <input type="hidden" value="<?php echo $appointment->date ?>">
-                                        <input type="hidden" value="<?php echo date('h:i', strtotime($appointment->time)) ?>">
+                                        <input type="hidden" value="<?php echo date('h:i A', strtotime($appointment->time)) ?>">
                                         <input type="hidden" value="<?php echo $appointment->appointmentID ?>">
 
                                         <input type="hidden" value="<?php echo $appointment->name ?>">
@@ -363,7 +363,7 @@
                                         <input type="hidden" value="<?php echo $appointment->gender ?>">
                                         <input type="hidden" value="<?php echo $appointment->address ?>">
                                         <input type="hidden" value="<?php echo date("M d, Y", strtotime($appointment->date)) ?>">
-                                        <input type="hidden" value="<?php echo date('h:i a', strtotime($appointment->time)) ?>">
+                                        
                                         <input type="hidden" value="<?php echo $appointment->appointmentTicket ?>">
                                     </div>
                                 </div>
@@ -393,7 +393,7 @@
 
                                     <div id="hidden-container">
                                         <input type="hidden" value="<?php echo $appointment->date ?>">
-                                        <input type="hidden" value="<?php echo date('h:i', strtotime($appointment->time)) ?>">
+                                        <input type="hidden" value="<?php echo date('h:i A', strtotime($appointment->time)) ?>">
                                         <input type="hidden" value="<?php echo $appointment->appointmentID ?>">
 
                                         <input type="hidden" value="<?php echo $appointment->name ?>">
@@ -403,7 +403,7 @@
                                         <input type="hidden" value="<?php echo $appointment->gender ?>">
                                         <input type="hidden" value="<?php echo $appointment->address ?>">
                                         <input type="hidden" value="<?php echo date("M d, Y", strtotime($appointment->date)) ?>">
-                                        <input type="hidden" value="<?php echo date('h:i a', strtotime($appointment->time)) ?>">
+                                        
                                         <input type="hidden" value="<?php echo $appointment->appointmentTicket ?>">
                                     </div>
                                 </div>
@@ -433,7 +433,7 @@
 
                                     <div id="hidden-container">
                                         <input type="hidden" value="<?php echo $appointment->date ?>">
-                                        <input type="hidden" value="<?php echo date('h:i', strtotime($appointment->time)) ?>">
+                                        <input type="hidden" value="<?php echo date('h:i A', strtotime($appointment->time)) ?>">
                                         <input type="hidden" value="<?php echo $appointment->appointmentID ?>">
 
                                         <input type="hidden" value="<?php echo $appointment->name ?>">
@@ -443,7 +443,7 @@
                                         <input type="hidden" value="<?php echo $appointment->gender ?>">
                                         <input type="hidden" value="<?php echo $appointment->address ?>">
                                         <input type="hidden" value="<?php echo date("M d, Y", strtotime($appointment->date)) ?>">
-                                        <input type="hidden" value="<?php echo date('h:i a', strtotime($appointment->time)) ?>">
+                                        
                                         <input type="hidden" value="<?php echo $appointment->appointmentTicket ?>">
                                     </div>
                                 </div>
@@ -473,7 +473,7 @@
 
                                     <div id="hidden-container">
                                         <input type="hidden" value="<?php echo $appointment->date ?>">
-                                        <input type="hidden" value="<?php echo date('h:i', strtotime($appointment->time)) ?>">
+                                        <input type="hidden" value="<?php echo date('h:i A', strtotime($appointment->time)) ?>">
                                         <input type="hidden" value="<?php echo $appointment->appointmentID ?>">
 
                                         <input type="hidden" value="<?php echo $appointment->name ?>">
@@ -483,7 +483,7 @@
                                         <input type="hidden" value="<?php echo $appointment->gender ?>">
                                         <input type="hidden" value="<?php echo $appointment->address ?>">
                                         <input type="hidden" value="<?php echo date("M d, Y", strtotime($appointment->date)) ?>">
-                                        <input type="hidden" value="<?php echo date('h:i a', strtotime($appointment->time)) ?>">
+                                        
                                         <input type="hidden" value="<?php echo $appointment->appointmentTicket ?>">
                                     </div>
                                 </div>
@@ -514,7 +514,7 @@
 
                                     <div id="hidden-container">
                                         <input type="hidden" value="<?php echo $appointment->date ?>">
-                                        <input type="hidden" value="<?php echo date('h:i', strtotime($appointment->time)) ?>">
+                                        <input type="hidden" value="<?php echo date('h:i A', strtotime($appointment->time)) ?>">
                                         <input type="hidden" value="<?php echo $appointment->appointmentID ?>">
 
                                         <input type="hidden" value="<?php echo $appointment->name ?>">
@@ -524,7 +524,7 @@
                                         <input type="hidden" value="<?php echo $appointment->gender ?>">
                                         <input type="hidden" value="<?php echo $appointment->address ?>">
                                         <input type="hidden" value="<?php echo date("M d, Y", strtotime($appointment->date)) ?>">
-                                        <input type="hidden" value="<?php echo date('h:i a', strtotime($appointment->time)) ?>">
+                                        
                                         <input type="hidden" value="<?php echo $appointment->appointmentTicket ?>">
                                     </div>
                                 </div>

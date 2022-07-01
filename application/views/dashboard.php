@@ -24,7 +24,7 @@
 
                 <h2>Time</h2>
                 <label>From</label>
-                <input type="time" disabled>
+                <input type="text" disabled>
 
                 <label>To</label>
                 <input type="time" name="time" min="08:00" max="17:00" required>
@@ -113,7 +113,7 @@
                             </td>
                             <td id="hidden-container">
                                 <input type="hidden" value="<?php echo $appointment->date ?>">
-                                <input type="hidden" value="<?php echo date('h:i', strtotime($appointment->time)) ?>">
+                                <input type="hidden" value="<?php echo date('h:i A', strtotime($appointment->time)) ?>">
                                 <input type="hidden" value="<?php echo $appointment->appointmentID ?>">
 
                                 <input type="hidden" value="<?php echo $appointment->name ?>">
@@ -123,7 +123,7 @@
                                 <input type="hidden" value="<?php echo $appointment->gender ?>">
                                 <input type="hidden" value="<?php echo $appointment->address ?>">
                                 <input type="hidden" value="<?php echo date("M d, Y", strtotime($appointment->date)) ?>">
-                                <input type="hidden" value="<?php echo date('h:i a', strtotime($appointment->time)) ?>">
+                                
                                 <input type="hidden" value="<?php echo $appointment->appointmentTicket ?>">
                             </td>
                         </tr>
