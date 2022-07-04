@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
-$hook['pre_system'] = function () {
-    $dotenv = new Symfony\Component\Dotenv\Dotenv();
-    $dotenv->load(__DIR__.'/../../.env');
-};
+// $hook['pre_system'] = function () {
+//     $dotenv = new Symfony\Component\Dotenv\Dotenv();
+//     $dotenv->load(__DIR__.'/../../.env');
+// };
