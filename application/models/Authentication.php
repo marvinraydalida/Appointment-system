@@ -9,4 +9,5 @@ class Authentication extends CI_Model {
 			redirect('Login');
 		}
 	}
+
 }

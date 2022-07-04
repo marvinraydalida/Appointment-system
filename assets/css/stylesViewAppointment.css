@@ -1,40 +1,68 @@
 body {
     align-items: center;
-    background-color: #f6f4f2;
-    display: flex;
     justify-content: center;
     height: 100vh;
     text-align: center;
+   
+  }
+
+  .logo{
+    width: auto;
+    height: 120px;
+  }
+  
+  .blur{
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0);
+    height: 100%;
+  }
+
+  .imagebg{
+    background-image: url("../image/clinicbackground.jpg");
+    
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .container{
+    
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
   }
   
   .form {
-    background-color: #d1d1d1;
-    border-radius: 20px;
     box-sizing: border-box;
-    height: 600px;
     padding: 20px;
-    width: 450px;
   }
+
   
+  .subtitle{
+    margin-top: 10px;
+    font-family: sans-serif;
+    font-size: 15px;
+  }
+
   .title {
     text-align: center;
     color: #000;
     font-family: sans-serif;
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 600;
-    
   }
   
   .input-container {
+    
     height: 50px;
     position: relative;
     width: 100%;
+  
   }
   
-  .ic1 {
-    margin-top: 40px;
-  }
-  
+
   .ic2 {
     margin-top: 20px;
   }
@@ -54,8 +82,8 @@ body {
     
   }
   
-  .cut {
-    background-color:  #d1d1d1;
+  .cutTicket{
+    background-color: white;
     border-radius: 10px;
     height: 20px;
     left: 20px;
@@ -63,19 +91,34 @@ body {
     top: -20px;
     transform: translateY(0);
     transition: transform 200ms;
-    width: 135px;
-    
+    width: 150px;
+  }
+
+  .cutEmail{
+    background-color: white;
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    top: -20px;
+    transform: translateY(0);
+    transition: transform 200ms;
+    width: 70px;
   }
   
   .icon{
       margin: 0px 4px;
   }
   
-  .input:focus ~ .cut,
-  .input:not(:placeholder-shown) ~ .cut {
+  .input:focus ~ .cutTicket,
+  .input:not(:placeholder-shown) ~ .cutTicket {
     transform: translateY(8px);
   }
   
+  .input:focus ~ .cutEmail,
+  .input:not(:placeholder-shown) ~ .cutEmail {
+    transform: translateY(8px);
+  }
+
   .placeholder {
     color: #65657b;
     font-family: sans-serif;
@@ -94,7 +137,7 @@ body {
   }
   
   .input:not(:placeholder-shown) ~ .placeholder {
-    color: #808097;
+   
   }
   
   .input:focus ~ .placeholder {
@@ -103,7 +146,7 @@ body {
   
   .submit {
     
-    background-color: #000;
+   
     border-radius: 12px;
     border: 0;
     box-sizing: border-box;
@@ -111,12 +154,14 @@ body {
     cursor: pointer;
     font-size: 18px;
     height: 50px;
-    margin-top: 40px;
+    margin-top: 50px;
     outline: 0;
     text-align: center;
-    width: 60%;
+    width: 45% ;
 
   }
+   
+
   
   .submit:active {
     background-color: green;

@@ -8,7 +8,7 @@
 	<title>Login Page</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	<link href=<?php echo base_url("assets/css/stylesLogin.css")?> rel="stylesheet">
+	<link href=<?php echo site_url("assets/css/stylesLogin.css")?> rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 
@@ -20,6 +20,12 @@
 				<button type="button" class="btn-close close" data-bs-dismiss="alert"></button>
 			</div>
 			<?php $this->session->unset_userdata ('loginerror'); ?>
+		<?php elseif($this->session->flashdata('login')) : ?>
+			<div class="alert alert-danger alert-dismissible fade show">
+				<?= $this->session->flashdata('login'); ?>
+				<button type="button" class="btn-close close" data-bs-dismiss="alert"></button>
+			</div>
+			<?php $this->session->unset_userdata ('login'); ?>
 		<?php endif; ?>
 		
 		<div class="form">

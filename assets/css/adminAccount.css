@@ -1,0 +1,360 @@
+#accounts {
+    width: 80vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0;
+}
+
+#accounts-container {
+    width: 90%;
+    height: 70%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: -1px 3px 13px -3px rgba(0, 0, 0, 0.06);
+    -webkit-box-shadow: -1px 3px 13px -3px rgba(0, 0, 0, 0.06);
+    -moz-box-shadow: -1px 3px 13px -3px rgba(0, 0, 0, 0.06);
+    margin: 0px auto;
+    font-family: 'Nunito', sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#request-container h1 {
+    margin-top: 0px;
+    color: #4F5355;
+    font-size: 1.2rem;
+}
+
+#table-container {
+
+    overflow-y: scroll;
+}
+
+.button-container{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 30px;
+}
+
+.addAdminBtn{
+    border: none;
+    padding: 13px;
+    border-radius: 3px;
+    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+    min-width: 100px;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+    color: #377099;
+    background-color: #bfe4ff;
+}
+
+.addAdminBtn:hover{
+    background-color: #99d5ff;
+    transform: scale(1.1);
+}
+
+.addAdminBtn:active{
+    background-color: #84b4d6;
+}
+
+/* width */
+#table-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Handle */
+#table-container::-webkit-scrollbar-thumb {
+    background: rgb(206, 206, 206);
+    border-radius: 50px;
+}
+
+/* Handle on hover */
+#table-container::-webkit-scrollbar-thumb:hover {
+    background: rgb(146, 146, 146);
+}
+
+table {
+    text-align: center;
+    /* border: 1px solid black; */
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    
+    padding: 10px 5px;
+    color: #576461;
+}
+
+
+td {
+    padding: 15px 5px;
+    color: #383C3F;
+}
+
+td>button {
+    border: none;
+    padding: 13px;
+    border-radius: 3px;
+    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+    min-width: 100px;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+}
+
+td>button:nth-child(1) {
+    color: #377099;
+    background-color: #bfe4ff;
+}
+
+td>button:nth-child(1):disabled {
+    color:#181f24 ;
+    background-color: #9eaeb9;
+    cursor: default;
+}
+
+
+td>button:nth-child(1):disabled:hover{
+    color:#181f24 ;
+    background-color: #9eaeb9;
+    transform: scale(1);
+}
+
+.deactivate-btn {
+    color: #A95069;
+    background-color: #ffb7c1;
+}
+
+.deactivate-btn:hover {
+    background-color: #ff9fac;
+}
+
+.deactivate-btn:active {
+    background-color: #d38590;
+}
+
+.deactivate-btn:disabled {
+    color:#181f24 ;
+    background-color: #9eaeb9;
+    cursor: default;
+}
+
+.deactivate-btn:disabled:hover {
+    color:#181f24 ;
+    background-color: #9eaeb9;
+    transform: scale(1);
+}
+
+
+.activate-btn {
+    color: #2E8469;
+    background-color: #cbffdf;
+}
+
+.activate-btn:hover{
+    background-color: #95f0b6;
+}
+
+.activate-btn:active {
+    background-color: #87d3a4;
+   
+}
+
+
+td>button:hover {
+    transform: scale(1.1);
+}
+
+td>button:nth-child(1):hover {
+    background-color: #99d5ff;
+}
+
+
+td>button:nth-child(1):active {
+    background-color: #84b4d6;
+}
+
+
+
+
+tr:nth-child(1) {
+    border-top: 1px solid #F4F5F8;
+    border-bottom: 1px solid #F4F5F8;
+}
+
+.row-data {
+    transition: background 500ms ease;
+}
+
+.row-data:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.row-data:hover {
+    background-color: #e5eff1;
+}
+
+#modal-container{
+    position: absolute;
+    display: none;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.582);
+    z-index: 1;
+}
+
+#addAccount-modal{
+    display: none;
+    flex-direction: column;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    position: relative;
+    padding: 30px 20px 20px 20px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 10px;
+    font-family: 'Nunito', sans-serif;
+    animation: slideDown 300ms ease-in-out;
+}
+
+#editAccount-modal{
+    display: none;
+    flex-direction: column;
+    width: 500px;
+    height: 700px;
+    margin: auto;
+    position: relative;
+    padding: 30px 20px 20px 20px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 10px;
+    font-family: 'Nunito', sans-serif;
+    animation: slideDown 300ms ease-in-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-30px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+  }
+
+  .modal-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    color: red;
+    background-color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+    cursor: pointer;
+}
+
+
+#addAccount-modal h1{
+    margin: 0;
+}
+
+#addAccount-modal h2{
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+#addAccount-modal form{
+    display: flex;
+    flex-direction: column;
+}
+
+#addAccount-modal label{
+    margin-bottom: 10px;
+    font-family: 'Nunito', sans-serif;
+}
+
+#addAccount-modal input{
+    padding: 5px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+#addAccount-modal input[type = "submit"]{
+    border: none;
+    height: 50px;
+    margin-top: 20px;
+    color: #2E8469;
+    background-color: #cbffdf;
+    transition: all 250ms ease-in-out;
+    cursor: pointer;
+}
+
+#addAccount-modal input[type = "submit"]:hover {
+    transform: scale(1.02);
+    background-color: #95f0b6;
+}
+
+#addAccount-modal input[type = "submit"]:active {
+    background-color: #87d3a4;
+}
+
+#editAccount-modal h1{
+    margin: 0;
+}
+
+#editAccount-modal h2{
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+#editAccount-modal form{
+    display: flex;
+    flex-direction: column;
+}
+
+#editAccount-modal label{
+    margin-bottom: 10px;
+    font-family: 'Nunito', sans-serif;
+}
+
+#editAccount-modal input{
+    padding: 5px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+#editAccount-modal input[type = "submit"]{
+    border: none;
+    height: 50px;
+    margin-top: 20px;
+    color: #2E8469;
+    background-color: #cbffdf;
+    transition: all 250ms ease-in-out;
+    cursor: pointer;
+}
+
+#editAccount-modal input[type = "submit"]:hover {
+    transform: scale(1.02);
+    background-color: #95f0b6;
+}
+
+#editAccount-modal input[type = "submit"]:active {
+    background-color: #87d3a4;
+}
