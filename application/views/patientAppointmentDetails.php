@@ -111,7 +111,7 @@
                 <div class="row">
                     <?php if($status == "reschedule pending") : ?>
                         <span class="col-sm-1"> </span>
-                        <button onclick="location.href='<?php echo base_url('Appointment/cancel');?>/<?php echo $appointmentID ?>'" class="btn btn-danger col-sm-4">Cancel Request</button>
+                        <button id="cancel-request-btn" class="cancel-request-btn btn btn-danger col-sm-4">Cancel Request</button>
                         <span class="col-sm-2"> </span>
                         <button type="submit" onclick="location.href='<?php echo base_url('Appointment/acceptReschedule');?>/<?php echo $appointmentID ?>'" class="btn btn-success col-sm-4 ">Accept Reschedule</button>
                         <span class="col-sm-1"> </span>

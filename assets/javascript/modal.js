@@ -7,6 +7,7 @@ const appointmentRows = document.querySelectorAll('.row-data');
 const confirmDeclineBtn = document.getElementById('decline-appointment-btn');
 const dateInputs = document.querySelectorAll('#rescehdule-modal input[type=\"date\"]');
 const timeInputs = document.querySelectorAll('#rescehdule-modal input[type=\"text\"]');
+const time = document.querySelector('#rescehdule-modal input[type=\"time\"]');
 const hiddenID = document.querySelector('#rescehdule-modal input[type=\"hidden\"]');
 const details = document.querySelectorAll('#appointment-details-modal h2');
 const appointmentCards = document.querySelectorAll('.appointment-card');
@@ -76,9 +77,12 @@ function showModal(event) {
     else if (event.target.className === 'reschedule-request-btn') {
         document.getElementById('rescehdule-modal').style.display = "flex";
         const tmpHiddens = event.target.closest('tr').children[6];
+        
 
         dateInputs[0].value = tmpHiddens.children[0].value;
+        dateInputs[1].value = "";
         timeInputs[0].value = tmpHiddens.children[1].value;
+        time.value = "";
         hiddenID.value = tmpHiddens.children[2].value;
     }
     else if (event.target.className === 'reschedule-appointment-btn') {
@@ -86,7 +90,9 @@ function showModal(event) {
         const tmpHiddens = event.target.parentNode.nextElementSibling;
 
         dateInputs[0].value = tmpHiddens.children[0].value;
+        dateInputs[1].value = "";
         timeInputs[0].value = tmpHiddens.children[1].value;
+        time.value = "";
         hiddenID.value = tmpHiddens.children[2].value;
     }
     else if (event.target.parentNode.className === 'appointment-card' || event.target.tagName === "TD" || event.target.tagName === "H1") {
