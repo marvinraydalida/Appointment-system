@@ -108,22 +108,22 @@
                 </div>
                             
                 <br>
-                <div class="row">
+                <div class="row d-flex justify-content-around">
                     <?php if($status == "reschedule pending") : ?>
-                        <span class="col-sm-1"> </span>
-                        <button id="cancel-request-btn" class="cancel-request-btn btn btn-danger col-sm-4">Cancel Request</button>
-                        <span class="col-sm-2"> </span>
-                        <button type="submit" onclick="location.href='<?php echo base_url('Appointment/acceptReschedule');?>/<?php echo $appointmentID ?>'" class="btn btn-success col-sm-4 ">Accept Reschedule</button>
-                        <span class="col-sm-1"> </span>
+                        
+                        <button id="cancel-request-btn" class="cancel-request-btn submit btn btn-danger col-sm-4">Cancel Request</button>
+                        
+                        <button type="submit" onclick="location.href='<?php echo site_url('Appointment/acceptReschedule');?>/<?php echo $appointmentID ?>'" class="btn submit btn-success col-sm-4 ">Accept Reschedule</button>
+                        
                     <?php elseif ($status == "accepted") : ?>
-                        <span class="col-sm-1"> </span>
-                        <button id="cancel-request-btn" class="cancel-request-btn btn btn-danger col-sm-4">Cancel Request</button>
-                        <span class="col-sm-2"> </span>
-                        <button class="btn btn-primary col-sm-4" onclick="location.href='<?php echo base_url('Appointment/viewAppointmentVerify');?>'">Back</button>
-                        <span class="col-sm-1"> </span>
+                        
+                        <button id="cancel-request-btn" class="cancel-request-btn btn submit btn-danger col-sm-4">Cancel Request</button>
+                        
+                        <button class="btn submit btn-primary col-sm-4" onclick="location.href='<?php echo site_url('Appointment/viewAppointmentVerify');?>'">Back</button>
+                        
                        
                     <?php else : ?>
-                        <button class="btn btn-primary" onclick="location.href='<?php echo base_url('LogoutAppointment');?>'">Back</button>
+                        <button class="btn btn-primary col-sm-4" onclick="location.href='<?php echo site_url('LogoutAppointment');?>'">Back</button>
                     <?php endif; ?>
                 </div>
             </div>

@@ -75,7 +75,7 @@
 															<td
 																style="width:100%;padding-right:0px;padding-left:0px;padding-top:5px;padding-bottom:5px;">
 																<div align="center" style="line-height:10px"><img
-																		src="<?php echo base_url('assets/image/logo.jpg'); ?>"
+																		src="<?php echo site_url('assets/image/logo.jpg'); ?>"
 																		style="display: block; height: auto; border: 0; width: 148px; max-width: 100%;"
 																		width="148" /></div>
 															</td>
@@ -173,7 +173,6 @@
 																	<strong><p>Dear <?php echo $name?>, </p></strong>
 																	<p style="text-indent: 30px">We would like to inform you that your dental application have
 																		been cancelled. However, You can book another appointment by clicking the button below: </p>
-							
 																	<p style="margin-bottom:13px;text-align:center">
 																			<a href="<?php echo site_url('Appointment')?>"><button
 																				style="background-color:#5CDC3C; font-size:20px; padding:10px; border-radius: 5px; color:#ffffff; border:0; cursor:pointer;">

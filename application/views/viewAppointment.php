@@ -64,7 +64,14 @@
 						<div class="input-container ic2">
 							<div class="h-captcha" data-sitekey="6ad65b76-24e9-4e8b-8e89-0a480ed2c8b8"></div>
 						</div>
-						<button type="submit" name="submit" class="submit btn-primary">View Details</button>
+						<div class="d-flex justify-content-around row">
+						
+							<button type="button" onclick="location.href='<?php echo base_url('');?>'" class="col-md-6 btn btn-primary submit">Back to home</button>
+							<button type="submit" name="submit" class="col-md-6 submit btn-success">View Details</button>
+						</div>
+						
+					
+						
 					</div>
 				</form>
 			</div>

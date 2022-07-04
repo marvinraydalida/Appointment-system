@@ -75,7 +75,7 @@
 															<td
 																style="width:100%;padding-right:0px;padding-left:0px;padding-top:5px;padding-bottom:5px;">
 																<div align="center" style="line-height:10px"><img
-																		src="<?php echo base_url('assets/image/logo.jpg'); ?>"
+																		src="<?php echo site_url('assets/image/logo.jpg'); ?>"
 																		style="display: block; height: auto; border: 0; width: 148px; max-width: 100%;"
 																		width="148" /></div>
 															</td>

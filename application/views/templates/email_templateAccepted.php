@@ -85,7 +85,7 @@
 															<td
 																style="width:100%;padding-right:0px;padding-left:0px;padding-top:5px;padding-bottom:5px;">
 																<div align="center" style="line-height:10px"><img
-																		src="<?php echo base_url('assets/image/logo.jpg'); ?>"
+																		src="<?php echo site_url('assets/image/logo.jpg'); ?>"
 																		style="display: block; height: auto; border: 0; width: 148px; max-width: 100%;"
 																		width="148" /></div>
 															</td>
@@ -277,10 +277,13 @@
 																		<p
 																			style=" font-size: 15px; margin-top: 20px;text-align:center">
 																			If you want to manage your appointment,
+																			<a href="<?php echo site_url('Appointment/viewAppointmentVerify')?>">
 																			<button
-																				style="background-color:#BFE4FF; font-size:20px; padding:10px; border-radius: 5px; color:#4C83A9; border:0; cursor:pointer;"
-																				onclick="location.href='<?php echo site_url('Appointment/viewAppointmentVerify')?>'">
-																				Manage Appointment</button>
+																				style="background-color:#BFE4FF; font-size:20px; padding:10px; border-radius: 5px; color:#4C83A9; border:0; cursor:pointer;">
+												
+																				Manage Appointment
+																			</button>
+																			</a>
 																		
 																			</td> </tr> </table> <table border="0"
 																			cellpadding="10" cellspacing="0"

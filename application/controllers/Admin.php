@@ -94,7 +94,7 @@ class Admin extends CI_Controller
         $this->email->from($this->config->item('smtp_user'));
         $this->email->to($data->email);
         $message = $this->load->view('templates/email_templateAccepted', $data, TRUE);
-        $this->email->subject('Email Test');
+        $this->email->subject('Appointment Request Notice');
         $this->email->message($message);
 
         if ($this->email->send()) {
@@ -116,7 +116,7 @@ class Admin extends CI_Controller
         $this->email->from($this->config->item('smtp_user'));
         $this->email->to($data->email);
         $message = $this->load->view('templates/email_templateDeclined', $data, TRUE);
-        $this->email->subject('Email Test');
+        $this->email->subject('Appointment Request Notice');
         $this->email->message($message);
        
         if ($this->email->send()) {
@@ -138,7 +138,7 @@ class Admin extends CI_Controller
         $this->email->from($this->config->item('smtp_user'));
         $this->email->to($data->email);
         $message = $this->load->view('templates/email_templateCancelled', $data, TRUE);
-        $this->email->subject('Email Test');
+        $this->email->subject('Appointment Request Notice');
         $this->email->message($message);
     
         if ($this->email->send()) {
@@ -161,7 +161,7 @@ class Admin extends CI_Controller
         $this->email->from($this->config->item('smtp_user'));
         $this->email->to($data['appointment']->email);
         $message = $this->load->view('templates/email_templateResched', $data, TRUE);
-        $this->email->subject('Reschedule notice');
+        $this->email->subject('Appointment Request Notice');
         $this->email->message($message);
        
         if ($this->email->send()) {

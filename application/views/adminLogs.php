@@ -32,7 +32,7 @@
 			</table>
 		</div>
 </section>
-<script src="<?php echo base_url("assets/javascript/adminLogs.js") ?>" type="module"></script>
+<script src="<?php echo site_url("assets/javascript/adminLogs.js") ?>" type="module"></script>
 </body>
 
 </html>

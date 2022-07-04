@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Appointment Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href=<?php echo base_url("assets/css/stylesLogin.css") ?> rel="stylesheet">
+    <link href=<?php echo site_url("assets/css/stylesSetAppointment.css") ?> rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -15,18 +15,23 @@
 </head>
 
 <body>
+<div class="container register">
+                <div class="row">
+                    <div class="col-md-5 register-left">
+                        <img src="<?php echo site_url("assets/image/logo.jpg") ?>" alt=""/>
+                        <h1>CERILLO HOUSE OF DENTAL MEDICINE</h1>
+                         <i><h4>More than just a smile</h4></i>
 
-    <div class="container mt-5">
-        <div class="row">
-
-            <div class="col-md-5 offset-md-4 border p-4 shadow bg-light">
-                <div class="col-12">
-                    <h3 class="fw-normal text-secondary fs-4 mb-4">Appointment form</h3>
-                </div>
-                <form action="<?php echo site_url('Appointment/appointment') ?>" method="POST">
-                    <div class="row g-3">
+                    </div>
+                    <div class="col-md-7 register-right">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h2 class="register-heading">Appointment Form</h2>
+                                <div class="row register-form">
+                   <form action="<?php echo site_url('Appointment/appointment') ?>" method="POST">
+                    <div class="row g-2">
                         <div class="col-md-12">
-                            <input type="text" name="name" required class="form-control input-lg" placeholder="Full Name">
+                            <input type="text" name="name" required class="form-control" placeholder="Full Name">
                         </div>
                         <div class="col-md-6">
                             <input type="number" name="age" min="7" required class="form-control" placeholder="Age">
@@ -69,14 +74,20 @@
                         </div>
                         <div class="col-12 mt-3">                        
                             <button type="submit" name="submit" class="btn btn-primary float-end">Book Appointment</button>
-                            <button type="button" class="btn btn-outline-secondary float-end me-2">Cancel</button>
+                            <button type="button" onclick="location.href='<?php echo site_url() ?>'" class="btn btn-outline-secondary float-end me-2">Back to home</button>
                         </div>
                         
                     </div>
                 </form>
+                                </div>   
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </div>
-    </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   
 </body>

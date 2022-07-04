@@ -75,7 +75,7 @@
 															<td
 																style="width:100%;padding-right:0px;padding-left:0px;padding-top:5px;padding-bottom:5px;">
 																<div align="center" style="line-height:10px"><img
-																		src="<?php echo base_url('assets/image/logo.jpg'); ?>"
+																		src="<?php echo site_url('assets/image/logo.jpg'); ?>"
 																		style="display: block; height: auto; border: 0; width: 148px; max-width: 100%;"
 																		width="148" /></div>
 															</td>
@@ -176,12 +176,13 @@
 																	 have been rescheduled to <?php echo date("F d,Y", strtotime($date))?>, <?php echo date("l", strtotime($date))?> at <?php echo date('h:i a', strtotime($time))?>. To accept the said date, click the button below: </p>
 							
 																	<p style="margin-bottom:13px;text-align:center">
-																			<button type="submit"
-																				style="background-color:#BFE4FF; font-size:20px; padding:10px; border-radius: 5px; color:#4C83A9; border:0; cursor:pointer;"
-																				onclick="location.href='<?php echo site_url('Appointment/viewAppointmentVerify')?>'">
-																				
-																				Manage Appointment</button>
-																			</p>
+																			<a href="<?php echo site_url('Appointment/viewAppointmentVerify')?>">
+																				<button
+																					style="background-color:#BFE4FF; font-size:20px; padding:10px; border-radius: 5px; color:#4C83A9; border:0; cursor:pointer;">
+																					Manage Appointment
+																				</button>
+																			</a>
+																		</p>
 
 					
 																	

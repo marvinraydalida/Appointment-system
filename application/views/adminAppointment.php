@@ -536,9 +536,9 @@
         </div>
 
 </section>
-<script src="<?php echo base_url("assets/javascript/adminAppointment.js") ?>" type="module"></script>
-<script src="<?php echo base_url("assets/javascript/modal.js") ?>"></script>
-<script src="<?php echo base_url("assets/javascript/calendar.js") ?>" type="module"></script>
+<script src="<?php echo site_url("assets/javascript/adminAppointment.js") ?>" type="module"></script>
+<script src="<?php echo site_url("assets/javascript/modal.js") ?>"></script>
+<script src="<?php echo site_url("assets/javascript/calendar.js") ?>" type="module"></script>
 </body>
 
 </html>
