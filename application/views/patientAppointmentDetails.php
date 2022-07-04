@@ -17,11 +17,11 @@
 
 <body>
     <section id="modal-container">
-            <div id="decline-modal">    
+            <div id="cancel-modal">    
                 <button class="modal-close" id="modal-close">X</button>
 
                 <h1>Are you sure you want to cancel the appointment?</h1>
-                <div id="decline-button-container">
+                <div id="cancel-button-container">
                     <!-- Wrap nalang sa form to para ma submit -->
                     <button onclick="location.href='<?php echo base_url('Appointment/cancel');?>/<?php echo $appointmentID ?>'"  id="cancel-appointment-btn">Yes</button>
                     <button>No</button>

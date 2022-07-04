@@ -8,21 +8,12 @@ modalCloseBtn.addEventListener('click', closeModal);
 cancelBtn.addEventListener('click', showModal);
 
 function closeModal(event) {
-    if (event.target.tagName === 'BUTTON') {
-        event.target.closest('section').style.display = "none";
-        document.getElementById('cancel-modal').style.display = "none";
-
-    }
-    else if (event.target.tagName === 'SECTION') {
-        event.target.style.display = "none";
-        document.getElementById('cancel-modal').style.display = "none";
-    }
+    document.getElementById('modal-container').style.display = "none";
 }
 
 function showModal(event) {
-    if (event.target.className === 'cancel-request-btn') {
-        document.getElementById('cancel-modal').style.display = "block";
-        console.log('test');
+    if (event.target.id === 'cancel-request-btn') {
+        document.getElementById('modal-container').style.display = "block";
     }
     
 }
