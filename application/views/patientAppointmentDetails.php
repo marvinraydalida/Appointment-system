@@ -37,12 +37,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3 border p-4 shadow bg-color">
-                <div class="alert alert-success" role="alert">
-                    <h4 class="alert-heading"><b>Important!</b></h4>
-                    [1] Please arrive at the clinic at least 30 minutes in advance of your scheduled time. <br>
-                    [2] Please provide an screenshot of the appointment email during your scheduled time.
-                </div>
-
+                <?php if($status != "cancelled") : ?>
+                    <div class="alert alert-success" role="alert">
+                        <h4 class="alert-heading"><b>Important!</b></h4>
+                        [1] Please arrive at the clinic at least 30 minutes in advance of your scheduled time. <br>
+                        [2] Please provide an screenshot of the appointment email during your scheduled time.
+                    </div>
+                <?php endif; ?>   
                 <br>
                 <div class="row">
                     <div class="col-sm-6">
