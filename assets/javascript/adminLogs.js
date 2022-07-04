@@ -5,7 +5,7 @@ const form = document.querySelector('form');
 const uri = window.location.search;
 const statusParam = new URLSearchParams(uri);
 const selectedAction = statusParam.get('action');
-const selectedDate = statusParam.get('date');
+const selectedDate = statusParam.get('dateLog');
 
 inputDate.value = selectedDate;
 

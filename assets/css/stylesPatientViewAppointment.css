@@ -57,3 +57,101 @@
 
   }
   
+  
+#modal-container {
+  position: absolute;
+  display: none;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.582);
+  z-index: 1;
+}
+
+#decline-modal {
+  display: none;
+  width: 400px;
+  height: 250px;
+  margin: auto;
+  position: relative;
+  padding: 50px 5px 5px 5px;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 10px;
+  font-family: 'Nunito', sans-serif;
+  animation: slideDown 300ms ease-in-out;
+}
+
+@keyframes slideDown {
+  from {
+      transform: translateY(-30px);
+  }
+
+  to {
+      transform: translateY(0px);
+  }
+}
+
+#decline-modal h1 {
+  text-align: center;
+  margin: 0px 0px 50px 0px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  color: red;
+  background-color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+}
+
+#decline-button-container {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#decline-button-container button {
+  height: 50px;
+  min-width: 100px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  transition: all 250ms ease-in-out;
+}
+
+#decline-button-container button:nth-child(1) {
+  color: #2E8469;
+  background-color: #cbffdf;
+}
+
+#decline-button-container button:nth-child(2) {
+  color: #A95069;
+  background-color: #ffb7c1;
+}
+
+#decline-button-container button:hover {
+  transform: scale(1.1);
+}
+
+#decline-button-container button:nth-child(1):hover {
+  background-color: #95f0b6;
+
+}
+
+#decline-button-container button:nth-child(2):hover {
+  background-color: #ff9fac;
+}

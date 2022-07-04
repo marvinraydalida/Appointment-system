@@ -31,8 +31,23 @@ class Appointment_model extends CI_Model {
 
     }
 
-	public function viewAllLogs(){
-		$query = $this->db->query('	SELECT * FROM logs ORDER BY happenedAt ASC');
+	public function viewAllLogs($date,$action){
+		if($action == "All"){
+			$query = $this->db->query('	SELECT *
+				FROM logs  
+				LEFT JOIN user_details ON logs.userID = user_details.userID
+				WHERE `date` ="'.$date.'"
+				ORDER BY `time` ASC ');
+		}
+		else{
+			$query = $this->db->query('	SELECT *
+				FROM logs  
+				LEFT JOIN user_details ON logs.userID = user_details.userID
+				WHERE `date` ="'.$date.'"
+				AND `action` = "'.$action.'"
+				ORDER BY `time` ASC ');
+		}
+		
 		return $query->result();
 	}
 
@@ -62,25 +77,34 @@ class Appointment_model extends CI_Model {
 		);
 		$this->db->where('appointmentID',$id);
 		$this->db->update('appointments',$data);
+		$query = $this->db->query('	SELECT * FROM appointments where `appointmentID` = ' . $id);
+		$query =$query->row();
 		$data = array(
-            'userID' => $this->session->userdata('auth_user')['userID'],
-			'action' => 'Accepted an Appointment with ID '.$id,
-			'happenedAt' => date("Y-m-d h:i:s")
-        );
+			'userID' => $this->session->userdata('auth_user')['userID'],
+			'action' => 'Accepted',
+			'details' => 'Accepted Appointment with ticket # '.$query->appointmentTicket.' successfully',
+			'date' => date("Y-m-d"),
+			'time' => date("H:i:s")
+		);
         $this->db->insert('logs',$data);
 	}
 
     public function declineAppointment($id){ #Delete/Status
+		
 		$data = array(
 			'status' => "declined"
 		);
 		$this->db->where('appointmentID',$id);
 		$this->db->update('appointments',$data);
+		$query = $this->db->query('	SELECT * FROM appointments where `appointmentID` = ' . $id);
+
 		$data = array(
-            'userID' => $this->session->userdata('auth_user')['userID'],
-			'action' => 'Declined an Appointment with ID'.$id,
-			'happenedAt' => date("Y-m-d h:i:s")
-        );
+			'userID' => $this->session->userdata('auth_user')['userID'],
+			'action' => 'Declined',
+			'details' => 'Declined Appointment with ticket # '.$query->appointmentTicket.' successfully',
+			'date' => date("Y-m-d"),
+			'time' => date("H:i:s")
+		);
         $this->db->insert('logs',$data);
 	}
 
@@ -90,11 +114,15 @@ class Appointment_model extends CI_Model {
 		);
 		$this->db->where('appointmentID',$id);
 		$this->db->update('appointments',$data);
+		$query = $this->db->query('	SELECT * FROM appointments where `appointmentID` = ' . $id);
+		$query = $query->row();
 		$data = array(
-            'userID' => $this->session->userdata('auth_user')['userID'],
-			'action' => 'Cancelled an Appointment with ID'.$id,
-			'happenedAt' => date("Y-m-d h:i:s")
-        );
+			'userID' => $this->session->userdata('auth_user')['userID'],
+			'action' => 'Cancelled',
+			'details' => 'Cancelled Appointment with ticket # '.$query->appointmentTicket.' successfully',
+			'date' => date("Y-m-d"),
+			'time' => date("H:i:s")
+		);
         $this->db->insert('logs',$data);
 	}
 
@@ -135,11 +163,15 @@ class Appointment_model extends CI_Model {
 		);
 		$this->db->where('appointmentID',$_POST['appointmentID']);
 		$this->db->update('appointments',$data);
+		$query = $this->db->query('	SELECT * FROM appointments where `appointmentID` = ' . $id);
+		$query = $query->row();
 		$data = array(
-            'userID' => $this->session->userdata('auth_user')['userID'],
-			'action' => 'Reschduled an Appointment with ID'.$_POST['appointmentID'],
-			'happenedAt' => date("Y-m-d h:i:s")
-        );
+			'userID' => $this->session->userdata('auth_user')['userID'],
+			'action' => 'Rescheduled',
+			'details' => 'Rescheduled Appointment with ticket # '.$query->appointmentTicket.' successfully',
+			'date' => date("Y-m-d"),
+			'time' => date("H:i:s")
+		);
         $this->db->insert('logs',$data);
 	}
 
@@ -195,8 +227,16 @@ class Appointment_model extends CI_Model {
 		$query = $todayAccepted = $this->db->query('SELECT * FROM appointments where 
 													appointmentTicket = "'.$_POST['appointmentTicket'].'" 
 													AND email="'.$_POST['email'].'"');
+
+		$data = $query->row();											
 		if($query->num_rows()>0){
-			return $query->row();
+			$auth_patientdetails = [
+				'appointmentID' => $data->appointmentID,
+				// 'time_added'  =>  $data->timeAdded
+			];
+			$this->session->set_userdata('auth_patient',$auth_patientdetails);
+			$this->session->set_userdata('authenticatedAppointment',"1");
+			return 1;
 		}
 		else{
 			return NULL; 

@@ -7,6 +7,7 @@ class Appointment extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        
         $this->load->model('Appointment_model');
         $this->load->helper('captcha');
     }
@@ -73,8 +74,7 @@ class Appointment extends CI_Controller
             $responseData = json_decode($result);
             if ($responseData->success) {
                 if($this->Appointment_model->viewAppointmentDetails()!=NULL){
-                    $data = $this->Appointment_model->viewAppointmentDetails();
-                    $this->load->view('PatientAppointmentDetails',$data);
+                    redirect('Appointment/viewAppointmentVerified');
                 }
                 else{
                     $this->session->set_flashdata('appointmentError','Invalid Appointment Code'); 
@@ -87,9 +87,15 @@ class Appointment extends CI_Controller
         }
     }
 
+    public function viewAppointmentVerified() {
+        $this->load->model('AuthenticationPatient');
+        $data = $this->Appointment_model->viewSingleAppointment($this->session->userdata('auth_patient')['appointmentID']);
+        $this->load->view('PatientAppointmentDetails',$data);
+    }
+
     public function cancel($id){
         $this->Appointment_model->cancelAppointment($id);
-        $this->load->view('cancelAppointment');
+        redirect('Appointment/viewAppointmentVerified');
     }
    
     public function acceptReschedule($id){

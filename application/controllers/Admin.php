@@ -23,7 +23,8 @@ class Admin extends CI_Controller
 
     
     public function appointment()
-    {
+    {   
+       
         $date =  $_GET['date'];
         $status = $_GET['status'];
         $data['appointments'] = $this->Appointment_model->viewAppointmentPerTime($date, $status);
@@ -37,7 +38,10 @@ class Admin extends CI_Controller
     }
 
     public function logs(){
-        $data['logs'] = $this->Appointment_model->viewAllLogs();
+
+        $date =  $_GET['dateLog'];
+        $action = $_GET['action'];
+        $data['logs'] = $this->Appointment_model->viewAllLogs($date,$action);
         $this->load->view('templates/sidebar');
         $this->load->view('adminLogs',$data);
     }

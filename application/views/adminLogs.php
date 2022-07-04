@@ -2,7 +2,7 @@
 	<div id="logs-container">
 		<form method="Get">
 			<h1>Date:</h1>
-			<input type="date" name="date" id="inputDate">
+			<input type="date" name="dateLog" id="inputDate">
 			<h1>Action:</h1>
 			<select id="action-selector" name="action">
 				<option value="All">All</option>
@@ -24,9 +24,9 @@
 				</tr>
 				<?php foreach ($logs as $log) { ?>
 					<tr>
-						<td><?php echo $log->happenedAt ?></td>
-						<td><?php echo $log->action ?></td>
-						<td>Marvin Ray Dalida</td>
+						<td><?php echo date('h:i a', strtotime($log->time)) ?></td>
+						<td><?php echo $log->details ?></td>
+						<td><?php echo $log->name ?></td>
 					</tr>
 				<?php } ?>
 			</table>

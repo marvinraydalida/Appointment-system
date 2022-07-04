@@ -16,28 +16,19 @@
 </head>
 
 <body>
-    <!-- TODO: -->
-    <!-- Add modal for cancel confirmation message-->
-    <!-- Add logs -->
-    <!-- .env and deployment -->
-    
-    <div class="modal fade" id="cancelModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Are you sure you want to cancel your appointment?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                    <button onclick="location.href='<?php echo site_url('Appointment/Cancel')?>/<?php echo $appointmentID; ?>'" class="btn btn-primary">Yes</button>
+    <section id="modal-container">
+            <div id="decline-modal">    
+                <button class="modal-close" id="modal-close">X</button>
+
+                <h1>Are you sure you want to cancel the appointment?</h1>
+                <div id="decline-button-container">
+                    <!-- Wrap nalang sa form to para ma submit -->
+                    <button onclick="location.href='<?php echo base_url('Appointment/cancel');?>/<?php echo $appointmentID ?>'"  id="cancel-appointment-btn">Yes</button>
+                    <button>No</button>
+                    <!--  -->
                 </div>
             </div>
-        </div>
-    </div>
-
+    </section>
     <div class="imagebg">
         <div class="blur">
 
@@ -125,20 +116,20 @@
                         <span class="col-sm-1"> </span>
                     <?php elseif ($status == "accepted") : ?>
                         <span class="col-sm-1"> </span>
-                        <button onclick="location.href='<?php echo base_url('Appointment/cancel');?>/<?php echo $appointmentID ?>'" class="btn btn-danger col-sm-4">Cancel Request</button>
+                        <button id="cancel-request-btn" class="cancel-request-btn btn btn-danger col-sm-4">Cancel Request</button>
                         <span class="col-sm-2"> </span>
                         <button class="btn btn-primary col-sm-4" onclick="location.href='<?php echo base_url('Appointment/viewAppointmentVerify');?>'">Back</button>
                         <span class="col-sm-1"> </span>
                        
                     <?php else : ?>
-                        <button class="btn btn-primary" onclick="location.href='<?php echo base_url('Appointment/viewAppointmentVerify');?>'">Back</button>
+                        <button class="btn btn-primary" onclick="location.href='<?php echo base_url('LogoutAppointment');?>'">Back</button>
                     <?php endif; ?>
                 </div>
             </div>
         </div>
     </div>
 
-
+    <script src="<?php echo base_url("assets/javascript/modalPatient.js") ?>"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>

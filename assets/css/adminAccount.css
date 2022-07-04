@@ -116,7 +116,7 @@ td>button:nth-child(1) {
 td>button:nth-child(1):disabled {
     color:#181f24 ;
     background-color: #9eaeb9;
-    
+    cursor: default;
 }
 
 
@@ -137,6 +137,18 @@ td>button:nth-child(1):disabled:hover{
 
 .deactivate-btn:active {
     background-color: #d38590;
+}
+
+.deactivate-btn:disabled {
+    color:#181f24 ;
+    background-color: #9eaeb9;
+    cursor: default;
+}
+
+.deactivate-btn:disabled:hover {
+    color:#181f24 ;
+    background-color: #9eaeb9;
+    transform: scale(1);
 }
 
 

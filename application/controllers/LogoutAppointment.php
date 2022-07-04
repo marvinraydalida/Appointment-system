@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Logout extends CI_Controller {
+class LogoutAppointment extends CI_Controller {
 
 	public function __construct() {
         parent:: __construct();
@@ -10,7 +10,8 @@ class Logout extends CI_Controller {
     }
 
 	public function index(){
-		$this->User_Login->logout();
-		redirect('Login');
-	}	
+		$this->User_Login->logoutAppointment();
+		redirect('Appointment/viewAppointmentVerify');
+	}
+	
 }

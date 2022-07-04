@@ -25,8 +25,10 @@ class User_Login extends CI_Model {
 				if($row->status == 1){
 					$data = array(
 						'userID' => $row->userID,
-						'action' => '[Admin] '.$row->name.' logged in',
-						'happenedAt' => date("Y-m-d h:i:s")
+						'action' => 'Log-in',
+						'details' => 'Logged-in Successfully',
+						'date' => date("Y-m-d"),
+						'time' => date("H:i:s")
 					);
 					$this->db->insert('logs',$data);
 					return $query->row();
@@ -51,12 +53,19 @@ class User_Login extends CI_Model {
 
 	public function logout(){
 		$data = array(
-            'userID' => $this->session->userdata('auth_user')['userID'],
-			'action' => '[Admin] '.$this->session->userdata('auth_user')['name'].' logged out',
-			'happenedAt' => date("Y-m-d h:i:s")
-        );
+			'userID' => $this->session->userdata('auth_user')['userID'],
+			'action' => 'Log-out',
+			'details' => 'Logged-out Successfully',
+			'date' => date("Y-m-d"),
+			'time' => date("H:i:s")
+		);
         $this->db->insert('logs',$data);
 		$this->session->unset_userdata('authenticated');
 		$this->session->unset_userdata('auth_user');
+	}
+
+	public function logoutAppointment(){
+		$this->session->unset_userdata('authenticatedAppointment');
+		$this->session->unset_userdata('auth_patient');
 	}
 }

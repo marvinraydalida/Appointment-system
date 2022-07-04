@@ -69,22 +69,28 @@
                         <td style="font-weight: bold;"><?php echo $account->username?></td>
                         <td><?php echo $account->name?></td>
                         <td>
-                            <?php if($account->status == 1): ?>
+                            <?php if($account->status == 1 && $account->userID != 1): ?>
                                 <button class="editAdminBtn" >Edit Details</button>
                             <?php else : ?>
                                 <button class="editAdminBtn" disabled>Edit Details</button>
                             <?php endif ; ?>
-                           
-                            <?php if($account->status == 1): ?>
-                                <button class="deactivate-btn" 
-                                        onclick="location.href='<?php echo site_url('Admin/deactivateAccount')?>/<?php echo $account->userID; ?>'">
-                                        Deactivate
-                                </button>
-                            <?php else : ?>
-                                <button class="activate-btn"
-                                        onclick="location.href='<?php echo site_url('Admin/activateAccount')?>/<?php echo $account->userID; ?>'">
-                                        Activate
-                                </button>
+
+                            <?php if($account->userID  == 1): ?>
+                                    <button class="deactivate-btn" disabled>
+                                            Deactivate
+                                    </button>
+                            <?php else : ?>   
+                                <?php if($account->status == 1): ?>
+                                    <button class="deactivate-btn" 
+                                            onclick="location.href='<?php echo site_url('Admin/deactivateAccount')?>/<?php echo $account->userID; ?>'">
+                                            Deactivate
+                                    </button>
+                                <?php else : ?>
+                                    <button class="activate-btn"
+                                            onclick="location.href='<?php echo site_url('Admin/activateAccount')?>/<?php echo $account->userID; ?>'">
+                                            Activate
+                                    </button>
+                                <?php endif ; ?>
                             <?php endif ; ?>
                             <input type="hidden" id="userID" value="<?php echo $account->userID?>">
                         </td>
