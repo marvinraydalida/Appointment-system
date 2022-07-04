@@ -26,7 +26,9 @@
                 <h5>Your new appointment details is sent in your email, but your appointment has <br><b>not been confirmed yet</b> by
                     Cerillo House of Dental Medicine</h5>
                     <br>
-                <h5>Your Appointment will be confirmed during operating hours <br> and we will notify you at <b>email ng clinic</b></h5>
+                <h5>Your Appointment will be confirmed during operating hours <br> and we will notify you at <b>
+cerillo.dentalmed@gmail.com
+</b></h5>
                 <br>
                 <button onclick="location.href='<?php echo site_url('Appointment/viewAppointmentVerify');?>'" class="btn btn-primary design">View Application Details</button>
             </div>

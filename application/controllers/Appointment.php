@@ -100,6 +100,6 @@ class Appointment extends CI_Controller
    
     public function acceptReschedule($id){
         $this->Appointment_model->acceptedRescheduleAppointment($id);
-        $this->load->view('reschedAppointment');
+        redirect('Appointment/viewAppointmentVerified');
     }
 }
