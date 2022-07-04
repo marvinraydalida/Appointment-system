@@ -163,7 +163,7 @@ class Appointment_model extends CI_Model {
 		);
 		$this->db->where('appointmentID',$_POST['appointmentID']);
 		$this->db->update('appointments',$data);
-		$query = $this->db->query('	SELECT * FROM appointments where `appointmentID` = ' . $id);
+		$query = $this->db->query('	SELECT * FROM appointments where `appointmentID` = ' . $_POST['appointmentID']);
 		$query = $query->row();
 		$data = array(
 			'userID' => $this->session->userdata('auth_user')['userID'],
