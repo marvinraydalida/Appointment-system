@@ -187,50 +187,7 @@
 														</tr>
 													</table>
 													
-									
-												
-													
-													<table border="0" cellpadding="10" cellspacing="0"
-														class="divider_block" role="presentation"
-														style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"
-														width="100%">
-														<tr>
-															<td>
-																<div align="center">
-																	<table border="0" cellpadding="0" cellspacing="0"
-																		role="presentation"
-																		style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"
-																		width="100%">
-																		<tr>
-																			<td class="divider_inner"
-																				style="font-size: 1px; line-height: 1px; border-top: 1px solid #BBBBBB;">
-																				<span> </span></td>
-																		</tr>
-																	</table>
-																</div>
-															</td>
-														</tr>
-													</table>
-													<table border="0" cellpadding="5" cellspacing="0" class="text_block"
-														role="presentation"
-														style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;"
-														width="100%">
-														<tr>
-															<td>
-																<div style="font-family: sans-serif">
-																	<div
-																		style="font-size: 14px; mso-line-height-alt: 16.8px; color: #555555; line-height: 1.2; font-family: Arial, Helvetica Neue, Helvetica, sans-serif;">
-																		<p
-																			style="margin: 0; font-size: 16px; text-align: center;">
-																			<b>Cerillo house of dental medicine</b><br>
-																			Address: Address Chuchu <br>
-																			Contact Number: 0915647621 <br>
-																			
-																	</div>
-																</div>
-															</td>
-														</tr>
-													</table>
+		
 													<table border="0" cellpadding="10" cellspacing="0"
 														class="divider_block" role="presentation"
 														style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;"

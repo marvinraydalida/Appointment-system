@@ -10,6 +10,8 @@ class Admin extends CI_Controller
         $this->load->model('Authentication');
         $this->load->model('Appointment_model');
         $this->load->model('userAccount');
+   
+        $this->load->model('sendEmail');
     }
 
     // VIEWS
@@ -80,91 +82,55 @@ class Admin extends CI_Controller
     }
 
     //APPOINTMENT PROCESSING
-
     
     public function sendEmailAccepted($id)
     {
-        $this->Appointment_model->acceptAppointment($id);
-        $this->load->library('email');
-        $this->load->config('email');
-        $this->email->set_mailtype("html");
-
+        // $this->Appointment_model->acceptAppointment($id);
         $data = $this->Appointment_model->viewSingleAppointment($id);
-
-        $this->email->from($this->config->item('smtp_user'));
-        $this->email->to($data->email);
         $message = $this->load->view('templates/email_templateAccepted', $data, TRUE);
-        $this->email->subject('Appointment Request Notice');
-        $this->email->message($message);
-
-        if ($this->email->send()) {
+        
+        if($this->sendEmail->sendAccepted($data->email,$message)==1)
             redirect('Admin');
-        } else {
-            show_error($this->email->print_debugger());
-        }
+        else
+            echo($this->sendEmail->sendAccepted());
     }
 
     public function sendEmailDeclined($id)
     {
-        $this->Appointment_model->declineAppointment($id);
-        $this->load->library('email');
-        $this->load->config('email');
-        $this->email->set_mailtype("html");
-
+        // $this->Appointment_model->declineAppointment($id);
         $data = $this->Appointment_model->viewSingleAppointment($id);
-
-        $this->email->from($this->config->item('smtp_user'));
-        $this->email->to($data->email);
         $message = $this->load->view('templates/email_templateDeclined', $data, TRUE);
-        $this->email->subject('Appointment Request Notice');
-        $this->email->message($message);
-       
-        if ($this->email->send()) {
+        
+        
+        if($this->sendEmail->sendDeclined($data->email,$message)==1)
             redirect('Admin');
-        } else {
-            show_error($this->email->print_debugger());
-        }
+        else
+            echo($this->sendEmail->sendEmailDeclined());
     }
 
     public function sendEmailCancelled($id)
     {
-        $this->Appointment_model->cancelAppointment($id);
-        $this->load->library('email');
-        $this->load->config('email');
-        $this->email->set_mailtype("html");
-
+        // $this->Appointment_model->cancelAppointment($id);
         $data = $this->Appointment_model->viewSingleAppointment($id);
-
-        $this->email->from($this->config->item('smtp_user'));
-        $this->email->to($data->email);
         $message = $this->load->view('templates/email_templateCancelled', $data, TRUE);
-        $this->email->subject('Appointment Request Notice');
-        $this->email->message($message);
-    
-        if ($this->email->send()) {
-            redirect('Admin/Appointment?date=' . $_GET['date'] . '&status=' . $_GET['status']);
-        } else {
-            show_error($this->email->print_debugger());
-        }
+        
+        
+        if($this->sendEmail->sendCancelled($data->email,$message)==1)
+            redirect('Admin');
+        else
+            echo($this->sendEmail->sendCancelled());
     }
 
     public function sendEmailRescheduled()
     {
-        $this->Appointment_model->rescheduleAppointment();
-        $this->load->library('email');
-        $this->load->config('email');
-        $this->email->set_mailtype("html");
-
+        // $this->Appointment_model->rescheduleAppointment();
         $data['appointment'] = $this->Appointment_model->viewSingleAppointment($_POST['appointmentID']);
         $data['time'] = $_POST['time'];
         $data['date'] = $_POST['date'];
-        $this->email->from($this->config->item('smtp_user'));
-        $this->email->to($data['appointment']->email);
+ 
         $message = $this->load->view('templates/email_templateResched', $data, TRUE);
-        $this->email->subject('Appointment Request Notice');
-        $this->email->message($message);
-       
-        if ($this->email->send()) {
+        
+        if($this->sendEmail->sendResched($data['appointment']->email,$message)==1) {
 
             if(isset($_GET['status']) && isset($_GET['date'])){
                 redirect('Admin/Appointment?date=' . $_GET['date'] . '&status=' . $_GET['status']);
@@ -172,9 +138,8 @@ class Admin extends CI_Controller
             else{
                 redirect('Admin');
             }  
-        } else {
-            show_error($this->email->print_debugger());
-        }
+        }   else
+            echo($this->sendEmail->sendResched());
     }
 
     public function acceptedEmailReschedule($id)
