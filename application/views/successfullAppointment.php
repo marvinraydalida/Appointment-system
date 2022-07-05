@@ -23,10 +23,9 @@
                 <i class="fa-solid fa-circle-check sizing"></i>
                 <h2>Appointment request sent!</h2>
                 <br>
-                <h5>We've reserved your time and saved your appointment details, but your appointment has <br><b>not been confirmed yet</b> by
-                    Cerillo House of Dental Medicine</h5>
+                <h5>We've reserved your time and saved your appointment details, but your appointment has <br><b>not been confirmed yet</b> by Cerillo House of Dental Medicine</h5>
                     <br>
-                <h5>Your Appointment will be confirmed during operating hours <br> and we will notify you at <b>email ng clinic</b></h5>
+                <h5>Your Appointment will be confirmed during operating hours <br> and we will notify you at <b>cerillo.dentalmed@gmail.com</b></h5>
                 <br>
                 <button onclick="location.href='<?php echo site_url('Appointment/viewAppointmentVerify');?>'" class="btn btn-primary design">View Application Details</button>
             </div>
